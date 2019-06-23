@@ -11,11 +11,13 @@ class MLObsPlayAreaDistance : MLObs {
     public override Option<List<float>> FloatListObs(Agent agent) {
         return agent.gameObject.transform
             .SomeNotNull()  
-            .Map(t => GeneratePlayAreaDistance(t, new Vector2(0, PlayAreaDistance))
-                .Concat(GeneratePlayAreaDistance(t, new Vector2(0, -PlayAreaDistance)))
-                .Concat(GeneratePlayAreaDistance(t, new Vector2(PlayAreaDistance, 0)))
-                .Concat(GeneratePlayAreaDistance(t, new Vector2(-PlayAreaDistance, 0)))
-                )
+            .Map(t => 
+                (t.position.x > 0 ? 
+                    GeneratePlayAreaDistance(t, new Vector2(PlayAreaDistance, t.position.y)) :
+                    GeneratePlayAreaDistance(t, new Vector2(-PlayAreaDistance, t.position.y)))
+                .Concat(t.position.y > 0 ? 
+                    GeneratePlayAreaDistance(t, new Vector2(t.position.x, PlayAreaDistance)) :
+                    GeneratePlayAreaDistance(t, new Vector2(t.position.x, -PlayAreaDistance))))
             .Map(ienum => new List<float>(ienum));
     }
 
