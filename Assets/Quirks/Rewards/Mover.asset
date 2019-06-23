@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ForwardIdx: 0
   TurnIdx: 1
-  MultiplierForward: 0.005
-  MultiplierTurn: 0.005
+  MultiplierForward: 0.002
+  MultiplierTurn: 0.002
