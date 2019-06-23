@@ -3,7 +3,29 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - target
+  - ground
+  - wall
+  - block
+  - goal
+  - agent
+  - banana
+  - stone
+  - pyramid
+  - walkableSurface
+  - blueAgent
+  - blueGoal
+  - redGoal
+  - ball
+  - orangeGoal
+  - orangeBlock
+  - redBlock
+  - iWall
+  - switchOff
+  - badBanana
+  - pit
+  - actor
   layers:
   - Default
   - TransparentFX
