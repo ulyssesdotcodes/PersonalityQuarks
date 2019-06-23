@@ -13,16 +13,16 @@ class MLObsPlayAreaDistance : MLObs {
             .SomeNotNull()  
             .Map(t => 
                 (t.position.x > 0 ? 
-                    GeneratePlayAreaDistance(t, new Vector2(PlayAreaDistance, t.position.y)) :
-                    GeneratePlayAreaDistance(t, new Vector2(-PlayAreaDistance, t.position.y)))
+                    GeneratePlayAreaDistance(t, new Vector3(PlayAreaDistance, 0, t.position.z)) :
+                    GeneratePlayAreaDistance(t, new Vector3(-PlayAreaDistance, 0, t.position.z)))
                 .Concat(t.position.y > 0 ? 
-                    GeneratePlayAreaDistance(t, new Vector2(t.position.x, PlayAreaDistance)) :
-                    GeneratePlayAreaDistance(t, new Vector2(t.position.x, -PlayAreaDistance))))
+                    GeneratePlayAreaDistance(t, new Vector3(t.position.x, 0, PlayAreaDistance)) :
+                    GeneratePlayAreaDistance(t, new Vector3(t.position.x, 0, -PlayAreaDistance))))
             .Map(ienum => new List<float>(ienum));
     }
 
-    private List<float> GeneratePlayAreaDistance(Transform t, Vector2 p) {
+    private List<float> GeneratePlayAreaDistance(Transform t, Vector3 p) {
         Vector2 ip = t.InverseTransformPoint(p);
-        return new List<float>(new float[]{ ip.x, ip.y });
+        return new List<float>(new float[]{ ip.x, ip.z });
     }
 }
