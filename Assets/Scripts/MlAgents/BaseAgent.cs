@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BaseAgent : Agent, IResettable {
+    public MLReset[] Resets;
     public MLObs[] Observations;
     public MLReward[] Rewards;
     public MLAction[] Actions;
@@ -64,8 +65,8 @@ public class BaseAgent : Agent, IResettable {
 
     public void Reset()
     {
-        transform.position = StartPosition;
-        transform.rotation = StartRotation;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        foreach(MLReset reset in Resets) {
+            reset.Reset(this);
+        }
     }
 }
