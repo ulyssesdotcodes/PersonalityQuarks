@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MoverLearning
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 5
+    vectorObservationSize: 6
     numStackedVectorObservations: 8
     vectorActionSize: 02000000
     cameraResolutions: []
@@ -21,5 +21,5 @@ MonoBehaviour:
     - forward
     - turn
     vectorActionSpaceType: 1
-  model: {fileID: -1821934957239435464, guid: 395c57ff2efd56c48a8717a41340798f, type: 3}
+  model: {fileID: -5230028338627273375, guid: 40e8236c7c223af4f9e74d51785a81c3, type: 3}
   inferenceDevice: 0

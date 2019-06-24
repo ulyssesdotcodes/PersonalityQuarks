@@ -2,10 +2,9 @@ using UnityEngine;
 using MLAgents;
 
 [CreateAssetMenu(menuName="ML/Reset/Velocity")]
-class MLResetRandom : MLReset {
-    public float PlayAreaDistance;
+class MLResetVelocity : MLReset {
 
-    private override void Reset(BaseAgent agent) {
+    public override void Reset(BaseAgent agent) {
         Rigidbody rb = agent.gameObject.GetComponent<Rigidbody>();
         if(rb == null) return;
 

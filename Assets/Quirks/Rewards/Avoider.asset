@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Avoider
   m_EditorClassIdentifier: 
   Tag: actor
-  Reward: -0.01
-  Distance: 1
+  Reward: -0.004
+  Distance: 5
