@@ -22,4 +22,4 @@ MonoBehaviour:
     - turn
     vectorActionSpaceType: 1
   model: {fileID: -5230028338627273375, guid: 40e8236c7c223af4f9e74d51785a81c3, type: 3}
-  inferenceDevice: 0
+  inferenceDevice: 1

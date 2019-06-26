@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 59d9a32d0ed603f43a05d28a7224dbf3, type: 3}
   m_Name: StandardLocalVelocity
-  m_EditorClassIdentifier: Assembly-CSharp::MLObsLocalVelocity
+  m_EditorClassIdentifier: 
