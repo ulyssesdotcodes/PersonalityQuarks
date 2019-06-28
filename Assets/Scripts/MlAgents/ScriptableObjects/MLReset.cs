@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public abstract class MLReset : ScriptableObject {
-    public void Initialize(BaseAgent agent) {
+    public virtual void Initialize(BaseAgent agent) {
 
     }
 
