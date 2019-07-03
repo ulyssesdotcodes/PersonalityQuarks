@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822925dde5fb287499f2412110c3fd13, type: 3}
-  m_Name: LeavePlayArea
+  m_Script: {fileID: 11500000, guid: 1d084c9edf0ed0e429cf579b23d58b45, type: 3}
+  m_Name: ConstantNegative
   m_EditorClassIdentifier: 
-  Amount: -1
-  LimitX: 20
-  LimitZ: 20
-  LimitY: 3
-  PositionY: 0.5
-  Reset: 1
+  Amount: -0.002

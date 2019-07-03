@@ -7,6 +7,7 @@ class MLRewardLeavePlayarea : MLReward {
     public float LimitX;
     public float LimitZ;
     public float LimitY;
+    public float PositionY;
     public bool Reset;
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
@@ -16,7 +17,7 @@ class MLRewardLeavePlayarea : MLReward {
             isOut = true;
         }
 
-        if(Mathf.Abs(agent.gameObject.transform.position.y) > LimitY) {
+        if(Mathf.Abs(agent.gameObject.transform.localPosition.y - PositionY) > LimitY) {
             agent.AddReward(Amount);
             isOut = true;
         }
