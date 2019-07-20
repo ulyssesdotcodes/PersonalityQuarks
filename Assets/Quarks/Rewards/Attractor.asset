@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Attractor
   m_EditorClassIdentifier: 
   Tag: actor
-  Reward: 0.008
-  Distance: 3
+  Reward: 0.002
+  Distance: 5

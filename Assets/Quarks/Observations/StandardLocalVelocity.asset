@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d9a32d0ed603f43a05d28a7224dbf3, type: 3}
   m_Name: StandardLocalVelocity
   m_EditorClassIdentifier: 
+  PlayAreaDistance: 20

@@ -23,6 +23,6 @@ class MLObsPlayAreaDistance : MLObs {
 
     private List<float> GeneratePlayAreaDistance(Transform t, Vector3 p) {
         Vector3 ip = t.InverseTransformPoint(p);
-        return new List<float>(new float[]{ ip.x, ip.z });
+        return new List<float>(new float[]{ ip.x / PlayAreaDistance, ip.z / PlayAreaDistance });
     }
 }

@@ -22,6 +22,10 @@ public class BaseAgent : Agent, IResettable {
     {
         base.InitializeAgent();
 
+        foreach(MLReset reset in Resets) {
+            reset.Initialize(this);
+        }
+
         foreach (MLObs obs in Observations) {
             obs.Initialize();
         }
