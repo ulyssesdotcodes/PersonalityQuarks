@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19462af1e14acf146bbab47271422439, type: 3}
-  m_Name: SpacerFar
+  m_Script: {fileID: 11500000, guid: d2f89a3f748e75b4b89c622168895c2e, type: 3}
+  m_Name: ResetSumo
   m_EditorClassIdentifier: 
-  Tag: actor
-  Reward: 0.004
-  Distance: 8
+  PlayAreaDistance: 2
+  PositionY: 0.5

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpacerNear
   m_EditorClassIdentifier: 
   Tag: actor
-  Reward: -0.008
+  Reward: -0.006
   Distance: 3

@@ -2618,10 +2618,9 @@ MonoBehaviour:
     _brainsToControl:
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 11400000, guid: c698bb956fd161e40ad58a8bbcc75b34, type: 2}
     - {fileID: 11400000, guid: 1243964ca3bb8c547bc8bcda2c212985, type: 2}
     - {fileID: 11400000, guid: d97fb78dd3611d54a80b6dc6062f53e7, type: 2}
-  maxSteps: 0
+  maxSteps: 1500
   trainingConfiguration:
     width: 80
     height: 80

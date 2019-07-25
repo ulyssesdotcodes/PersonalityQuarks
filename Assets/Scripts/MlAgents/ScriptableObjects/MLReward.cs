@@ -2,7 +2,7 @@ using UnityEngine;
 using MLAgents;
 
 public abstract class MLReward : ScriptableObject {
-    public void Initialize() {
+    public virtual void Initialize() {
 
     }
 

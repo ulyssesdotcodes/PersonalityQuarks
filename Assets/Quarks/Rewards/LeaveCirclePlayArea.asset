@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19462af1e14acf146bbab47271422439, type: 3}
-  m_Name: SpacerFar
+  m_Script: {fileID: 11500000, guid: ac75ffada402cef489c36491931e38b9, type: 3}
+  m_Name: LeaveCirclePlayArea
   m_EditorClassIdentifier: 
-  Tag: actor
-  Reward: 0.004
-  Distance: 8
+  Amount: -1
+  LimitRadius: 8
+  LimitY: 3
+  PositionY: 0.5
+  Reset: 1

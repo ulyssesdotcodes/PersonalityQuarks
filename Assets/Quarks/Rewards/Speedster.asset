@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb8c3e6fed733844befb502e1f693e4, type: 3}
   m_Name: Speedster
   m_EditorClassIdentifier: 
-  Multiplier: 0.001
+  Multiplier: 0.004

@@ -9,17 +9,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: SpeedsterLearning
+  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Name: SumoBrainPlayer
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 33
+    vectorObservationSize: 30
     numStackedVectorObservations: 8
     vectorActionSize: 02000000
     cameraResolutions: []
     vectorActionDescriptions:
-    - 
-    - 
+    - forward
+    - turn
     vectorActionSpaceType: 1
-  model: {fileID: 5022602860645237092, guid: 1ab99a862fbc11e419e528c8a2a7c8fd, type: 3}
-  inferenceDevice: 0
+  keyContinuousPlayerActions:
+  - key: 119
+    index: 0
+    value: 0.3
+  - key: 115
+    index: 0
+    value: -0.3
+  - key: 97
+    index: 1
+    value: -1
+  - key: 100
+    index: 1
+    value: 1
+  axisContinuousPlayerActions: []
+  discretePlayerActions: []

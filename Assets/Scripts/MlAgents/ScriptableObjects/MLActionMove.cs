@@ -16,7 +16,9 @@ class MLActionMove : MLAction {
 
         if (rigidbody == null) return;
 
-        Vector3 dirToGo = gameObject.transform.forward * Mathf.Clamp(vectorActions[forwardIdx], MoveMin, MoveMax);
+        Vector3 dirToGo = 
+            Quaternion.Euler(0, gameObject.transform.rotation.eulerAngles.y, 0) * 
+            Vector3.forward* Mathf.Clamp(vectorActions[forwardIdx], MoveMin, MoveMax);
         Vector3 rotateDir = gameObject.transform.up * Mathf.Clamp(vectorActions[turnIdx], TurnMin, TurnMax);
 
         rigidbody.AddForce(dirToGo * MoveSpeed, ForceMode.VelocityChange);
