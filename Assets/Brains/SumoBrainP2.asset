@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SumoBrainP2
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 30
-    numStackedVectorObservations: 8
+    vectorObservationSize: 8
+    numStackedVectorObservations: 16
     vectorActionSize: 02000000
     cameraResolutions: []
     vectorActionDescriptions:
