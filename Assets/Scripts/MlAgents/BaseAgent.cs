@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MLAgents;
 using UnityEngine;
 using UnityEngine.UI;
-using Optional;
+using OptionalUnity;
 
 public class BaseAgent : Agent, IResettable {
     public MLReset[] Resets;
@@ -11,7 +11,7 @@ public class BaseAgent : Agent, IResettable {
     public MLReward[] Rewards;
     public MLAction[] Actions;
 
-    public Option<Collider> TriggerCollision;
+    public Option<Collider> TriggerCollider;
 
     private Vector3 StartPosition;
     private Quaternion StartRotation;
@@ -45,6 +45,7 @@ public class BaseAgent : Agent, IResettable {
 
     public override void CollectObservations() {
         foreach (MLObs obs in Observations) {
+
             obs.IntObs(this).MatchSome(io => AddVectorObs(io));
             obs.FloatObs(this).MatchSome(io => AddVectorObs(io));
             obs.Vec2Obs(this).MatchSome(io => AddVectorObs(io));
@@ -82,6 +83,6 @@ public class BaseAgent : Agent, IResettable {
     }
 
     public void OnTriggerExit(Collider col) {
-        TriggerCollider = Option.None();
+        TriggerCollider = Option.None<Collider>();
     }
 }
