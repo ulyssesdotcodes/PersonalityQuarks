@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using MLAgents;
 using UnityEngine;
 using UnityEngine.UI;
+using Optional;
 
 public class BaseAgent : Agent, IResettable {
     public MLReset[] Resets;
     public MLObs[] Observations;
     public MLReward[] Rewards;
     public MLAction[] Actions;
+
+    public Option<Collider> TriggerCollision;
 
     private Vector3 StartPosition;
     private Quaternion StartRotation;
@@ -72,5 +75,13 @@ public class BaseAgent : Agent, IResettable {
         foreach(MLReset reset in Resets) {
             reset.Reset(this);
         }
+    }
+
+    public void OnTriggerEnter(Collider col) {
+        TriggerCollider = col.Some();
+    }
+
+    public void OnTriggerExit(Collider col) {
+        TriggerCollider = Option.None();
     }
 }
