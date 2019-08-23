@@ -1,5 +1,5 @@
 {
-    "id":"helper-test",
-    "number": 2,
-    "num-envs": 2
+    "id":"helper",
+    "number": 8,
+    "numenvs": 2
 }
