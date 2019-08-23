@@ -38,7 +38,7 @@ public class BaseAgent : Agent, IResettable {
         }
 
         foreach (MLAction action in Actions) {
-            action.Initialize();
+            action.Initialize(this);
         }
 
     }

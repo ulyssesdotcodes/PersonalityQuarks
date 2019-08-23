@@ -14,16 +14,16 @@ class MLRewardTagsLabel : MLReward {
 
     private Academy myAcademy;
 
-    private List<Labels> LabelObjects;
+    private List<ObservableFields> LabelObjects;
 
     public override void Initialize() {
         myAcademy = GameObject.FindGameObjectsWithTag("academy")[0].GetComponent<Academy>();
 
-        LabelObjects = new List<Labels>();
+        LabelObjects = new List<ObservableFields>();
 
         foreach(string tag in Tags) {
             foreach(GameObject obj in GameObject.FindGameObjectsWithTag(tag)){
-                Labels lobj = obj.GetComponent<Labels>();
+                ObservableFields lobj = obj.GetComponent<ObservableFields>();
                 if (lobj != null) {
                     LabelObjects.Add(lobj);
                 }
@@ -33,7 +33,7 @@ class MLRewardTagsLabel : MLReward {
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
         bool allHaveTag = true;
-        foreach(Labels labels in LabelObjects) {
+        foreach(ObservableFields labels in LabelObjects) {
             if (!labels.LabelsHash.Contains(Label)) {
                 allHaveTag = false;
             }
@@ -43,7 +43,7 @@ class MLRewardTagsLabel : MLReward {
             agent.AddReward(Reward);
 
             if (Remove) {
-                foreach(Labels labels in LabelObjects) {
+                foreach(ObservableFields labels in LabelObjects) {
                     labels.LabelsHash.Remove(Label);
                 }
             }

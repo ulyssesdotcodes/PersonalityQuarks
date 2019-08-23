@@ -13,7 +13,6 @@ public class HelperAcademy : Academy
 
     public override void InitializeAcademy() {
         RedTarget = GameObject.FindGameObjectsWithTag("redtarget")[0];
-        Debug.Log(RedTarget.tag);
         BlueTarget = GameObject.FindGameObjectsWithTag("bluetarget")[0];
     }
 
@@ -21,11 +20,11 @@ public class HelperAcademy : Academy
     public override void AcademyReset()
     {
         RedTarget.transform.position = new Vector3(Random.Range(-PlayAreaDistance, PlayAreaDistance), PositionY, Random.Range(-PlayAreaDistance, PlayAreaDistance));
-        RedTarget.transform.rotation = Quaternion.identity;
-        RedTarget.transform.Rotate(0, Random.Range(0, 360), 0);
+        RedTarget.GetComponent<ObservableFields>().LabelsHash.Clear();
+        RedTarget.GetComponent<ObservableFields>().FieldsHash.Clear();
 
         BlueTarget.transform.position = new Vector3(Random.Range(-PlayAreaDistance, PlayAreaDistance), PositionY, Random.Range(-PlayAreaDistance, PlayAreaDistance));
-        BlueTarget.transform.rotation = Quaternion.identity;
-        BlueTarget.transform.Rotate(0, Random.Range(0, 360), 0);
+        BlueTarget.GetComponent<ObservableFields>().LabelsHash.Clear();
+        BlueTarget.GetComponent<ObservableFields>().FieldsHash.Clear();
     }
 }

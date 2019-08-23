@@ -30,25 +30,9 @@ class MLRewardTrigger : MLReward {
         
         triggerCol
             .Filter(_ => Label != "")
-            .FlatMap(tc => tc.GetComponent<Labels>().SomeNotNull())
+            .FlatMap(tc => tc.GetComponent<ObservableFields>().SomeNotNull())
             .MatchSome(lc => {
                 lc.LabelsHash.Add(Label);
             });
-
-
-        /* if (base) { */
-        /*     agent.AddReward(reward); */
-
-        /*     if (Remove) { */
-        /*         foreach(Labels labels in LabelObjects) { */
-        /*             labels.Labels.Remove(Label); */
-        /*         } */
-        /*     } */
-
-        /*     if (Reset) { */
-        /*         agent.Done(); */
-        /*         agent.Reset(); */
-        /*     } */
-        /* } */
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public abstract class MLAction : ScriptableObject {
-    public void Initialize() {
+    public virtual void Initialize(BaseAgent agent) {
 
     }
 
