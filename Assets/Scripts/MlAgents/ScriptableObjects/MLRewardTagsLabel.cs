@@ -10,6 +10,7 @@ class MLRewardTagsLabel : MLReward {
     public bool Remove = true;
     public bool Reset = true;
     public bool AcademyReset;
+    public bool AcademyDone;
     public float Reward = 0;
 
     private Academy myAcademy;
@@ -54,8 +55,11 @@ class MLRewardTagsLabel : MLReward {
             }
 
             if(AcademyReset) {
-                myAcademy.Done();
                 myAcademy.AcademyReset();
+            }
+
+            if(AcademyDone) {
+                myAcademy.Done();
             }
         }
     }
