@@ -252,6 +252,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 670a5ca2d44e8418e830dba2a00bdda7, type: 2}
   - {fileID: 11400000, guid: a70a22860928a45c1b3d3b9d156ab72c, type: 2}
   - {fileID: 11400000, guid: 3f5415dac8b8942208f3e070a16f8fd5, type: 2}
+  - {fileID: 11400000, guid: 50206be1c1838b14082a35b842afb984, type: 2}
   Actions:
   - {fileID: 11400000, guid: e0863e516913a9b4d89ea8bee3217cc3, type: 2}
   - {fileID: 11400000, guid: 53f3d5a3520924bafa28845b54831c0c, type: 2}
@@ -270,7 +271,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &63364646
 MonoBehaviour:
@@ -585,6 +586,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 670a5ca2d44e8418e830dba2a00bdda7, type: 2}
   - {fileID: 11400000, guid: 3f5415dac8b8942208f3e070a16f8fd5, type: 2}
   - {fileID: 11400000, guid: a70a22860928a45c1b3d3b9d156ab72c, type: 2}
+  - {fileID: 11400000, guid: 50206be1c1838b14082a35b842afb984, type: 2}
   Actions:
   - {fileID: 11400000, guid: e0863e516913a9b4d89ea8bee3217cc3, type: 2}
   - {fileID: 11400000, guid: 53f3d5a3520924bafa28845b54831c0c, type: 2}
@@ -603,7 +605,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!135 &591687592
 SphereCollider:
@@ -1378,10 +1380,8 @@ MonoBehaviour:
     broadcastingBrains:
     - {fileID: 11400000, guid: d72070a6e113d49c7a38c22dc8c6cd02, type: 2}
     - {fileID: 11400000, guid: ffbe111c800d347e8ade1451287e346f, type: 2}
-    _brainsToControl:
-    - {fileID: 11400000, guid: d72070a6e113d49c7a38c22dc8c6cd02, type: 2}
-    - {fileID: 11400000, guid: ffbe111c800d347e8ade1451287e346f, type: 2}
-  maxSteps: 2000
+    _brainsToControl: []
+  maxSteps: 500
   trainingConfiguration:
     width: 80
     height: 80
