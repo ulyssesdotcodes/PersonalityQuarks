@@ -15,4 +15,4 @@ MonoBehaviour:
   TagA: bluetarget
   TagB: blueactor
   Reward: 0.1
-  MaxDistance: 10
+  MaxDistance: 4

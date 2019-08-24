@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5496232cc8a472a49be8d48f571f2989, type: 3}
   m_Name: PositionRed
   m_EditorClassIdentifier: 
-  Tag: actor
+  Tag: redactor
   PlayAreaDistance: 8

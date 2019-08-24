@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: TagDistanceRed
   m_EditorClassIdentifier: Assembly-CSharp::MLRewardTagsDistance
-  TagA: bluetarget
-  TagB: blueactor
+  TagA: redtarget
+  TagB: redactor
   Reward: 0.1
   MaxDistance: 10

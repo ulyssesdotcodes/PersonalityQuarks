@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67666dc3da0884c3baace8e9f40be014, type: 3}
   m_Name: RotationRed
   m_EditorClassIdentifier: 
-  Tag: actor
+  Tag: redactor

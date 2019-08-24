@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 63364647}
   m_Layer: 0
   m_Name: Sumo Red
-  m_TagString: actor
+  m_TagString: redactor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 591687596}
   m_Layer: 0
   m_Name: Sumo Blue
-  m_TagString: actor
+  m_TagString: blueactor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

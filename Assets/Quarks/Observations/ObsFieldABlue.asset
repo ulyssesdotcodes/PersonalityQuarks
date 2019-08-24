@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc435af7fb9f4cda8837cbb85b05efd, type: 3}
   m_Name: ObsFieldABlue
   m_EditorClassIdentifier: 
-  Tag: blueacotr
+  Tag: blueactor
   Field: a
