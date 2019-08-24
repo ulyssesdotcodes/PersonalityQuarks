@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8595d02f042b345f99217af5df4a1f14, type: 3}
-  m_Name: TagRedSeen
+  m_Script: {fileID: 11500000, guid: 6dc435af7fb9f4cda8837cbb85b05efd, type: 3}
+  m_Name: ObsFieldARed
   m_EditorClassIdentifier: 
-  Tags:
-  - redtarget
-  Label: seen
-  Remove: 0
-  Reset: 0
-  AcademyReset: 0
-  Reward: 0.01
+  Tag: redactor
+  Field: a

@@ -26,6 +26,11 @@ TagManager:
   - badBanana
   - pit
   - actor
+  - bluetarget
+  - redtarget
+  - academy
+  - blueactor
+  - redactor
   layers:
   - Default
   - TransparentFX

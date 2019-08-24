@@ -7,6 +7,6 @@ using System.Collections.Generic;
 class MLObsRotation : MLObs {
 
     public override Option<float> FloatObs(Agent agent) {
-        return agent.gameObject.transform.rotation.eulerAngles.y.SomeNotNull();
+        return agent.gameObject.transform.localRotation.eulerAngles.y.SomeNotNull();
     }
 }
