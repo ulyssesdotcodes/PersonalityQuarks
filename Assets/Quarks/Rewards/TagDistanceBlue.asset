@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TagA: blueactor
   TagB: bluetarget
-  Reward: 0.005
+  Reward: 0.001
   MaxDistance: 4
