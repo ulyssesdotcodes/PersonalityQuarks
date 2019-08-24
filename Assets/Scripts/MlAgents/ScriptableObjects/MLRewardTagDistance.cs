@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using OptionalUnity;
 
 [CreateAssetMenu(menuName="ML/Rewards/Tags Distance")]
-class MLRewardTagsDistance : MLReward {
+class MLRewardTagDistance : MLReward {
     public string TagA;
     public string TagB;
     public float Reward = 1;

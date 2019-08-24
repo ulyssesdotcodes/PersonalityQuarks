@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 0bc060a890ee640a6a9599607fc15e1a, type: 3}
   m_Name: TagDistanceRed
-  m_EditorClassIdentifier: Assembly-CSharp::MLRewardTagsDistance
-  TagA: redtarget
-  TagB: redactor
+  m_EditorClassIdentifier: 
+  TagA: redagent
+  TagB: redtarget
   Reward: 0.1
-  MaxDistance: 10
+  MaxDistance: 4
