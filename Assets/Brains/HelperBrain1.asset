@@ -24,5 +24,5 @@ MonoBehaviour:
     - coma
     - comb
     vectorActionSpaceType: 0
-  model: {fileID: 5022602860645237092, guid: dc42b8930003bec48bfbb21b9573be5c, type: 3}
+  model: {fileID: 5022602860645237092, guid: d8025d2ecf997e7498a153befcf1e7f9, type: 3}
   inferenceDevice: 0
