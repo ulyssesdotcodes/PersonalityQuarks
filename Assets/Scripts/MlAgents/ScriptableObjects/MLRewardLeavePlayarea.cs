@@ -9,6 +9,7 @@ class MLRewardLeavePlayarea : MLReward {
     public float LimitY;
     public float PositionY;
     public bool Reset;
+    public bool Done;
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
         bool isOut = false;
@@ -27,9 +28,11 @@ class MLRewardLeavePlayarea : MLReward {
             isOut = true;
         }
 
+        if(isOut && Done) {
+            agent.Done();
+        }
 
         if(isOut && Reset) {
-            agent.Done();
             agent.Reset();
         }
     }
