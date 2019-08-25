@@ -15,13 +15,14 @@ MonoBehaviour:
   brainParameters:
     vectorObservationSize: 17
     numStackedVectorObservations: 12
-    vectorActionSize: 04000000
+    vectorActionSize: 0300000003000000030000000800000008000000
     cameraResolutions: []
     vectorActionDescriptions:
     - forward
-    - turn
-    - a
-    - b
-    vectorActionSpaceType: 1
+    - right
+    - rotate
+    - coma
+    - comb
+    vectorActionSpaceType: 0
   model: {fileID: 5022602860645237092, guid: c59d556dff0bcef468d9929280d447f1, type: 3}
   inferenceDevice: 0

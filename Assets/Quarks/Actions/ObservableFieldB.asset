@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553a9a6640789494db1df42716c8358a, type: 3}
   m_Name: ObservableFieldB
   m_EditorClassIdentifier: 
-  idx: 3
+  idx: 4
   Field: b
+  BranchSize: 8
