@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TagA: redactor
   TagB: redtarget
-  Reward: 0.001
+  Reward: 0
   MaxDistance: 4

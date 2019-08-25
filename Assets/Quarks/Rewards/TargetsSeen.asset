@@ -19,4 +19,5 @@ MonoBehaviour:
   Remove: 0
   Reset: 0
   AcademyReset: 1
-  Reward: 1
+  AcademyDone: 0
+  Reward: 2

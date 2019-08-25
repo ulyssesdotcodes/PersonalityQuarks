@@ -62,7 +62,7 @@ public class BaseAgent : Agent, IResettable {
         }
 
         foreach(MLAction action in Actions) {
-            action.RunAction(vectorAction, this.gameObject);
+            action.RunAction(this, vectorAction);
         }
     }
 

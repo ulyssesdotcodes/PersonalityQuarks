@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822925dde5fb287499f2412110c3fd13, type: 3}
   m_Name: HelperLeavePlayArea
   m_EditorClassIdentifier: 
-  Amount: -1
+  Amount: 0
   LimitX: 10
   LimitZ: 10
   LimitY: 3

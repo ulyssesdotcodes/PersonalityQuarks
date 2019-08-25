@@ -5,5 +5,5 @@ public abstract class MLAction : ScriptableObject {
 
     }
 
-    public abstract void RunAction(float[] vectorActions, GameObject go);
+    public abstract void RunAction(BaseAgent agent, float[] vectorActions);
 }
