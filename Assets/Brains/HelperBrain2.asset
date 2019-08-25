@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HelperBrain2
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 17
+    vectorObservationSize: 13
     numStackedVectorObservations: 4
     vectorActionSize: 0300000003000000030000000800000008000000
     cameraResolutions: []
