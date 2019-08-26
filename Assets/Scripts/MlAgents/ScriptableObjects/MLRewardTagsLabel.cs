@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using MLAgents;
+using System.Collections;
 using System.Collections.Generic;
 using OptionalUnity;
 
@@ -16,6 +18,7 @@ class MLRewardTagsLabel : MLReward {
     private Academy myAcademy;
 
     private List<ObservableFields> LabelObjects;
+    private HashSet<int> AddedLastRound = new HashSet<int>();
 
     public override void Initialize() {
         myAcademy = GameObject.FindGameObjectsWithTag("academy")[0].GetComponent<Academy>();
@@ -33,6 +36,22 @@ class MLRewardTagsLabel : MLReward {
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
+
+        if (AddedLastRound.Contains(agent.gameObject.GetInstanceID())) {
+            AddedLastRound.Remove(agent.gameObject.GetInstanceID());
+
+            if(AcademyReset) {
+                myAcademy.AcademyReset();
+            }
+
+            if(AcademyDone) {
+                myAcademy.Done();
+            }
+
+            return;
+        }
+
+
         bool allHaveTag = true;
         foreach(ObservableFields labels in LabelObjects) {
             if (!labels.LabelsHash.Contains(Label)) {
@@ -41,6 +60,7 @@ class MLRewardTagsLabel : MLReward {
         }
 
         if (allHaveTag) {
+            AddedLastRound.Add(agent.gameObject.GetInstanceID());
             agent.AddReward(Reward);
 
             if (Remove) {
@@ -54,13 +74,6 @@ class MLRewardTagsLabel : MLReward {
                 agent.Reset();
             }
 
-            if(AcademyReset) {
-                myAcademy.AcademyReset();
-            }
-
-            if(AcademyDone) {
-                myAcademy.Done();
-            }
         }
     }
 }
