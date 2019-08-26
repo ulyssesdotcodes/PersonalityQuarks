@@ -69,3 +69,5 @@ Assets/ML-Agents
 Assets/Gizmos
 Assets/ML-Agents.meta
 Assets/Gizmos.meta
+
+*.log

@@ -31,7 +31,7 @@ class MLObsTagField : MLObs {
             for(int i = 0; i < NumFields; i++) {
                 float f = 0;
                 target.FieldsHash.TryGetValue(String.Concat(FieldName, i), out f);
-                /* Debug.Log(String.Concat(target.gameObject.tag, ": ", FieldName, i, ": ", f)); */
+                Debug.Log(String.Concat(target.gameObject.tag, ": ", FieldName, i, ": ", f));
                 observations.Add(f);
             }
         }

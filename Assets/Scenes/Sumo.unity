@@ -239,9 +239,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56e3213c87fc5904ab6950ce42991653, type: 2}
   - {fileID: 11400000, guid: 71667d4bd9f4f044d96b3821760afbd7, type: 2}
   Observations:
-  - {fileID: 11400000, guid: 790412e846cefdd4aa746d8f0cad9a4d, type: 2}
+  - {fileID: 11400000, guid: 8f411de950226654ca8656d725400d0f, type: 2}
   - {fileID: 11400000, guid: 50a3e11917e0f234eb92e9539ed5d8e0, type: 2}
-  - {fileID: 11400000, guid: 12b11d282ba0e4b3b828e991e9183a64, type: 2}
+  - {fileID: 11400000, guid: 5cd64a2d0479f5b438cbff89d6441278, type: 2}
   Rewards:
   - {fileID: 11400000, guid: 73392125fca2249498b2fb8c3f7763c1, type: 2}
   - {fileID: 11400000, guid: 50206be1c1838b14082a35b842afb984, type: 2}
@@ -249,7 +249,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 670a5ca2d44e8418e830dba2a00bdda7, type: 2}
   Actions:
   - {fileID: 11400000, guid: e0863e516913a9b4d89ea8bee3217cc3, type: 2}
-  - {fileID: 11400000, guid: 53f3d5a3520924bafa28845b54831c0c, type: 2}
+  - {fileID: 11400000, guid: fbdbeed28aaff1e4bb718fea2dddb414, type: 2}
 --- !u!54 &63364645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -566,9 +566,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56e3213c87fc5904ab6950ce42991653, type: 2}
   - {fileID: 11400000, guid: 71667d4bd9f4f044d96b3821760afbd7, type: 2}
   Observations:
-  - {fileID: 11400000, guid: 790412e846cefdd4aa746d8f0cad9a4d, type: 2}
+  - {fileID: 11400000, guid: 12b11d282ba0e4b3b828e991e9183a64, type: 2}
   - {fileID: 11400000, guid: 50a3e11917e0f234eb92e9539ed5d8e0, type: 2}
-  - {fileID: 11400000, guid: 28a33f98399ac486ca1aa1c39ae592e8, type: 2}
+  - {fileID: 11400000, guid: 968b370c7592efb4e99aca17e1a93b31, type: 2}
   Rewards:
   - {fileID: 11400000, guid: 73392125fca2249498b2fb8c3f7763c1, type: 2}
   - {fileID: 11400000, guid: 50206be1c1838b14082a35b842afb984, type: 2}
@@ -576,7 +576,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 670a5ca2d44e8418e830dba2a00bdda7, type: 2}
   Actions:
   - {fileID: 11400000, guid: e0863e516913a9b4d89ea8bee3217cc3, type: 2}
-  - {fileID: 11400000, guid: cbe895d8f7b578a4da1140989e9d6eb1, type: 2}
+  - {fileID: 11400000, guid: 2d98816d41726b24fb2a53a45062b066, type: 2}
 --- !u!54 &591687591
 Rigidbody:
   m_ObjectHideFlags: 0
