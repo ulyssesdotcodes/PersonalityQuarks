@@ -6,7 +6,8 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-#/[Bb]uild/
+/[Bb]uild/PersonalityQuirks_Data/
+/[Bb]uild/PersonalityQuirks.exe
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
