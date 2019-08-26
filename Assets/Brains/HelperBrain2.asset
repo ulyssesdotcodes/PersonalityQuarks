@@ -30,5 +30,5 @@ MonoBehaviour:
     - comb
     - comb
     vectorActionSpaceType: 0
-  model: {fileID: -6477450873089038521, guid: 6aa18d96109a9d1429d2d6631a67f9a5, type: 3}
+  model: {fileID: 5022602860645237092, guid: e8e6afa5c61ee824abc94835080e5dd0, type: 3}
   inferenceDevice: 0

@@ -19,7 +19,6 @@ public class HelperAcademy : Academy
 
     public override void AcademyReset()
     {
-        Debug.Log("Resetting");
         RedTarget.transform.position = new Vector3(Random.Range(-PlayAreaDistance, PlayAreaDistance), PositionY, Random.Range(-PlayAreaDistance, PlayAreaDistance));
         RedTarget.GetComponent<ObservableFields>().LabelsHash.Clear();
         RedTarget.GetComponent<ObservableFields>().FieldsHash.Clear();

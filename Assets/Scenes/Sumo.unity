@@ -576,7 +576,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 670a5ca2d44e8418e830dba2a00bdda7, type: 2}
   Actions:
   - {fileID: 11400000, guid: e0863e516913a9b4d89ea8bee3217cc3, type: 2}
-  - {fileID: 11400000, guid: 53f3d5a3520924bafa28845b54831c0c, type: 2}
+  - {fileID: 11400000, guid: cbe895d8f7b578a4da1140989e9d6eb1, type: 2}
 --- !u!54 &591687591
 Rigidbody:
   m_ObjectHideFlags: 0
