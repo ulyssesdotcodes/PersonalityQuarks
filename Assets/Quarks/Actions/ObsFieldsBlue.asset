@@ -15,4 +15,4 @@ MonoBehaviour:
   StartIdx: 3
   NumFields: 1
   FieldName: com
-  BranchSize: 8
+  BranchSize: 4

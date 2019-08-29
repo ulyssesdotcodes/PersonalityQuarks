@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using MLAgents;
+using System.Collections.Generic;
 
 [CreateAssetMenu(menuName="ML/Rewards/Object Leave Circle Play Area")]
 class MLRewardObjectLeaveCirclePlayArea : MLReward {
@@ -11,10 +12,10 @@ class MLRewardObjectLeaveCirclePlayArea : MLReward {
     public string Tag;
     public bool Reset;
 
-    private GameObject[] TargetObjects;
+    List<GameObject> TargetObjects;
 
-    public override void Initialize() {
-        TargetObjects = GameObject.FindGameObjectsWithTag(Tag);
+    public override void Initialize(BaseAgent agent) {
+        TargetObjects = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(Tag);
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorAction) {

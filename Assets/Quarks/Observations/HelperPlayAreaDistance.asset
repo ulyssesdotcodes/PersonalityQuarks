@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de9fb072aa40434fba47e061c249290, type: 3}
   m_Name: HelperPlayAreaDistance
   m_EditorClassIdentifier: 
-  PlayAreaDistance: 8
+  PlayAreaDistance: 10

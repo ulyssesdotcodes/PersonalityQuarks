@@ -15,9 +15,9 @@ MonoBehaviour:
   forwardIdx: 0
   rightIdx: 1
   turnIdx: 2
-  MoveSpeed: 3
-  MoveMin: -0.6
+  MoveSpeed: 1
+  MoveMin: -1
   MoveMax: 1
-  TurnSpeed: 180
+  TurnSpeed: 200
   TurnMin: -1
   TurnMax: 1

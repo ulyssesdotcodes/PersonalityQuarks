@@ -17,3 +17,7 @@ MonoBehaviour:
   Reward: 0
   Remove: 0
   Reset: 0
+  Done: 0
+  Toggle: 0
+  RewardOnToggle: 0
+  ResetArea: 1

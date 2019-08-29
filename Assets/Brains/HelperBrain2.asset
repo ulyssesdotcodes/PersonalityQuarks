@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HelperBrain2
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 45
+    vectorObservationSize: 48
     numStackedVectorObservations: 4
     vectorActionSize: 0300000003000000030000000800000008000000080000000800000008000000080000000800000008000000
     cameraResolutions: []
@@ -30,5 +30,5 @@ MonoBehaviour:
     - comb
     - comb
     vectorActionSpaceType: 0
-  model: {fileID: 5022602860645237092, guid: 7fa7176274e479d49a4befe125f9920e, type: 3}
+  model: {fileID: 5022602860645237092, guid: e778ce55f177385499ea0b00c43cdaec, type: 3}
   inferenceDevice: 0

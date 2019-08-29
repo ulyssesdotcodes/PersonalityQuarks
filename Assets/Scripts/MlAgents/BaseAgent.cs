@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using MLAgents;
@@ -6,10 +7,16 @@ using UnityEngine.UI;
 using OptionalUnity;
 
 public class BaseAgent : Agent, IResettable {
+    public Logger Logger;
     public MLReset[] Resets;
     public MLObs[] Observations;
     public MLReward[] Rewards;
     public MLAction[] Actions;
+
+    private List<MLReset> myResets = new List<MLReset>();
+    private List<MLObs> myObservations = new List<MLObs>();
+    private List<MLReward> myRewards = new List<MLReward>();
+    private List<MLAction> myActions = new List<MLAction>();
 
     public Option<Collider> TriggerCollider;
 
@@ -26,26 +33,33 @@ public class BaseAgent : Agent, IResettable {
         base.InitializeAgent();
 
         foreach(MLReset reset in Resets) {
-            reset.Initialize(this);
+            MLReset r = MLReset.Instantiate(reset);
+            r.Initialize(this);
+            myResets.Add(r);
         }
 
         foreach (MLObs obs in Observations) {
-            obs.Initialize();
+            MLObs o = MLObs.Instantiate(obs);
+            o.Initialize(this);
+            myObservations.Add(o);
         }
 
         foreach (MLReward reward in Rewards) {
-            reward.Initialize();
+            MLReward r = MLReward.Instantiate(reward);
+            r.Initialize(this);
+            myRewards.Add(r);
         }
 
         foreach (MLAction action in Actions) {
-            action.Initialize(this);
+            MLAction a = MLAction.Instantiate(action);
+            a.Initialize(this);
+            myActions.Add(a);
         }
 
     }
 
     public override void CollectObservations() {
-        foreach (MLObs obs in Observations) {
-
+        foreach (MLObs obs in myObservations) {
             obs.IntObs(this).MatchSome(io => AddVectorObs(io));
             obs.FloatObs(this).MatchSome(io => AddVectorObs(io));
             obs.Vec2Obs(this).MatchSome(io => AddVectorObs(io));
@@ -57,11 +71,11 @@ public class BaseAgent : Agent, IResettable {
     }
 
     public override void AgentAction(float[] vectorAction, string textAction) {
-        foreach (MLReward reward in Rewards) {
+        foreach (MLReward reward in myRewards) {
             reward.AddReward(this, vectorAction);
         }
 
-        foreach(MLAction action in Actions) {
+        foreach(MLAction action in myActions) {
             action.RunAction(this, vectorAction);
         }
     }
@@ -73,16 +87,20 @@ public class BaseAgent : Agent, IResettable {
 
     public void Reset()
     {
-        foreach(MLReset reset in Resets) {
+        Logger.Log(String.Concat("Reset ", gameObject.transform.position.y));
+        foreach(MLReset reset in myResets) {
             reset.Reset(this);
         }
     }
 
     public void OnTriggerEnter(Collider col) {
+        Logger.Log(String.Concat("Trigger Enter ", col.transform.position.y));
+        Logger.Log(String.Concat("Trigger Enter ", col.gameObject.tag));
         TriggerCollider = col.Some();
     }
 
     public void OnTriggerExit(Collider col) {
+        Logger.Log(String.Concat("Trigger Exit ", gameObject.transform.position.y));
         TriggerCollider = Option.None<Collider>();
     }
 }

@@ -5,12 +5,10 @@ using System.Collections.Generic;
 
 [CreateAssetMenu(menuName="ML/Obs/Local Velocity")]
 class MLObsLocalVelocity : MLObs {
-    public float PlayAreaDistance;
-
     public override Option<Vector2> Vec2Obs(Agent agent) {
         return agent.gameObject.GetComponent<Rigidbody>()
             .SomeNotNull()  
             .Map(rb => agent.gameObject.transform.InverseTransformDirection(rb.velocity))
-            .Map(vel => new Vector2(vel.x / PlayAreaDistance, vel.z / PlayAreaDistance));
+            .Map(vel => new Vector2(vel.x, vel.z));
     }
 }

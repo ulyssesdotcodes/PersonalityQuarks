@@ -5,28 +5,26 @@ using System.Collections;
 using System.Collections.Generic;
 using OptionalUnity;
 
-[CreateAssetMenu(menuName="ML/Rewards/Tags Label")]
+[CreateAssetMenu(menuName="ML/Rewards/Tags Labels")]
 class MLRewardTagsLabel : MLReward {
     public List<string> Tags;
-    public string Label;
+    public List<string> Labels;
     public bool Remove = true;
     public bool Reset = true;
-    public bool AcademyReset;
-    public bool AcademyDone;
+    public bool AreaReset;
     public float Reward = 0;
 
-    private Academy myAcademy;
-
-    private List<ObservableFields> LabelObjects;
+    Area myArea;
+    List<ObservableFields> LabelObjects;
     private HashSet<int> AddedLastRound = new HashSet<int>();
 
-    public override void Initialize() {
-        myAcademy = GameObject.FindGameObjectsWithTag("academy")[0].GetComponent<Academy>();
 
+    public override void Initialize(BaseAgent agent) {
         LabelObjects = new List<ObservableFields>();
 
+        myArea = agent.gameObject.GetComponentInParent<Area>();
         foreach(string tag in Tags) {
-            foreach(GameObject obj in GameObject.FindGameObjectsWithTag(tag)){
+            foreach(GameObject obj in myArea.FindGameObjectsWithTagInChildren(tag)){
                 ObservableFields lobj = obj.GetComponent<ObservableFields>();
                 if (lobj != null) {
                     LabelObjects.Add(lobj);
@@ -36,36 +34,33 @@ class MLRewardTagsLabel : MLReward {
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
-
         if (AddedLastRound.Contains(agent.gameObject.GetInstanceID())) {
             AddedLastRound.Remove(agent.gameObject.GetInstanceID());
 
-            if(AcademyReset) {
-                myAcademy.AcademyReset();
-            }
-
-            if(AcademyDone) {
-                myAcademy.Done();
+            if(AreaReset) {
+                myArea.ResetArea();
             }
 
             return;
         }
 
-
         bool allHaveTag = true;
         foreach(ObservableFields labels in LabelObjects) {
-            if (!labels.LabelsHash.Contains(Label)) {
-                allHaveTag = false;
+            foreach(string label in Labels) {
+                allHaveTag &= labels.LabelsHash.Contains(label);
             }
         }
 
         if (allHaveTag) {
+            agent.Logger.Log(String.Concat("All ", String.Join(",", Tags), " have labels ", String.Join(",", Labels)));
             AddedLastRound.Add(agent.gameObject.GetInstanceID());
             agent.AddReward(Reward);
 
             if (Remove) {
                 foreach(ObservableFields labels in LabelObjects) {
-                    labels.LabelsHash.Remove(Label);
+                    foreach(string label in Labels) {
+                        labels.LabelsHash.Remove(label);
+                    }
                 }
             }
 

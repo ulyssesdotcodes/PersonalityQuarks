@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DetectableObjects:
   - blueactor
-  - bluetarget
+  - target
   - wall
   rayAngles:
   - 20
