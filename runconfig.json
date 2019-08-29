@@ -1,5 +1,6 @@
 {
     "id":"helper,
-    "number": 65,
-    "numenvs": 2
+    "number": 66,
+    "numenvs": 2,
+    "description": "single target"
 }

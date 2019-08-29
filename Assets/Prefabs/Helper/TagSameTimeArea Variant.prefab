@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2715777510401900600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715777511217860964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddd02f3b0f59ff4d9800ee97d5c9a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartY: 0
+  TargetDistance: 4
+--- !u!1001 &629477332986255579
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3246034360325687743, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_Name
+      value: TagSameTimeArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034359389584347, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_TagString
+      value: redtarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360346999409, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360017127113, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360017127113, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 11400000, guid: 30eafe51f6d19e841bee360adf655fe5,
+        type: 2}
+    - target: {fileID: 3246034360017127113, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Observations.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c12962de715328b43931669cc0804385,
+        type: 2}
+    - target: {fileID: 3246034360017127113, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ff561931a07ab745a6bf096bf5b76a2,
+        type: 2}
+    - target: {fileID: 3246034360017127113, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e5e62baf0f269848a2e3326aa1fdb90,
+        type: 2}
+    - target: {fileID: 3246034360017127113, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d8bc0af053e3ec4c90280b1d6ba179e,
+        type: 2}
+    - target: {fileID: 3246034360017127113, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6890e3b85a7fb4a47bad6851cfa64d76,
+        type: 2}
+    - target: {fileID: 3246034360545720139, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360545720139, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 11400000, guid: 99810e5b37f3df64dafd3fe802c4f8f2,
+        type: 2}
+    - target: {fileID: 3246034360545720139, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Observations.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 599778fb865625747ab4238906472515,
+        type: 2}
+    - target: {fileID: 3246034360545720139, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ff561931a07ab745a6bf096bf5b76a2,
+        type: 2}
+    - target: {fileID: 3246034360545720139, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f2e3e150d283174d98e2daf2d449343,
+        type: 2}
+    - target: {fileID: 3246034360545720139, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d8bc0af053e3ec4c90280b1d6ba179e,
+        type: 2}
+    - target: {fileID: 3246034360545720139, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: Rewards.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6890e3b85a7fb4a47bad6851cfa64d76,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 3246034360030091503, guid: eb244213c4946db4fb20b9163d48b365, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: eb244213c4946db4fb20b9163d48b365, type: 3}
+--- !u!1 &2715777511217860964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3246034360325687743, guid: eb244213c4946db4fb20b9163d48b365,
+    type: 3}
+  m_PrefabInstance: {fileID: 629477332986255579}
+  m_PrefabAsset: {fileID: 0}

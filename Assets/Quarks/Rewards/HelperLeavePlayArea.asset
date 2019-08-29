@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: HelperLeavePlayArea
   m_EditorClassIdentifier: 
   Amount: 0
-  LimitX: 10
-  LimitZ: 10
+  LimitX: 11
+  LimitZ: 11
   LimitY: 3
   PositionY: 0.5
   Reset: 1
+  Done: 0
+  myArea: {fileID: 0}

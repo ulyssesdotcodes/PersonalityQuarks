@@ -23,8 +23,6 @@ class MLActionField : MLAction {
     }
 
     public override void RunAction(BaseAgent agent, float[] act) {
-        GameObject gameObject = agent.gameObject;
-
         for (int i = 0; i < NumFields; i++) {
             string Field = String.Concat(FieldName, i);
             float value = 0;

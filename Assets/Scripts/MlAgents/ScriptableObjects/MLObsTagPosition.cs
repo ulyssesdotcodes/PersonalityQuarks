@@ -7,11 +7,10 @@ using System.Collections.Generic;
 class MLObsTagPosition : MLObs {
     public string Tag;
     public float PlayAreaDistance;
+    List<GameObject> TaggedObjects;
 
-    private GameObject[] TaggedObjects;
-
-    public override void Initialize() {
-        TaggedObjects = GameObject.FindGameObjectsWithTag(Tag);
+    public override void Initialize(BaseAgent agent) {
+        TaggedObjects = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(Tag);
     }
 
     public override Option<List<float>> FloatListObs(Agent agent) {

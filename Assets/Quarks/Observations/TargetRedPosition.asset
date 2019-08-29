@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TargetRedPosition
   m_EditorClassIdentifier: 
   Tag: redtarget
-  PlayAreaDistance: 8
+  PlayAreaDistance: 10

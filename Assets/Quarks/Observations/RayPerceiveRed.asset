@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DetectableObjects:
   - redactor
-  - redtarget
+  - target
   - wall
   rayAngles:
   - 20

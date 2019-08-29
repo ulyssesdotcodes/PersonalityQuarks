@@ -5,6 +5,7 @@ using MLAgents;
 [CreateAssetMenu(menuName="ML/Reset/Random")]
 class MLResetRandom : MLReset {
     public float PlayAreaDistance;
+    public float PositionYOffset;
     public float PositionY;
 
     public override void Initialize(BaseAgent agent) {

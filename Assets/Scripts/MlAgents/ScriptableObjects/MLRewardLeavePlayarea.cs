@@ -10,8 +10,15 @@ class MLRewardLeavePlayarea : MLReward {
     public float PositionY;
     public bool Reset;
     public bool Done;
+        
+    public Area myArea;
+
+    public override void Initialize(BaseAgent agent) {
+        myArea = agent.gameObject.GetComponentInParent<Area>();
+    }
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
+
         bool isOut = false;
         if(Mathf.Abs(agent.gameObject.transform.position.x) > LimitX) {
             agent.AddReward(Amount);

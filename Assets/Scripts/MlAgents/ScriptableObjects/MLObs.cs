@@ -4,7 +4,7 @@ using OptionalUnity;
 using System.Collections.Generic;
 
 public abstract class MLObs : ScriptableObject {
-    public virtual void Initialize() {
+    public virtual void Initialize(BaseAgent agent) {
 
     }
 

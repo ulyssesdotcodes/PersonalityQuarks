@@ -6,11 +6,10 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName="ML/Obs/Tag Rotation")]
 class MLObsTagRotation : MLObs {
     public string Tag;
+    List<GameObject> TaggedObjects;
 
-    private GameObject[] TaggedObjects;
-
-    public override void Initialize() {
-        TaggedObjects = GameObject.FindGameObjectsWithTag(Tag);
+    public override void Initialize(BaseAgent agent) {
+        TaggedObjects = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(Tag);
     }
 
     public override Option<List<float>> FloatListObs(Agent agent) {

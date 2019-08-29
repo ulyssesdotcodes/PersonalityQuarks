@@ -10,12 +10,12 @@ class MLRewardTagDistance : MLReward {
     public float Reward = 1;
     public float MaxDistance = 10;
 
-    private GameObject TagAGameObject;
-    private GameObject TagBGameObject;
+    GameObject TagAGameObject;
+    GameObject TagBGameObject;
 
-    public override void Initialize() {
-        TagAGameObject = GameObject.FindGameObjectsWithTag(TagA)[0];
-        TagBGameObject = GameObject.FindGameObjectsWithTag(TagB)[0];
+    public override void Initialize(BaseAgent agent) {
+        TagAGameObject = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(TagA)[0];
+        TagBGameObject = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(TagB)[0];
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {

@@ -17,3 +17,5 @@ MonoBehaviour:
   Reward: 0
   Remove: 0
   Reset: 0
+  Done: 0
+  ResetArea: 0
