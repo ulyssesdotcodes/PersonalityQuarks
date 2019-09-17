@@ -24,7 +24,6 @@ public class TagSameTimeArea : Area
     public override void ResetArea() {
         RedActor.GetComponent<BaseAgent>().Logger.Log("Resetting area " + StartY);
 
-
         RedTarget.transform.position = new Vector3(Random.Range(-TargetDistance, TargetDistance), StartY + 0.5f, Random.Range(-TargetDistance, TargetDistance));
         RedTarget.GetComponent<ObservableFields>().LabelsHash.Remove("hit");
 

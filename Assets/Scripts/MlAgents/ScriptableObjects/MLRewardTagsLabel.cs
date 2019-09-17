@@ -52,7 +52,7 @@ class MLRewardTagsLabel : MLReward {
         }
 
         if (allHaveTag) {
-            agent.Logger.Log(String.Concat("All ", String.Join(",", Tags), " have labels ", String.Join(",", Labels)));
+            agent.Logger.Log("All have tag");
             AddedLastRound.Add(agent.gameObject.GetInstanceID());
             agent.AddReward(Reward);
 

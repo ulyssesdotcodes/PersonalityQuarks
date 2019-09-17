@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5a2c0101b0419d803670f00cc1992, type: 3}
   m_Name: TargetRedTrigger
   m_EditorClassIdentifier: 
-  Tag: redtarget
+  Tag: bluetarget
   Label: hit
   Reward: 1
   ContinuousReward: 0
