@@ -7,9 +7,11 @@ class MLActionMove : MLAction {
     public int rightIdx = 0;
     public int turnIdx = 0;
     public float MoveSpeed = 3f;
+    public float MoveSpeedVariance = 0f;
     public float MoveMin = -0.6f;
     public float MoveMax = 1f;
     public float TurnSpeed = 180f;
+    public float TurnSpeedVariance = 0f;
     public float TurnMin = -1f;
     public float TurnMax = 1f;
 
@@ -65,8 +67,10 @@ class MLActionMove : MLAction {
             }
         }
 
+        float MoveSpeedRand = Random.Range(MoveSpeed - MoveSpeedVariance, MoveSpeed + MoveSpeedVariance);
+        float TurnSpeedRand = Random.Range(TurnSpeed - TurnSpeedVariance, TurnSpeed + TurnSpeedVariance);
 
-        rigidbody.AddForce(dirToGo * MoveSpeed, ForceMode.VelocityChange);
-        gameObject.transform.Rotate(rotateDir, Time.fixedDeltaTime * TurnSpeed);
+        rigidbody.AddForce(dirToGo * MoveSpeedRand, ForceMode.VelocityChange);
+        gameObject.transform.Rotate(rotateDir, Time.fixedDeltaTime * TurnSpeedRand);
     }
 }

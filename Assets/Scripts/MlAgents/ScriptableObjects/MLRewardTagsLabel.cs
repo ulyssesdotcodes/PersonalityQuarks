@@ -12,7 +12,10 @@ class MLRewardTagsLabel : MLReward {
     public bool Remove = true;
     public bool Reset = true;
     public bool AreaReset;
-    public float Reward = 0;
+    public string RewardKeyVal = "0";
+
+    Academy academy;
+    private float Reward = 0;
 
     Area myArea;
     List<ObservableFields> LabelObjects;
@@ -21,6 +24,9 @@ class MLRewardTagsLabel : MLReward {
 
     public override void Initialize(BaseAgent agent) {
         LabelObjects = new List<ObservableFields>();
+
+        academy = FindObjectOfType<Academy>();
+        Reward = AcademyParameters.FetchOrParse(academy, RewardKeyVal);
 
         myArea = agent.gameObject.GetComponentInParent<Area>();
         foreach(string tag in Tags) {
@@ -34,6 +40,8 @@ class MLRewardTagsLabel : MLReward {
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
+        Reward = AcademyParameters.Update(academy, RewardKeyVal, Reward);
+
         if (AddedLastRound.Contains(agent.gameObject.GetInstanceID())) {
             AddedLastRound.Remove(agent.gameObject.GetInstanceID());
 
@@ -52,7 +60,7 @@ class MLRewardTagsLabel : MLReward {
         }
 
         if (allHaveTag) {
-            agent.Logger.Log(String.Concat("All ", String.Join(",", Tags), " have labels ", String.Join(",", Labels)));
+            agent.Logger.Log(String.Concat("All ", String.Join(",", Tags), " have labels ", String.Join(",", Labels), " Adding reward: ", Reward));
             AddedLastRound.Add(agent.gameObject.GetInstanceID());
             agent.AddReward(Reward);
 

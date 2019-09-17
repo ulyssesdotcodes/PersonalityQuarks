@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: TagSameTimeBrainBlue
+  m_Name: FindEachother
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 38
-    numStackedVectorObservations: 4
-    vectorActionSize: 03000000030000000300000004000000
+    vectorObservationSize: 50
+    numStackedVectorObservations: 2
+    vectorActionSize: 03000000030000000300000004000000040000000400000004000000
     cameraResolutions: []
     vectorActionDescriptions:
     - forward
     - right
     - rotate
     - coma
+    - coma
+    - coma
+    - coma
     vectorActionSpaceType: 0
-  model: {fileID: 5022602860645237092, guid: 91daf337fc65ac54dafb2988f17106d0, type: 3}
+  model: {fileID: 5022602860645237092, guid: 82c03296e9700324a8bc5653634fa9df, type: 3}
   inferenceDevice: 0

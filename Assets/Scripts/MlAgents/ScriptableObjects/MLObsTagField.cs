@@ -14,6 +14,7 @@ class MLObsTagField : MLObs {
 
     private List<ObservableFields> TaggedObjectFields;
     private Area area;
+    private Color baseColor;
 
     public override void Initialize(BaseAgent agent) {
         area = agent.gameObject.GetComponentInParent<Area>();
@@ -24,6 +25,7 @@ class MLObsTagField : MLObs {
                 TaggedObjectFields.Add(target.GetComponent<ObservableFields>());
             }
         }
+        baseColor = agent.gameObject.GetComponent<Renderer>().material.color;
     }
 
     public override Option<List<float>> FloatListObs(Agent agent) {
@@ -41,6 +43,8 @@ class MLObsTagField : MLObs {
                     level[(int)(f * 4)] = "|";
                     agent.gameObject.GetComponent<LabelCanvas>().AddText(String.Concat(FieldName, i), String.Join("", level));
                 }
+                agent.gameObject.GetComponent<Renderer>().material.color =
+                    Color.Lerp(baseColor, Color.green, f);
                 observations.Add(f);
             }
         }

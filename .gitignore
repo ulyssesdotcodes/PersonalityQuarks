@@ -6,11 +6,11 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-/[Bb]uild/PersonalityQuirks_Data/
-/[Bb]uild/PersonalityQuirks.exe
+/[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/Assets/TrainedModels
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -69,5 +69,6 @@ Assets/ML-Agents
 Assets/Gizmos
 Assets/ML-Agents.meta
 Assets/Gizmos.meta
+
 
 *.log

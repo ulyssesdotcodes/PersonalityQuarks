@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8923b5f6dd77ad64cb4aa4949067fa0c, type: 3}
+  m_Name: Red
+  m_EditorClassIdentifier: 
+  Groups: []
+  Resets:
+  - {fileID: 11400000, guid: afeb23a63213f0145a914b38f205668b, type: 2}
+  - {fileID: 11400000, guid: 71667d4bd9f4f044d96b3821760afbd7, type: 2}
+  Observations:
+  - {fileID: 11400000, guid: 94068bea7dc6d6e46abeee18561e076c, type: 2}
+  - {fileID: 11400000, guid: 6fd2870c8c0b68d49a23e35ee4ca3d33, type: 2}
+  - {fileID: 11400000, guid: 810cf38d54183054094d8fb88a887643, type: 2}
+  - {fileID: 11400000, guid: 7516b40b230d0664493611f51c2f8167, type: 2}
+  - {fileID: 11400000, guid: 84790d1e1ad233a439dff8408e71c10e, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: 1a8c7c5090b2f9c4c86206804449a920, type: 2}
+  - {fileID: 11400000, guid: 5d96888e26e4ca642b6d177838ad11ca, type: 2}
+  - {fileID: 11400000, guid: 21d6ae818fdf4a543b4244cb760c7119, type: 2}
+  - {fileID: 11400000, guid: 1804a9bd409955942bbff0dbc9637e2a, type: 2}
+  Actions:
+  - {fileID: 11400000, guid: c6b014a646b7fea40ac84cbf763c32ac, type: 2}
+  - {fileID: 11400000, guid: ba1839da0378e9344943e0085eb2b9ff, type: 2}

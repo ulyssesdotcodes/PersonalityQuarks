@@ -11,15 +11,19 @@ public class HelperAcademy : Academy
     /* private GameObject RedTarget; */
     /* private GameObject BlueTarget; */
 
+    private List<Area> Areas;
+
     public override void InitializeAcademy() {
     }
 
 
     public override void AcademyReset()
     {
+        base.AcademyReset();
         Area[] listArea = FindObjectsOfType<Area>();
         foreach (Area ba in listArea)
         {
+            Debug.Log("Resettinga rea");
             ba.ResetArea();
         }
     }

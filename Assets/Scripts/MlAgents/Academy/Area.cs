@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAgents;
 
 public class Area : MonoBehaviour
 {
     public float StartY;
+    public Academy academy;
 
     protected virtual void Start()
     {
         StartY = gameObject.transform.position.y;
+        academy = FindObjectOfType<Academy>();
     }
 
 

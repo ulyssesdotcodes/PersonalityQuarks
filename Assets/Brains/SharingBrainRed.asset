@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SharingBrainRed
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 38
-    numStackedVectorObservations: 4
-    vectorActionSize: 03000000030000000300000004000000
+    vectorObservationSize: 39
+    numStackedVectorObservations: 3
+    vectorActionSize: 03000000030000000300000002000000
     cameraResolutions: []
     vectorActionDescriptions:
     - forward
@@ -23,5 +23,5 @@ MonoBehaviour:
     - forward
     - forward
     vectorActionSpaceType: 0
-  model: {fileID: 5022602860645237092, guid: 83cc396be0dedb24da82782a07337927, type: 3}
+  model: {fileID: 5022602860645237092, guid: c73158221d114c845b62a5de315561e5, type: 3}
   inferenceDevice: 0

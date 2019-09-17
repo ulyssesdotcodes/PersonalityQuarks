@@ -8,6 +8,30 @@ public abstract class MLObs : ScriptableObject {
 
     }
 
+    public virtual List<float> CollectObservations(Agent agent){
+        List<float> obs = new List<float>();
+        IntObs(agent).MatchSome(io => obs.Add(io));
+        FloatObs(agent).MatchSome(io => obs.Add(io));
+        Vec2Obs(agent).MatchSome(io => {
+            obs.Add(io.x);
+            obs.Add(io.y);
+        });
+        Vec3Obs(agent).MatchSome(io => {
+            obs.Add(io.x);
+            obs.Add(io.y);
+            obs.Add(io.z);
+        });
+        FloatArrObs(agent).MatchSome(io => obs.AddRange(io));
+        FloatListObs(agent).MatchSome(io => obs.AddRange(io));
+        QuatObs(agent).MatchSome(io => {
+            obs.Add(io.x);
+            obs.Add(io.y);
+            obs.Add(io.z);
+            obs.Add(io.w);
+        });
+        return obs;
+    }
+
     public virtual Option<int> IntObs(Agent agent){
         return Option.None<int>();
     }

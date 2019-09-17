@@ -10,7 +10,7 @@ class MLRewardVelocity : MLReward {
         
         if(rb == null) return;
 
-        agent.AddReward(rb.velocity.x * Multiplier);
-        agent.AddReward(rb.velocity.z * Multiplier);
+        agent.AddReward(Mathf.Abs(rb.velocity.x) * Multiplier / (float)agent.agentParameters.maxStep);
+        agent.AddReward(Mathf.Abs(rb.velocity.z) * Multiplier / (float)agent.agentParameters.maxStep);
     }
 }

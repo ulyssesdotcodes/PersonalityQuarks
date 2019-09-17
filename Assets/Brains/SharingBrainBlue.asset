@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SharingBrainBlue
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 38
-    numStackedVectorObservations: 4
-    vectorActionSize: 03000000030000000300000004000000
+    vectorObservationSize: 39
+    numStackedVectorObservations: 3
+    vectorActionSize: 03000000030000000300000002000000
     cameraResolutions: []
     vectorActionDescriptions:
     - forward
@@ -23,5 +23,5 @@ MonoBehaviour:
     - rotate
     - coma
     vectorActionSpaceType: 0
-  model: {fileID: 5022602860645237092, guid: 91daf337fc65ac54dafb2988f17106d0, type: 3}
+  model: {fileID: 5022602860645237092, guid: 083bcda91fcc29c49b992015684896b2, type: 3}
   inferenceDevice: 0

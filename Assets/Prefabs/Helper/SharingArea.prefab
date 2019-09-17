@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5ec554ae091945800db6e7b745910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enable: 1
+  Enable: 0
   TargetCanvas: {fileID: 0}
   offsetY: 1.5
 --- !u!1 &3246034360325687743
@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartY: 0
+  academy: {fileID: 0}
   TargetDistance: 4
 --- !u!1 &3246034360346999409
 GameObject:
@@ -776,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5ec554ae091945800db6e7b745910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enable: 1
+  Enable: 0
   TargetCanvas: {fileID: 0}
   offsetY: 1.5
 --- !u!1001 &2906221626328121637
@@ -848,13 +849,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
         type: 3}
+      propertyPath: Resets.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
+        type: 3}
       propertyPath: Observations.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
         type: 3}
       propertyPath: Rewards.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
         type: 3}
@@ -893,6 +899,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
         type: 3}
+      propertyPath: Observations.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bae12882092d8b44a9a630db338fbab,
+        type: 2}
+    - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
+        type: 3}
       propertyPath: Rewards.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: cf913541d83b8b040841f4275c18ee4c,
@@ -902,6 +914,18 @@ PrefabInstance:
       propertyPath: Rewards.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: ae6d9c446f2c58640adcf3eeda541c4f,
+        type: 2}
+    - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
+        type: 3}
+      propertyPath: Rewards.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6cea9695b097fc148b78f98018d73e6b,
+        type: 2}
+    - target: {fileID: 385271239403550318, guid: 8784476dc87ddd843aa80f40b2e9ae04,
+        type: 3}
+      propertyPath: Actions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 129a749cecbe6a14d811fdd24fa800e1,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8784476dc87ddd843aa80f40b2e9ae04, type: 3}
@@ -986,8 +1010,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
         type: 3}
+      propertyPath: Resets.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
+        type: 3}
+      propertyPath: Observations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
+        type: 3}
       propertyPath: Rewards.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
         type: 3}
@@ -1025,6 +1059,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
         type: 3}
+      propertyPath: Observations.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bae12882092d8b44a9a630db338fbab,
+        type: 2}
+    - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
+        type: 3}
       propertyPath: Rewards.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 0209ee52204ea3e45ab544d71ebb7f1f,
@@ -1037,9 +1077,15 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
         type: 3}
+      propertyPath: Rewards.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 15e522cc06989a5499a2ee1defab6567,
+        type: 2}
+    - target: {fileID: 5223583397401994006, guid: b4694cc92395f82468e224eafe4b56bc,
+        type: 3}
       propertyPath: Actions.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: fbdbeed28aaff1e4bb718fea2dddb414,
+      objectReference: {fileID: 11400000, guid: 129a749cecbe6a14d811fdd24fa800e1,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4694cc92395f82468e224eafe4b56bc, type: 3}

@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: RayPerceiveBlue
   m_EditorClassIdentifier: 
   DetectableObjects:
-  - redactor
-  - bluetarget
   - wall
+  - bluetarget
   rayAngles:
   - 20
   - 90
@@ -25,5 +24,5 @@ MonoBehaviour:
   - 70
   - 110
   rayDistance: 50
-  offsetX: 0
-  offsetY: 0
+  startOffset: 0
+  endOffset: 0

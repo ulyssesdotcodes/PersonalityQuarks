@@ -206,6 +206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Area (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687743, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -497,6 +502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Area (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687743, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -565,6 +575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Area (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246034360325687743, guid: eb244213c4946db4fb20b9163d48b365,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3246034360325687737, guid: eb244213c4946db4fb20b9163d48b365,
         type: 3}
@@ -790,13 +805,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909166390}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.2651277, y: -0, z: -0, w: 0.9642134}
+  m_LocalPosition: {x: 0, y: 8.14, z: -18.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30.749, y: 0, z: 0}
 --- !u!1 &2091025068
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,9 +845,7 @@ MonoBehaviour:
     broadcastingBrains:
     - {fileID: 11400000, guid: d72070a6e113d49c7a38c22dc8c6cd02, type: 2}
     - {fileID: 11400000, guid: ffbe111c800d347e8ade1451287e346f, type: 2}
-    _brainsToControl:
-    - {fileID: 11400000, guid: d72070a6e113d49c7a38c22dc8c6cd02, type: 2}
-    - {fileID: 11400000, guid: ffbe111c800d347e8ade1451287e346f, type: 2}
+    _brainsToControl: []
   maxSteps: 750
   trainingConfiguration:
     width: 80
@@ -847,7 +860,11 @@ MonoBehaviour:
     timeScale: 1
     targetFrameRate: 60
   resetParameters:
-    resetParameters: []
+    resetParameters:
+    - key: blue_double_touch_penalty
+      value: 0
+    - key: red_double_touch_penalty
+      value: 0
 --- !u!4 &2091025070
 Transform:
   m_ObjectHideFlags: 0
@@ -928,6 +945,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465851957, guid: eb244213c4946db4fb20b9163d48b365, type: 3}
+      propertyPath: Enable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149104219, guid: eb244213c4946db4fb20b9163d48b365, type: 3}
+      propertyPath: Enable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb244213c4946db4fb20b9163d48b365, type: 3}

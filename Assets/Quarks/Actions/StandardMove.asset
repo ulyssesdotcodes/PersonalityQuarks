@@ -16,8 +16,10 @@ MonoBehaviour:
   rightIdx: 1
   turnIdx: 2
   MoveSpeed: 1
+  MoveSpeedVariance: 0
   MoveMin: -1
   MoveMax: 1
-  TurnSpeed: 200
+  TurnSpeed: 180
+  TurnSpeedVariance: 0
   TurnMin: -1
   TurnMax: 1

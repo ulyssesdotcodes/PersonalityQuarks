@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8923b5f6dd77ad64cb4aa4949067fa0c, type: 3}
+  m_Name: Speedy
+  m_EditorClassIdentifier: 
+  Groups:
+  - {fileID: 11400000, guid: f14809147578cbe458504ddae4f39249, type: 2}
+  Resets:
+  - {fileID: 11400000, guid: 86f1fb268900f69468d35e6c7236a899, type: 2}
+  Observations:
+  - {fileID: 11400000, guid: 0ec571b631a3fe043a87c448f566fd21, type: 2}
+  - {fileID: 11400000, guid: 04ff47f6878c4f240aee23fb7ecc3aa6, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: f09df13ba4208074b8d9aac30a5f27e5, type: 2}
+  - {fileID: 11400000, guid: 5292790d1e97e254687453f546e2a89d, type: 2}
+  - {fileID: 11400000, guid: ba9783ae6d7f85a43aa00650df3dab0b, type: 2}
+  Actions: []

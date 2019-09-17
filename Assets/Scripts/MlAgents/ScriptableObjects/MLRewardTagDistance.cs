@@ -21,7 +21,7 @@ class MLRewardTagDistance : MLReward {
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
         float sqrmag = (TagAGameObject.transform.position - TagBGameObject.transform.position).sqrMagnitude;
         float byMaxDist = sqrmag / (MaxDistance * MaxDistance);
-        float scaledReward = Mathf.Max((1 - byMaxDist) * Reward, 0);
+        float scaledReward = Mathf.Max((1 - byMaxDist) * Reward, 0) / (float)agent.agentParameters.maxStep;
         agent.AddReward(scaledReward);
     }
 }

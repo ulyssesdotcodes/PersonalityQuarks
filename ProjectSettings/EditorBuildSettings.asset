@@ -14,7 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sharing.unity
     guid: 28fdf317fd1cd8342b3e3c07f573a7bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tag Same Time.unity
     guid: 65d97b54edac76d47a3d9133763e6add
+  - enabled: 0
+    path: Assets/Scenes/FindEachother.unity
+    guid: b5f4f7218b0e29546bfe59840ae7fef4
+  - enabled: 1
+    path: Assets/Scenes/Speedy.unity
+    guid: df39ed906e75cf2428079e9daa57980f
   m_configObjects: {}

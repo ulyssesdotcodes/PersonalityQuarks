@@ -9,17 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db5a2c0101b0419d803670f00cc1992, type: 3}
-  m_Name: TargetBlueTrigger
+  m_Script: {fileID: 11500000, guid: 0bc060a890ee640a6a9599607fc15e1a, type: 3}
+  m_Name: DistanceBetween
   m_EditorClassIdentifier: 
-  Tag: bluetarget
-  Label: hit
-  Reward: 1
-  ContinuousReward: 0
-  Penalty: 0
-  Remove: 0
-  Reset: 0
-  Done: 0
-  Toggle: 0
-  PenaltyIfAlreadyThere: 0
-  ResetArea: 0
+  TagA: redactor
+  TagB: blueactor
+  Reward: 2
+  MaxDistance: 80
