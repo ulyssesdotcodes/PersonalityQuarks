@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb20cf66c1b39094184fb0f4b1199f24, type: 3}
+  m_Name: SpawnNotIts
+  m_EditorClassIdentifier: 
+  Actor: {fileID: 3854460671935394396, guid: 680fbf5562b063c4aa4d545b54a97d14, type: 3}
+  spawnkey: spawn_actor_number
+  SpawnRange: 32

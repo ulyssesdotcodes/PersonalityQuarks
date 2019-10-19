@@ -23,7 +23,6 @@ public class HelperAcademy : Academy
         Area[] listArea = FindObjectsOfType<Area>();
         foreach (Area ba in listArea)
         {
-            Debug.Log("Resettinga rea");
             ba.ResetArea();
         }
     }

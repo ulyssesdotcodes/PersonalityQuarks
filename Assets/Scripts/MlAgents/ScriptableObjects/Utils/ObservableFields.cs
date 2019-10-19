@@ -5,16 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ObservableFields : MonoBehaviour {
-    public HashSet<string> LabelsHash;
-    public Dictionary<string, float> FieldsHash;
+    public HashSet<string> LabelsHash = new HashSet<string>();
+    public Dictionary<string, float> FieldsHash = new Dictionary<string, float>();
 
     public void Start() {
-        if(LabelsHash == null) {
-            LabelsHash = new HashSet<string>();
-        }
-
-        if(FieldsHash == null) {
-            FieldsHash = new Dictionary<string,float>();
-        }
     }
 }

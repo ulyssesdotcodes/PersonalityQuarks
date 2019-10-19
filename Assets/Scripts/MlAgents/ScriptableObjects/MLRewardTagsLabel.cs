@@ -11,6 +11,7 @@ class MLRewardTagsLabel : MLReward {
     public List<string> Labels;
     public bool Remove = true;
     public bool Reset = true;
+    public bool MultRewardByTagCount = false;
     public bool AreaReset;
     public string RewardKeyVal = "0";
 
@@ -18,28 +19,31 @@ class MLRewardTagsLabel : MLReward {
     private float Reward = 0;
 
     Area myArea;
-    List<ObservableFields> LabelObjects;
     private HashSet<int> AddedLastRound = new HashSet<int>();
 
 
     public override void Initialize(BaseAgent agent) {
-        LabelObjects = new List<ObservableFields>();
-
         academy = FindObjectOfType<Academy>();
         Reward = AcademyParameters.FetchOrParse(academy, RewardKeyVal);
 
         myArea = agent.gameObject.GetComponentInParent<Area>();
-        foreach(string tag in Tags) {
-            foreach(GameObject obj in myArea.FindGameObjectsWithTagInChildren(tag)){
-                ObservableFields lobj = obj.GetComponent<ObservableFields>();
-                if (lobj != null) {
-                    LabelObjects.Add(lobj);
-                }
-            }
-        }
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {
+        List<ObservableFields> LabelObjects = new List<ObservableFields>();
+        List<GameObject> objs = new List<GameObject>();
+
+        foreach(string tag in Tags) {
+            objs.AddRange(myArea.FindGameObjectsWithTagInChildren(tag));
+        }
+
+        foreach(GameObject obj in objs){
+            ObservableFields lobj = obj.GetComponent<ObservableFields>();
+            if (lobj != null) {
+                LabelObjects.Add(lobj);
+            }
+        }
+
         Reward = AcademyParameters.Update(academy, RewardKeyVal, Reward);
 
         if (AddedLastRound.Contains(agent.gameObject.GetInstanceID())) {
@@ -62,7 +66,7 @@ class MLRewardTagsLabel : MLReward {
         if (allHaveTag) {
             agent.Logger.Log(String.Concat("All ", String.Join(",", Tags), " have labels ", String.Join(",", Labels), " Adding reward: ", Reward));
             AddedLastRound.Add(agent.gameObject.GetInstanceID());
-            agent.AddReward(Reward);
+            agent.AddReward(Reward * (MultRewardByTagCount ? objs.Count : 1));
 
             if (Remove) {
                 foreach(ObservableFields labels in LabelObjects) {

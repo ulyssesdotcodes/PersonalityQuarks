@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8923b5f6dd77ad64cb4aa4949067fa0c, type: 3}
+  m_Name: GrafittiRed
+  m_EditorClassIdentifier: 
+  Groups:
+  - {fileID: 11400000, guid: 76f1363efee83b649a76067fd70316df, type: 2}
+  Resets:
+  - {fileID: 11400000, guid: 171292318a1f69349ae93b09dc059aeb, type: 2}
+  Observations:
+  - {fileID: 11400000, guid: 766d1cf58ed83d24b882696b0a2ba553, type: 2}
+  - {fileID: 11400000, guid: eebe902de28facc4da1c86ada666894b, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: 0162ce2043703f14799cd2739f7abd74, type: 2}
+  - {fileID: 11400000, guid: 49ad0db65e33c184e8ea9e92d7691eba, type: 2}
+  - {fileID: 11400000, guid: 71a18242ae36c88479fbb78081dbabe3, type: 2}
+  Actions: []

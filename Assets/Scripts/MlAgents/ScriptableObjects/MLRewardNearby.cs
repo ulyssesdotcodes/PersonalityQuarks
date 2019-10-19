@@ -11,7 +11,7 @@ class MLRewardNearby : MLReward {
         GameObject[] objs = GameObject.FindGameObjectsWithTag(Tag);
         foreach(GameObject obj in objs) {
             if ((obj.transform.position - agent.gameObject.transform.position).sqrMagnitude < Distance) {
-                agent.AddReward(Reward);
+                agent.AddReward(Reward / (float)agent.agentParameters.maxStep);
             }
         }
     }

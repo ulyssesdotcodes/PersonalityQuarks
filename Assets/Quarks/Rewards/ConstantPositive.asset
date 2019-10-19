@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d084c9edf0ed0e429cf579b23d58b45, type: 3}
   m_Name: ConstantPositive
   m_EditorClassIdentifier: 
-  Amount: 0.002
+  AmountKeyVal: 1

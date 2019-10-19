@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedyArea (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1200538480341096961, guid: d78535490a44d1d41909b2a759dcd812,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1200538480341096967, guid: d78535490a44d1d41909b2a759dcd812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,6 +205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedyArea (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200538480341096961, guid: d78535490a44d1d41909b2a759dcd812,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1200538480341096967, guid: d78535490a44d1d41909b2a759dcd812,
         type: 3}
@@ -270,6 +280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedyArea (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1200538480341096961, guid: d78535490a44d1d41909b2a759dcd812,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1200538480341096967, guid: d78535490a44d1d41909b2a759dcd812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -338,6 +353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedyArea (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200538480341096961, guid: d78535490a44d1d41909b2a759dcd812,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1200538480341096967, guid: d78535490a44d1d41909b2a759dcd812,
         type: 3}
@@ -408,6 +428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedyArea (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1200538480341096961, guid: d78535490a44d1d41909b2a759dcd812,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1200538480341096967, guid: d78535490a44d1d41909b2a759dcd812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,6 +501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedyArea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200538480341096961, guid: d78535490a44d1d41909b2a759dcd812,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1200538480341096967, guid: d78535490a44d1d41909b2a759dcd812,
         type: 3}
@@ -643,6 +673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedyArea (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200538480341096961, guid: d78535490a44d1d41909b2a759dcd812,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1200538480341096967, guid: d78535490a44d1d41909b2a759dcd812,
         type: 3}
@@ -978,7 +1013,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ffbe111c800d347e8ade1451287e346f, type: 2}
     - {fileID: 11400000, guid: 2d079e37fbd78be49a15a6e880d0809e, type: 2}
     - {fileID: 11400000, guid: ce6c907bdf51cf64283732dbb89cc34b, type: 2}
-    - {fileID: 11400000, guid: d11ba646875b3c14e97bc4c67fc61939, type: 2}
   maxSteps: 0
   trainingConfiguration:
     width: 80

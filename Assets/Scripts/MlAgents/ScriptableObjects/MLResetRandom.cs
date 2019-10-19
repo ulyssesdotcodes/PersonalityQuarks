@@ -7,6 +7,7 @@ class MLResetRandom : MLReset {
     public string PlayAreaDistanceKeyVal;
     public float PositionYOffset;
     public float PositionY;
+    public float CenterDistance = 0.5f;
 
     private float PlayAreaDistance;
     private Academy academy;
@@ -21,13 +22,16 @@ class MLResetRandom : MLReset {
         PlayAreaDistance = AcademyParameters.Update(academy, PlayAreaDistanceKeyVal, PlayAreaDistance);
 
 
-        float halfdist = PlayAreaDistance * 0.5f;
-        float x = Random.Range(-halfdist, halfdist);
-        x += halfdist * Mathf.Sign(x);
-        float y = Random.Range(-halfdist, halfdist);
-        y += halfdist * Mathf.Sign(y);
+        /* float spawn = PlayAreaDistance * 0.5f; */
+        /* float x = Random.Range(-halfdist, halfdist); */
+        /* x += halfdist * Mathf.Sign(x); */
+        /* float y = Random.Range(-halfdist, halfdist); */
+        /* y += halfdist * Mathf.Sign(y); */
 
-        agent.transform.position = new Vector3(x, PositionY, y);
+        Quaternion rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        Vector3 polarPosition = rotation * new Vector3(0, 0, Random.Range(PlayAreaDistance * CenterDistance, PlayAreaDistance));
+
+        agent.transform.position = new Vector3(polarPosition.x, PositionY, polarPosition.z);
         agent.transform.rotation = Quaternion.identity;
         agent.transform.Rotate(0, Random.Range(0, 360), 0);
     }

@@ -22,6 +22,8 @@ public class BaseAgent : Agent, IResettable {
 
     public Option<Collider> TriggerCollider;
 
+    public List<string> ColliderTags = new List<string>();
+
     private Vector3 StartPosition;
     private Quaternion StartRotation;
 
@@ -102,22 +104,29 @@ public class BaseAgent : Agent, IResettable {
     public void OnTriggerEnter(Collider col) {
         Logger.Log(String.Concat("Trigger Enter ", col.transform.position.y));
         Logger.Log(String.Concat("Trigger Enter ", col.gameObject.tag));
-        TriggerCollider = col.Some();
+        if(ColliderTags.Contains(col.gameObject.tag)) {
+          TriggerCollider = col.Some();
+        }
     }
 
     public void OnTriggerExit(Collider col) {
         Logger.Log(String.Concat("Trigger Exit ", gameObject.transform.position.y));
-        TriggerCollider = Option.None<Collider>();
+        if(ColliderTags.Contains(col.gameObject.tag)) {
+          TriggerCollider = Option.None<Collider>();
+        }
     }
 
     public void OnCollisionEnter(Collision col) {
-        Logger.Log(String.Concat("Collision Enter ", col.transform.position.y));
-        Logger.Log(String.Concat("Collision Enter ", col.gameObject.tag));
-        TriggerCollider = col.collider.Some();
+        if(ColliderTags.Contains(col.gameObject.tag)) {
+          Logger.Log(String.Concat("Collision Enter ", col.gameObject.tag));
+          TriggerCollider = col.collider.Some();
+        }
     }
 
     public void OnCollisionExit(Collision col) {
-        Logger.Log(String.Concat("Collision Exit ", gameObject.transform.position.y));
-        TriggerCollider = Option.None<Collider>();
+        if(ColliderTags.Contains(col.gameObject.tag)) {
+          Logger.Log(String.Concat("Collision Exit ", gameObject.transform.position.y));
+          TriggerCollider = Option.None<Collider>();
+        }
     }
 }

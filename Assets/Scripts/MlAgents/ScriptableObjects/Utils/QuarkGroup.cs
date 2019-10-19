@@ -6,7 +6,6 @@ using OptionalUnity;
 [CreateAssetMenu(menuName="ML/Quark Group")]
 
 public class QuarkGroup : ScriptableObject {
-
     public QuarkGroup[] Groups;
     public MLReset[] Resets;
     public MLObs[] Observations;

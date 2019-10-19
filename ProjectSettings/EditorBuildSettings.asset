@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/DanceFloor.unity
+  - enabled: 1
+    path: Assets/Scenes/TagGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Sumo.unity
@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FindEachother.unity
     guid: b5f4f7218b0e29546bfe59840ae7fef4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Speedy.unity
     guid: df39ed906e75cf2428079e9daa57980f
+  - enabled: 0
+    path: Assets/Scenes/Graffiti.unity
+    guid: 838162266ac85034d9413a112abe674d
   m_configObjects: {}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db5a2c0101b0419d803670f00cc1992, type: 3}
+  m_Name: BumpActor
+  m_EditorClassIdentifier: 
+  Tag: actor
+  NewTag: 
+  Label: 
+  LabelPrevents: 
+  RewardKeyVal: -0.1
+  ContinuousRewardKeyVal: 0
+  PenaltyKeyVal: 0
+  Remove: 0
+  RemoveOnLeave: 0
+  Reset: 0
+  Done: 0
+  Toggle: 0
+  ResetAreaIfAlreadyThere: 0
+  DoneIfAlreadyThere: 0
+  ResetArea: 0

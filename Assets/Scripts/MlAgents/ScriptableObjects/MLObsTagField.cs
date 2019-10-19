@@ -18,19 +18,13 @@ class MLObsTagField : MLObs {
 
     public override void Initialize(BaseAgent agent) {
         area = agent.gameObject.GetComponentInParent<Area>();
-        TaggedObjectFields = new List<ObservableFields>();
-        foreach(GameObject target in area.FindGameObjectsWithTagInChildren(Tag)) {
-            if(target.GetComponent<ObservableFields>() != null) {
-                FieldLogger.Log(String.Concat("Adding tog"));
-                TaggedObjectFields.Add(target.GetComponent<ObservableFields>());
-            }
-        }
         baseColor = agent.gameObject.GetComponent<Renderer>().material.color;
     }
 
     public override Option<List<float>> FloatListObs(Agent agent) {
         List<float> observations = new List<float>();
-        foreach(ObservableFields target in TaggedObjectFields) {
+        foreach(GameObject targetObj in area.FindGameObjectsWithTagInChildren(Tag)) {
+            ObservableFields target = targetObj.GetComponent<ObservableFields>();
             if(target.gameObject == agent.gameObject) {
                 continue;
             }

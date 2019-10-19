@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using MLAgents;
 
 [CreateAssetMenu(menuName="ML/Rewards/Leave Playarea")]
@@ -31,6 +32,7 @@ class MLRewardLeavePlayarea : MLReward {
         }
 
         if(Mathf.Abs(agent.gameObject.transform.position.z) > LimitZ) {
+            agent.Logger.Log(String.Concat("LeavePlayArea Reward", Amount));
             agent.AddReward(Amount);
             isOut = true;
         }
