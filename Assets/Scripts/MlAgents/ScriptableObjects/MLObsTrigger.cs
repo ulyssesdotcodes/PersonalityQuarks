@@ -7,7 +7,7 @@ using System.Collections.Generic;
 class MLObsTrigger : MLObs {
     public string Tag;
 
-    public override Option<float> FloatObs(Agent agent) {
+    public override Option<float> FloatObs(BaseAgent agent) {
         return ((BaseAgent)agent).TriggerCollider
             .Filter(tc => tc != null)
             .Map(tc => tc.gameObject)

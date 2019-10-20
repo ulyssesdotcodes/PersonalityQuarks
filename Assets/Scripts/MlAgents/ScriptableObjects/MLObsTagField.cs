@@ -7,7 +7,6 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName="ML/Obs/Tag Field")]
 class MLObsTagField : MLObs {
     public bool ShowFields;
-    public Logger FieldLogger;
     public string Tag;
     public int NumFields = 1;
     public string FieldName;
@@ -21,7 +20,7 @@ class MLObsTagField : MLObs {
         baseColor = agent.gameObject.GetComponent<Renderer>().material.color;
     }
 
-    public override Option<List<float>> FloatListObs(Agent agent) {
+    public override Option<List<float>> FloatListObs(BaseAgent agent) {
         List<float> observations = new List<float>();
         foreach(GameObject targetObj in area.FindGameObjectsWithTagInChildren(Tag)) {
             ObservableFields target = targetObj.GetComponent<ObservableFields>();
@@ -35,7 +34,7 @@ class MLObsTagField : MLObs {
                 if(ShowFields) {
                     var level = new List<string>(){".", ".", ".", "."};
                     level[(int)(f * 4)] = "|";
-                    agent.gameObject.GetComponent<LabelCanvas>().AddText(String.Concat(FieldName, i), String.Join("", level));
+                    area.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, String.Join("", level)), agent);
                 }
                 agent.gameObject.GetComponent<Renderer>().material.color =
                     Color.Lerp(baseColor, Color.green, f);

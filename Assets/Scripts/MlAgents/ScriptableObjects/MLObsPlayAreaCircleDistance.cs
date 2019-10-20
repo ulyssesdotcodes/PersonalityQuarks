@@ -8,7 +8,7 @@ using System.Linq;
 class MLObsPlayAreaCircleDistance : MLObs {
     public float PlayAreaDistance;
 
-    public override Option<List<float>> FloatListObs(Agent agent) {
+    public override Option<List<float>> FloatListObs(BaseAgent agent) {
         return agent.gameObject.transform
             .SomeNotNull()  
             .Map(t => new List<float>(){ t.position.x, t.position.y, t.position.z

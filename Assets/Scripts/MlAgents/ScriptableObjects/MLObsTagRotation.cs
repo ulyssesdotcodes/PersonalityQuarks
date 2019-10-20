@@ -12,7 +12,7 @@ class MLObsTagRotation : MLObs {
         TaggedObjects = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(Tag);
     }
 
-    public override Option<List<float>> FloatListObs(Agent agent) {
+    public override Option<List<float>> FloatListObs(BaseAgent agent) {
         List<float> observations = new List<float>();
         foreach(GameObject target in TaggedObjects) {
             if(target == agent.gameObject) {

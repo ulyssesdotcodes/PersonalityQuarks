@@ -6,7 +6,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName="ML/Obs/Rotation")]
 class MLObsRotation : MLObs {
 
-    public override Option<float> FloatObs(Agent agent) {
+    public override Option<float> FloatObs(BaseAgent agent) {
         return agent.gameObject.transform.localRotation.eulerAngles.y.SomeNotNull();
     }
 }

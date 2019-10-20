@@ -133,8 +133,14 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 2
-  Logger: {fileID: 11400000, guid: dd2161ac65f00e043bf35f9494678466, type: 2}
   Quarks: {fileID: 11400000, guid: b5471500c53e3f84ab1733d590dfe247, type: 2}
+  ColliderTags:
+  - redtarget
+  area: {fileID: 0}
+  ResetMessages:
+  - I'm feeling Blue
+  - Let's get it blue team!
+  - Eiffel 65 in the house
 --- !u!114 &3854460671935394397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,5 +178,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enable: 1
-  TargetCanvas: {fileID: 0}
   offsetY: 1.5

@@ -12,7 +12,7 @@ class MLObsSelfField : MLObs {
     public override void Initialize(BaseAgent agent) {
     }
 
-    public override Option<float> FloatObs(Agent agent) {
+    public override Option<float> FloatObs(BaseAgent agent) {
       if(ObserveAsBool) {
         return (agent.GetComponent<ObservableFields>().FieldsHash.ContainsKey(FieldName) ? 1f : 0f)
           .SomeNotNull();

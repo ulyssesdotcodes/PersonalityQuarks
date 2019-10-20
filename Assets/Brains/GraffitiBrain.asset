@@ -22,5 +22,5 @@ MonoBehaviour:
     - right
     - rotate
     vectorActionSpaceType: 0
-  model: {fileID: 5022602860645237092, guid: 6f3d92e39c302ca45a66cc489d9db12e, type: 3}
+  model: {fileID: 5022602860645237092, guid: 1f0427cd84d87d04096ad3a05b5ce57a, type: 3}
   inferenceDevice: 0

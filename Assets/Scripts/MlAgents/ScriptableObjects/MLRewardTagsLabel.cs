@@ -64,7 +64,7 @@ class MLRewardTagsLabel : MLReward {
         }
 
         if (allHaveTag) {
-            agent.Logger.Log(String.Concat("All ", String.Join(",", Tags), " have labels ", String.Join(",", Labels), " Adding reward: ", Reward));
+            myArea.Logger.Log(String.Concat("All ", String.Join(",", Tags), " have labels ", String.Join(",", Labels), " Adding reward: ", Reward));
             AddedLastRound.Add(agent.gameObject.GetInstanceID());
             agent.AddReward(Reward * (MultRewardByTagCount ? objs.Count : 1));
 

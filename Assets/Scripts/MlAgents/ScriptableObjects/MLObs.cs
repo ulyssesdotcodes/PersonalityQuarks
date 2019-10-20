@@ -8,7 +8,7 @@ public abstract class MLObs : ScriptableObject {
 
     }
 
-    public virtual List<float> CollectObservations(Agent agent){
+    public virtual List<float> CollectObservations(BaseAgent agent){
         List<float> obs = new List<float>();
         IntObs(agent).MatchSome(io => obs.Add(io));
         FloatObs(agent).MatchSome(io => obs.Add(io));
@@ -32,31 +32,31 @@ public abstract class MLObs : ScriptableObject {
         return obs;
     }
 
-    public virtual Option<int> IntObs(Agent agent){
+    public virtual Option<int> IntObs(BaseAgent agent){
         return Option.None<int>();
     }
 
-    public virtual Option<float> FloatObs(Agent agent){
+    public virtual Option<float> FloatObs(BaseAgent agent){
         return Option.None<float>();
     }
 
-    public virtual Option<Vector2> Vec2Obs(Agent agent){
+    public virtual Option<Vector2> Vec2Obs(BaseAgent agent){
         return Option.None<Vector2>();
     }
 
-    public virtual Option<Vector3> Vec3Obs(Agent agent){
+    public virtual Option<Vector3> Vec3Obs(BaseAgent agent){
         return Option.None<Vector3>();
     }
 
-    public virtual Option<float[]> FloatArrObs(Agent agent){
+    public virtual Option<float[]> FloatArrObs(BaseAgent agent){
         return Option.None<float[]>();
     }
 
-    public virtual Option<List<float>> FloatListObs(Agent agent){
+    public virtual Option<List<float>> FloatListObs(BaseAgent agent){
         return Option.None<List<float>>();
     }
 
-    public virtual Option<Quaternion> QuatObs(Agent agent){
+    public virtual Option<Quaternion> QuatObs(BaseAgent agent){
         return Option.None<Quaternion>();
     }
 }

@@ -6,7 +6,7 @@ using OptionalUnity;
 class MLObsConstant : MLObs {
     public float obs;
 
-    public override Option<float> FloatObs(Agent agent) {
+    public override Option<float> FloatObs(BaseAgent agent) {
         return obs.SomeNotNull();
     }
 }

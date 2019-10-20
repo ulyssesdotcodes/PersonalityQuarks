@@ -22,6 +22,9 @@ class MLRewardTrigger : MLReward {
     public bool DoneIfAlreadyThere = false;
     public bool ResetArea = true;
     public float Cooldown = 5f;
+    public bool RunResetMessage = false;
+
+    public string AgentCollisionMessage = "";
 
     private float Reward = 0;
     private float ContinuousReward = 0;
@@ -42,8 +45,8 @@ class MLRewardTrigger : MLReward {
 
     public override void Initialize(BaseAgent agent) {
         myArea = agent.gameObject.GetComponentInParent<Area>();
-        agent.Logger.Log(String.Concat("Found Area: ", myArea.StartY));
-        agent.Logger.Log(String.Concat("Found Pos: ", myArea.gameObject.transform.position.y));
+        myArea.Logger.Log(String.Concat("Found Area: ", myArea.StartY));
+        myArea.Logger.Log(String.Concat("Found Pos: ", myArea.gameObject.transform.position.y));
 
         agent.ColliderTags.Add(Tag);
 
@@ -81,7 +84,17 @@ class MLRewardTrigger : MLReward {
                 .Filter(tc => !tc.SomeNotNull().Equals(prevFrame.Map(p => p.gameObject)));
 
         triggerCol
-            .MatchSome(_ => agent.Logger.Log(String.Concat("Tagged ", agent.transform.position.y)));
+            .MatchSome(_ => {
+              if(AgentCollisionMessage != "" ){
+                myArea.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, AgentCollisionMessage), agent);
+              }
+
+              if(RunResetMessage) {
+                agent.RunResetMessage();
+              }
+
+              myArea.Logger.Log(String.Concat("Tagged ", agent.transform.position.y));
+            });
 
         triggerColCont.MatchSome(_ => {
             agent.AddReward(ContinuousReward);
@@ -92,7 +105,7 @@ class MLRewardTrigger : MLReward {
             .FlatMap(pc => pc.GetComponent<ObservableFields>().SomeNotNull())
             .MatchSome(lc => {
                 if (RemoveOnLeave) {
-                    agent.Logger.Log(String.Concat("Removing label on leave ", Label));
+                    myArea.Logger.Log(String.Concat("Removing label on leave ", Label));
                     lc.FieldsHash.Remove(Label);
                 }
             });
@@ -102,7 +115,7 @@ class MLRewardTrigger : MLReward {
             .MatchSome(go => {
                 ObservableFields lc = go.GetComponent<ObservableFields>();
                 if((lc == null || !lc.FieldsHash.ContainsKey(LabelPrevents)) && NewTag != "") {
-                    agent.Logger.Log(String.Concat("Adding tag ", NewTag));
+                    myArea.Logger.Log(String.Concat("Adding tag ", NewTag));
                     go.tag = NewTag;
                 }
             });
@@ -111,29 +124,29 @@ class MLRewardTrigger : MLReward {
             .FlatMap(tc => tc.GetComponent<ObservableFields>().SomeNotNull())
             .MatchSome(lc => {
                 if(lc.FieldsHash.ContainsKey(Label) && Time.time - lc.FieldsHash[Label] < Cooldown) {
-                    agent.Logger.Log(String.Concat("already there ", Label));
+                    myArea.Logger.Log(String.Concat("already there ", Label));
                     if(Toggle) {
-                        agent.Logger.Log(String.Concat("Removing label ", Label));
+                        myArea.Logger.Log(String.Concat("Removing label ", Label));
                         lc.FieldsHash.Remove(Label);
                     }
 
-                    agent.Logger.Log(String.Concat("Penalizing already there ", Penalty));
+                    myArea.Logger.Log(String.Concat("Penalizing already there ", Penalty));
                     agent.AddReward(Penalty);
 
                     if(DoneIfAlreadyThere) {
-                        agent.Logger.Log(String.Concat("Done already there ", agent.gameObject.tag));
+                        myArea.Logger.Log(String.Concat("Done already there ", agent.gameObject.tag));
                         agent.Done();
                     }
 
                     if(ResetAreaIfAlreadyThere) {
-                        agent.Logger.Log(String.Concat("Resetting already there ", agent.gameObject.tag));
+                        myArea.Logger.Log(String.Concat("Resetting already there ", agent.gameObject.tag));
                         myArea.ResetArea();
                     }
                 } else if (!lc.FieldsHash.ContainsKey(LabelPrevents)) {
-                    agent.Logger.Log(String.Concat("Adding reward ", Reward));
+                    myArea.Logger.Log(String.Concat("Adding reward ", Reward));
                     agent.AddReward(Reward);
                     if(Label != "") {
-                        agent.Logger.Log(String.Concat("Adding label ", Label));
+                        myArea.Logger.Log(String.Concat("Adding label ", Label));
                         lc.FieldsHash.Add(Label, labelValue);
                     }
                 }
@@ -150,7 +163,7 @@ class MLRewardTrigger : MLReward {
         triggerCol
             .Filter((GameObject go) => Reset)
             .MatchSome(_ => {
-                agent.Logger.Log(String.Concat("Reset on collide ", Tag));
+                myArea.Logger.Log(String.Concat("Reset on collide ", Tag));
                 agent.Reset();
             });
 

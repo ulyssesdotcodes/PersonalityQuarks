@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TagSameTimeArea : Area
 {
-    public Logger Logger;
     public float TargetDistance;
     GameObject RedTarget;
     GameObject BlueTarget;
@@ -28,7 +27,7 @@ public class TagSameTimeArea : Area
         Logger.Log(System.String.Concat("Blue reset time: ", blueResetTime));
         
 
-        RedActor.GetComponent<BaseAgent>().Logger.Log("Resetting area " + StartY);
+        Logger.Log("Resetting area " + StartY);
 
         RedTarget.transform.position = new Vector3(Random.Range(-TargetDistance, TargetDistance), StartY + 0.5f, Random.Range(-TargetDistance, TargetDistance));
         RedTarget.GetComponent<ObservableFields>().LabelsHash.Remove("hit");

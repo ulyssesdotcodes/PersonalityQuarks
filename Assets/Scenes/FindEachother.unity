@@ -1030,7 +1030,7 @@ MonoBehaviour:
     targetFrameRate: 60
   resetParameters:
     resetParameters:
-    - key: spawn_number
+    - key: spawn_wall_number
       value: 16
     - key: spawn_distance
       value: 32
@@ -1117,14 +1117,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1038216204910376532, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: TargetCanvas
-      value: 
-      objectReference: {fileID: 1333367971}
-    - target: {fileID: 1038216205519097914, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: TargetCanvas
+    - target: {fileID: 1363531485, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
+      propertyPath: WorldCanvas
       value: 
       objectReference: {fileID: 1333367971}
     m_RemovedComponents: []

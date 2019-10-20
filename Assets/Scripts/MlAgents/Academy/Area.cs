@@ -13,6 +13,9 @@ public class Area : MonoBehaviour
 
   public AreaReset[] AreaResets;
 
+  public Logger Logger;
+  public Canvas WorldCanvas;
+
   protected virtual void Start()
   {
     StartY = gameObject.transform.position.y;

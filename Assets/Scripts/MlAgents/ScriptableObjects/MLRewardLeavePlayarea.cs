@@ -11,6 +11,7 @@ class MLRewardLeavePlayarea : MLReward {
     public float PositionY;
     public bool Reset;
     public bool Done;
+    public string AgentLeaveMessage = "Wheeeee!";
         
     public Area myArea;
 
@@ -32,7 +33,8 @@ class MLRewardLeavePlayarea : MLReward {
         }
 
         if(Mathf.Abs(agent.gameObject.transform.position.z) > LimitZ) {
-            agent.Logger.Log(String.Concat("LeavePlayArea Reward", Amount));
+            myArea.Logger.Log(String.Concat("LeavePlayArea Reward", Amount));
+            myArea.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, AgentLeaveMessage), agent);
             agent.AddReward(Amount);
             isOut = true;
         }

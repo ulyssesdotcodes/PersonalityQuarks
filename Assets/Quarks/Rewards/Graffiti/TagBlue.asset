@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5a2c0101b0419d803670f00cc1992, type: 3}
   m_Name: TagBlue
   m_EditorClassIdentifier: 
+  RequiresTag: 
   Tag: redtarget
   NewTag: bluetarget
   Label: 
@@ -27,3 +28,7 @@ MonoBehaviour:
   ResetAreaIfAlreadyThere: 0
   DoneIfAlreadyThere: 0
   ResetArea: 0
+  Cooldown: 5
+  RunResetMessage: 0
+  AgentCollisionMessage: Blue rules!
+  LabelValue: 0

@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 3368835451206613024, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3368835451206613030, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
@@ -209,7 +209,7 @@ PrefabInstance:
     - target: {fileID: 3368835451206613024, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3368835451206613030, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
@@ -381,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 3368835451206613024, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3368835451206613030, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
@@ -695,7 +695,7 @@ PrefabInstance:
     - target: {fileID: 3368835451206613024, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3368835451206613030, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
@@ -769,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 3368835451206613024, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3368835451206613030, guid: c7ff26ed81c935d4799545248191e132,
         type: 3}
@@ -865,7 +865,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ffbe111c800d347e8ade1451287e346f, type: 2}
     - {fileID: 11400000, guid: 2d079e37fbd78be49a15a6e880d0809e, type: 2}
     - {fileID: 11400000, guid: ce6c907bdf51cf64283732dbb89cc34b, type: 2}
-    - {fileID: 11400000, guid: 61146661f3ebdf24c9f11808859e30e2, type: 2}
   maxSteps: 0
   trainingConfiguration:
     width: 80
@@ -884,7 +883,7 @@ MonoBehaviour:
     - key: spawn_distance
       value: 32
     - key: spawn_number
-      value: 256
+      value: 64
     - key: actor_spawn_number
       value: 32
     - key: target_reward
@@ -970,5 +969,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2931848948901271808, guid: c7ff26ed81c935d4799545248191e132,
+        type: 3}
+      propertyPath: WorldCanvas
+      value: 
+      objectReference: {fileID: 1333367971}
+    - target: {fileID: 2931848948901271808, guid: c7ff26ed81c935d4799545248191e132,
+        type: 3}
+      propertyPath: Logger
+      value: 
+      objectReference: {fileID: 11400000, guid: 35dd5dba5b1f9424fa178f7c137ae085,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ff26ed81c935d4799545248191e132, type: 3}
