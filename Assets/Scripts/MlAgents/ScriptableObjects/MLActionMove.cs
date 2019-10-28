@@ -72,5 +72,12 @@ class MLActionMove : MLAction {
 
         rigidbody.AddForce(dirToGo * MoveSpeedRand, ForceMode.VelocityChange);
         gameObject.transform.Rotate(rotateDir, Time.fixedDeltaTime * TurnSpeedRand);
+
+        agent.area.EventSystem.RaiseEvent(TransformEvent.Create(
+              agent.gameObject.GetInstanceID(), 
+              gameObject.transform.position,
+              gameObject.transform.rotation,
+              gameObject.transform.localScale
+            ));
     }
 }

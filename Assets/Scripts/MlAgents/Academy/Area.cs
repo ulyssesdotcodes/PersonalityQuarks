@@ -11,6 +11,8 @@ public class Area : MonoBehaviour
   [HideInInspector]
   public Academy academy;
 
+  public QuarkEvents EventSystem;
+
   public AreaReset[] AreaResets;
 
   public Logger Logger;
@@ -20,6 +22,8 @@ public class Area : MonoBehaviour
   {
     StartY = gameObject.transform.position.y;
     academy = FindObjectOfType<Academy>();
+
+    Logger.Start(EventSystem); 
 
     foreach(AreaReset areaReset in AreaResets) {
       areaReset.Init(this);

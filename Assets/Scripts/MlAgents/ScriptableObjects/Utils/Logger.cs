@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public enum LogMessageType {
   Debug,
@@ -12,13 +13,13 @@ public struct Message {
 }
 
 [CreateAssetMenu(menuName="ML/Logger")]
-public class Logger : ScriptableObject {
+public class Logger : QuarkEventListener {
     public bool IsLoggingDebug;
     public bool IsLoggingAgent;
     public bool IsLoggingWorld;
 
-    public void OnEnable() {
-        IsLoggingDebug = Debug.isDebugBuild && IsLoggingDebug;
+    public override void OnEnable() {
+      base.Type = QuarkEventType.All;
     }
 
     public virtual void Log(string message) {
@@ -45,6 +46,15 @@ public class Logger : ScriptableObject {
       message.type = type;
       message.message = text;
       return message;
+    }
+
+    protected override void HandleEvent(QuarkEvent e) {
+      switch(e.Type) {
+        case QuarkEventType.Transform:
+          TransformEvent ev = (TransformEvent)e;
+          Debug.Log(String.Concat(e.Id, " moved to ", ev.Position));
+          break;
+      }
     }
 
 }
