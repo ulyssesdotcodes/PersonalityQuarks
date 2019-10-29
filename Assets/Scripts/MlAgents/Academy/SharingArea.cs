@@ -20,7 +20,7 @@ public class SharingArea : Area
     }
 
     public override void ResetArea() {
-        Logger.Log("Resetting area " + StartY);
+        /* Logger.Log("Resetting area " + StartY); */
         Target.transform.position = new Vector3(Random.Range(-TargetDistance, TargetDistance), StartY + 0.5f, Random.Range(-TargetDistance, TargetDistance));
         Target.GetComponent<ObservableFields>().LabelsHash.Remove("hitred");
         Target.GetComponent<ObservableFields>().LabelsHash.Remove("hitblue");

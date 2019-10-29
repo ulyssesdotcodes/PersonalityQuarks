@@ -23,11 +23,11 @@ public class TagSameTimeArea : Area
     public override void ResetArea() {
         float redResetTime = base.academy.resetParameters["hidden_time"];
         float blueResetTime = base.academy.resetParameters["hidden_time"];
-        Logger.Log(System.String.Concat("Red reset time: ", redResetTime));
-        Logger.Log(System.String.Concat("Blue reset time: ", blueResetTime));
+        /* Logger.Log(System.String.Concat("Red reset time: ", redResetTime)); */
+        /* Logger.Log(System.String.Concat("Blue reset time: ", blueResetTime)); */
         
 
-        Logger.Log("Resetting area " + StartY);
+        /* Logger.Log("Resetting area " + StartY); */
 
         RedTarget.transform.position = new Vector3(Random.Range(-TargetDistance, TargetDistance), StartY + 0.5f, Random.Range(-TargetDistance, TargetDistance));
         RedTarget.GetComponent<ObservableFields>().LabelsHash.Remove("hit");
@@ -43,7 +43,7 @@ public class TagSameTimeArea : Area
     private IEnumerator DisableEnableCollider(Collider comp, float seconds) {
         comp.enabled = false;
         yield return new WaitForSeconds(seconds);
-        Logger.Log(System.String.Concat("Enabling: ", comp, " after ", seconds));
+        /* Logger.Log(System.String.Concat("Enabling: ", comp, " after ", seconds)); */
         comp.enabled = true;
     }
 

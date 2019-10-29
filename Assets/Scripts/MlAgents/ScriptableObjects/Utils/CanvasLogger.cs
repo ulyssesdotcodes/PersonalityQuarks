@@ -2,22 +2,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName="ML/Canvas Logger")]
-public class CanvasLogger : Logger {
+public class CanvasLogger : QuarkEventListener {
+    Queue<string> WorldText = new Queue<string>();
     public Font LoggingFont;
     Text WorldTextComponent;
 
-    Queue<string> WorldText = new Queue<string>();
-
-    public void OnEnable() {
+    public override int Id {
+      get { return -1; }
     }
 
-    public override void Log(Message message, Canvas WorldCanvas) {
-      if(IsLoggingDebug && message.type == LogMessageType.Debug) {
+    private void Log(Message message, Canvas WorldCanvas) {
+      if(message.type == LogMessageType.Debug) {
           Debug.Log(message.message);
       } 
 
-      if(IsLoggingWorld && message.type == LogMessageType.World && WorldCanvas != null) {
+      if(message.type == LogMessageType.World && WorldCanvas != null) {
         WorldText.Enqueue(message.message);
         if (WorldText.Count > 20) {
           WorldText.Dequeue();
@@ -38,22 +37,7 @@ public class CanvasLogger : Logger {
       } 
     }
 
-    public override void Log(Message message, BaseAgent agent) {
-      switch(message.type) {
-        case LogMessageType.Debug:
-          if(IsLoggingDebug) {
-            Debug.Log(message.message);
-          }
-          break;
-        case LogMessageType.Agent:
-          if(IsLoggingAgent) {
-            LabelCanvas canvas = agent.GetComponent<LabelCanvas>();
-            canvas.Speak(message.message, LoggingFont);
-          }
-          break;
-        case LogMessageType.World:
-          Log(message, agent.area.WorldCanvas);
-          break;
-      }
+    public override void OnEvent(QuarkEvent e) {
+      // TODO: implement
     }
 }

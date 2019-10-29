@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum QuarkEventType {
   All,
+  Reset,
   Transform,
   Collision,
   Tag
@@ -27,6 +28,16 @@ public class TransformEvent : QuarkEvent {
     e.Position = pos;
     e.Rotation = rot;
     e.Scale = Scale;
+    return e;
+  }
+}
+
+[Serializable]
+public class ResetEvent : QuarkEvent {
+  public static ResetEvent Create(int id) {
+    ResetEvent e = new ResetEvent();
+    e.Type = QuarkEventType.Reset;
+    e.Id = id;
     return e;
   }
 }

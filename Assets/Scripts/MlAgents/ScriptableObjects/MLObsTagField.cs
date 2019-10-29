@@ -34,7 +34,7 @@ class MLObsTagField : MLObs {
                 if(ShowFields) {
                     var level = new List<string>(){".", ".", ".", "."};
                     level[(int)(f * 4)] = "|";
-                    area.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, String.Join("", level)), agent);
+          //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, String.Join("", level)), agent);
                 }
                 agent.gameObject.GetComponent<Renderer>().material.color =
                     Color.Lerp(baseColor, Color.green, f);

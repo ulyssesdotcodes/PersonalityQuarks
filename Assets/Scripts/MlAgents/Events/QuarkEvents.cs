@@ -6,48 +6,41 @@ using MLAgents;
 
 public class QuarkEvents : MonoBehaviour {
 
+  public List<QuarkEventListener> Listeners;
+
   private Queue<QuarkEvent> Events = new Queue<QuarkEvent>();
 
-  private Dictionary<QuarkEventType, HashSet<QuarkEventListener>> Listeners = 
-    new Dictionary<QuarkEventType, HashSet<QuarkEventListener>>();
- 
-  public void Start()
-  {
+  private Dictionary<int, HashSet<QuarkEventListener>> ListenersById = 
+    new Dictionary<int, HashSet<QuarkEventListener>>();
 
+  public void Start() {
+    foreach(QuarkEventListener listener in Listeners) {
+       if(ListenersById.ContainsKey(listener.Id)) {
+         ListenersById[listener.Id].Add(listener);
+       } else {
+         ListenersById.Add(listener.Id, new HashSet<QuarkEventListener>(new [] { listener }));
+       }
+    }
   }
 
   public void Update() {
-    foreach(QuarkEvent e in Events) {
-      if(Listeners.ContainsKey(e.Type)) {
-        foreach(QuarkEventListener l in Listeners[e.Type]) {
+    while(Events.Count > 0) {
+      QuarkEvent e = Events.Dequeue();
+      if(ListenersById.ContainsKey(e.Id)) {
+        foreach(QuarkEventListener l in ListenersById[e.Id]) {
           l.OnEvent(e);
         }
       }
 
-      foreach(QuarkEventListener l in Listeners[QuarkEventType.All]) {
-        l.OnEvent(e);
+      if(ListenersById.ContainsKey(-1)) {
+        foreach(QuarkEventListener l in ListenersById[-1]) {
+          l.OnEvent(e);
+        }
       }
     }
   }
 
   public void RaiseEvent(QuarkEvent e) {
     Events.Enqueue(e);
-  }
-
-  public void AddTypeListener(QuarkEventListener listener) {
-     if(Listeners.ContainsKey(listener.Type)) {
-       Listeners[listener.Type].Add(listener);
-     } else {
-       Listeners.Add(listener.Type, new HashSet<QuarkEventListener>(new [] { listener }));
-     }
-  }
-
-  public void RemoveTypeListener(QuarkEventListener listener) {
-     if(Listeners.ContainsKey(listener.Type)) {
-       HashSet<QuarkEventListener> TypedListeners = Listeners[listener.Type];
-       if(TypedListeners.Contains(listener)) {
-         TypedListeners.Remove(listener);
-       }
-     }
   }
 }

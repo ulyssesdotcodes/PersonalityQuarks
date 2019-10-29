@@ -33,8 +33,8 @@ class MLRewardLeavePlayarea : MLReward {
         }
 
         if(Mathf.Abs(agent.gameObject.transform.position.z) > LimitZ) {
-            myArea.Logger.Log(String.Concat("LeavePlayArea Reward", Amount));
-            myArea.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, AgentLeaveMessage), agent);
+//TAG: MakeEvent             myArea.Logger.Log(String.Concat("LeavePlayArea Reward", Amount));
+           //TAG: MakeEvent  myArea.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, AgentLeaveMessage), agent);
             agent.AddReward(Amount);
             isOut = true;
         }

@@ -75,8 +75,8 @@ class MLActionMove : MLAction {
 
         agent.area.EventSystem.RaiseEvent(TransformEvent.Create(
               agent.gameObject.GetInstanceID(), 
-              gameObject.transform.position,
-              gameObject.transform.rotation,
+              gameObject.transform.localPosition,
+              gameObject.transform.localRotation,
               gameObject.transform.localScale
             ));
     }

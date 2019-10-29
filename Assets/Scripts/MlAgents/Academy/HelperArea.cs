@@ -20,7 +20,7 @@ public class HelperArea : Area
     }
 
     public override void ResetArea() {
-        Logger.Log("Resetting area " + StartY);
+        /* Logger.Log("Resetting area " + StartY); */
         RedTarget.transform.position = new Vector3(Random.Range(-TargetDistance, TargetDistance), StartY + 0.5f, Random.Range(-TargetDistance, TargetDistance));
         RedTarget.GetComponent<ObservableFields>().LabelsHash.Remove("hit");
 
