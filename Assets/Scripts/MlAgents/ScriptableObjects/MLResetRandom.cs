@@ -35,12 +35,7 @@ class MLResetRandom : MLReset {
         agent.transform.rotation = Quaternion.identity;
         agent.transform.Rotate(0, Random.Range(0, 360), 0);
 
-        agent.area.EventSystem.RaiseEvent(ResetEvent.Create(agent.gameObject.GetInstanceID()));
-        agent.area.EventSystem.RaiseEvent(TransformEvent.Create(
-          agent.gameObject.GetInstanceID(),
-          agent.gameObject.transform.localPosition,
-          agent.gameObject.transform.localRotation,
-          agent.gameObject.transform.localScale
-        ));
+        agent.area.EventSystem.RaiseEvent(ResetEvent.Create(agent.gameObject));
+        agent.area.EventSystem.RaiseEvent(TransformEvent.Create(agent.gameObject));
     }
 }

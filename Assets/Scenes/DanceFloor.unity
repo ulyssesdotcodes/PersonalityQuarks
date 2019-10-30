@@ -307,6 +307,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e87a9b605bc91642bb227675f02b5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventSystem: {fileID: 0}
+  Radius: 20
+  GroundWidth: 20
+  GroundHeight: 20
 --- !u!1 &495590546
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,26 +731,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 919460fae23e55044899fcd3004e7394, type: 3}
---- !u!1 &2076139570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 497760370135055625, guid: 919460fae23e55044899fcd3004e7394,
-    type: 3}
-  m_PrefabInstance: {fileID: 497760368914082496}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2076139573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076139570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7728637f8c43c49bfe1d048b073a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Listeners:
-  - {fileID: 444126455}
 --- !u!1001 &497760368914082496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -816,20 +800,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1316081112297183990, guid: 919460fae23e55044899fcd3004e7394,
         type: 3}
+      propertyPath: AreaResets.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316081112297183990, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
       propertyPath: WorldCanvas
       value: 
       objectReference: {fileID: 495590549}
     - target: {fileID: 1316081112297183990, guid: 919460fae23e55044899fcd3004e7394,
         type: 3}
-      propertyPath: Logger
+      propertyPath: AreaResets.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 5cdfaa6339a4f684783b4cafcce9ab5f,
+      objectReference: {fileID: 11400000, guid: e0476bb39a8894d40b29ee353ca5c69b,
         type: 2}
     - target: {fileID: 1316081112297183990, guid: 919460fae23e55044899fcd3004e7394,
         type: 3}
-      propertyPath: EventSystem
+      propertyPath: AreaResets.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 1fa9a28a07ebcc840a48cae86e65c25f,
+      objectReference: {fileID: 11400000, guid: f01097ea9cc9893428f2498641eed9e2,
         type: 2}
+    - target: {fileID: 1316081112297183990, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
+      propertyPath: AreaResets.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e2999cbb2d301d49a066f581a8e5ccf,
+        type: 2}
+    - target: {fileID: 497760368657366626, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497760368949962811, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497760369510223617, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497760369635535291, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497760370240767942, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076139573, guid: 919460fae23e55044899fcd3004e7394, type: 3}
+      propertyPath: Listeners.Array.data[0]
+      value: 
+      objectReference: {fileID: 444126455}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 919460fae23e55044899fcd3004e7394, type: 3}

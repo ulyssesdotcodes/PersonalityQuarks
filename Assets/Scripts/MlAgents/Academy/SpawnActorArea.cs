@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 
 [CreateAssetMenu(menuName="ML/AreaResets/SpawnActors")]
@@ -35,6 +36,7 @@ public class SpawnActorArea : AreaReset
                     Quaternion.identity,
                     area.gameObject.transform);
 
+            area.EventSystem.RaiseEvent(CreateEvent.Create(AssetDatabase.GetAssetPath(Actor), gob));
             Spawned.Add(gob);
         }
     }

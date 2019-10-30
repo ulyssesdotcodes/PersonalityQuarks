@@ -4,8 +4,8 @@ using UnityEngine;
 public class Spherical : QuarkEventListener {
   private Dictionary<int, GameObject> InstanceMap;
   public float Radius = 20f;
-  public float GroundWidth = 20f;
-  public float GroundHeight = 20f;
+  public float GroundWidth = 80f;
+  public float GroundHeight = 80f;
 
   public void Start() {
     InstanceMap = new Dictionary<int, GameObject>();
@@ -17,20 +17,26 @@ public class Spherical : QuarkEventListener {
 
   public override void OnEvent(QuarkEvent e) {
     switch(e.Type) {
-      case QuarkEventType.Transform:
-        TransformEvent te = (TransformEvent) e;
-        GameObject gob = GetOrCreate(te.Id);
-        gob.transform.localPosition = SphericalToEuclidean(te.Position);
-        gob.transform.localRotation = te.Rotation;
-        gob.transform.localScale = te.Scale;
-        Debug.DrawLine(te.Position, gob.transform.position);
+      case QuarkEventType.Create:
+        CreateEvent ce = (CreateEvent) e;
+        GameObject prefab = (GameObject) Resources.Load(ce.ResourcePath);
+        GameObject gob = GameObject.CreatePrimitive(ce.Tag == "actor" ? PrimitiveType.Sphere : PrimitiveType.Cube);
+        gob.transform.SetParent(gameObject.transform);
+        gob.transform.localPosition = SphericalToEuclidean(ce.Position);
+        gob.transform.localRotation = ce.Rotation;
+        gob.transform.localScale = ce.Scale;
+        gob.tag = ce.Tag;
+        RenderedAgent renderedAgent = gob.AddComponent<RenderedAgent>();
+        renderedAgent.EventSystem = this.EventSystem;
+        renderedAgent.AddId(ce.Id);
+        InstanceMap.Add(ce.Id, gob);
         break;
     }
   }
 
   private Vector3 SphericalToEuclidean(Vector3 pos) {
     float theta = Mathf.PI * (0.5f + pos.x / GroundWidth);
-    float theotherone = Mathf.PI * (1 + pos.z * 2 / GroundHeight);
+    float theotherone = 2 * Mathf.PI * (0.5 + pos.z / GroundHeight);
     return new Vector3(
         Radius * Mathf.Cos(theta) * Mathf.Sin(theotherone), 
         Radius * Mathf.Sin(theta) * Mathf.Sin(theotherone),

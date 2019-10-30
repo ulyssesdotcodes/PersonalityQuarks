@@ -13,14 +13,19 @@ public class QuarkEvents : MonoBehaviour {
   private Dictionary<int, HashSet<QuarkEventListener>> ListenersById = 
     new Dictionary<int, HashSet<QuarkEventListener>>();
 
-  public void Start() {
+  public void Awake() {
     foreach(QuarkEventListener listener in Listeners) {
-       if(ListenersById.ContainsKey(listener.Id)) {
-         ListenersById[listener.Id].Add(listener);
-       } else {
-         ListenersById.Add(listener.Id, new HashSet<QuarkEventListener>(new [] { listener }));
-       }
+      AddListener(listener);
+      listener.EventSystem = this;
     }
+  }
+  
+  public void AddListener(QuarkEventListener listener) {
+     if(ListenersById.ContainsKey(listener.Id)) {
+       ListenersById[listener.Id].Add(listener);
+     } else {
+       ListenersById.Add(listener.Id, new HashSet<QuarkEventListener>(new [] { listener }));
+     }
   }
 
   public void Update() {

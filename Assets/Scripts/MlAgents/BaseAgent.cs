@@ -87,6 +87,7 @@ public class BaseAgent : Agent, IResettable {
         if(ColliderTags.Contains(col.gameObject.tag)) {
           //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Debug, $"Ran into {col.gameObject.name}"), this); 
           TriggerCollider = col.collider.Some();
+          area.EventSystem.RaiseEvent(CollisionEnterEvent.Create(gameObject, col));
         }
     }
 
@@ -94,6 +95,7 @@ public class BaseAgent : Agent, IResettable {
         if(ColliderTags.Contains(col.gameObject.tag)) {
           //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Debug, $"Ran away from {col.gameObject.name}"), this); 
           TriggerCollider = Option.None<Collider>();
+          area.EventSystem.RaiseEvent(CollisionExitEvent.Create(gameObject, col));
         }
     }
 }

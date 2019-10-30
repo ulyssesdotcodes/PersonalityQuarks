@@ -3327,6 +3327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497760370135055626}
+  - component: {fileID: 2076139573}
   - component: {fileID: 1316081112297183990}
   m_Layer: 0
   m_Name: DanceFloor
@@ -3355,6 +3356,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076139573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497760370135055625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7728637f8c43c49bfe1d048b073a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Listeners:
+  - {fileID: 0}
 --- !u!114 &1316081112297183990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3369,9 +3384,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartY: 0
   academy: {fileID: 0}
+  EventSystem: {fileID: 0}
   AreaResets:
   - {fileID: 11400000, guid: b9d2deaec7733a84a87a9f0e75469a64, type: 2}
-  Logger: {fileID: 11400000, guid: 35dd5dba5b1f9424fa178f7c137ae085, type: 2}
+  Logger: {fileID: 0}
   WorldCanvas: {fileID: 0}
 --- !u!1 &497760370232030466
 GameObject:

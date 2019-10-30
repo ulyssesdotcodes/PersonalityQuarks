@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [CreateAssetMenu(menuName="ML/AreaResets/SpawnWalls")]
 public class SpawnWallsArea : AreaReset
@@ -34,7 +35,7 @@ public class SpawnWallsArea : AreaReset
         Spawned.Clear();
 
         for(int i = 0; i < SpawnNumber; i++) {
-            SpawnWall(area, new Vector2(Random.Range(-SpawnDistance, SpawnDistance), Random.Range(-SpawnDistance, SpawnDistance)));
+          SpawnWall(area, new Vector2(Random.Range(-SpawnDistance, SpawnDistance), Random.Range(-SpawnDistance, SpawnDistance)));
         }
     }
 
@@ -42,6 +43,7 @@ public class SpawnWallsArea : AreaReset
       GameObject prefab = Walls[(int)Random.Range(0, Walls.Length)];
       GameObject wall = GameObject.Instantiate(prefab, new Vector3(position.x, area.StartY + 1f, position.y), Quaternion.EulerAngles(0, Random.Range(0, 360), 0));
       wall.transform.SetParent(area.gameObject.transform);
+      area.EventSystem.RaiseEvent(CreateEvent.Create(AssetDatabase.GetAssetPath(prefab), wall));
       Spawned.Add(wall);
     }
 }
