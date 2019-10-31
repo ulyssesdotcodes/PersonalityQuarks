@@ -19,7 +19,6 @@ public class Spherical : QuarkEventListener {
     switch(e.Type) {
       case QuarkEventType.Create:
         CreateEvent ce = (CreateEvent) e;
-        GameObject prefab = (GameObject) Resources.Load(ce.ResourcePath);
         GameObject gob = GameObject.CreatePrimitive(ce.Tag == "actor" ? PrimitiveType.Sphere : PrimitiveType.Cube);
         gob.transform.SetParent(gameObject.transform);
         gob.transform.localPosition = SphericalToEuclidean(ce.Position);
@@ -36,7 +35,7 @@ public class Spherical : QuarkEventListener {
 
   private Vector3 SphericalToEuclidean(Vector3 pos) {
     float theta = Mathf.PI * (0.5f + pos.x / GroundWidth);
-    float theotherone = 2 * Mathf.PI * (0.5 + pos.z / GroundHeight);
+    float theotherone = 2 * Mathf.PI * (0.5f + pos.z / GroundHeight);
     return new Vector3(
         Radius * Mathf.Cos(theta) * Mathf.Sin(theotherone), 
         Radius * Mathf.Sin(theta) * Mathf.Sin(theotherone),

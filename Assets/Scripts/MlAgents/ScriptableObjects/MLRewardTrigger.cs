@@ -117,6 +117,8 @@ class MLRewardTrigger : MLReward {
                 if((lc == null || !lc.FieldsHash.ContainsKey(LabelPrevents)) && NewTag != "") {
                     //TAG: MakeEvent myArea.Logger.Log(String.Concat("Adding tag ", NewTag));
                     go.tag = NewTag;
+                    agent.area.EventSystem.RaiseEvent(TagEvent.Create(go));
+                    agent.area.EventSystem.RaiseEvent(TaggingEvent.Create(agent.gameObject, NewTag));
                 }
             });
         

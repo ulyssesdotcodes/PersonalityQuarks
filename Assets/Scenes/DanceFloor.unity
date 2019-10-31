@@ -826,6 +826,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8e2999cbb2d301d49a066f581a8e5ccf,
         type: 2}
+    - target: {fileID: 1316081112297183990, guid: 919460fae23e55044899fcd3004e7394,
+        type: 3}
+      propertyPath: AreaResets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5775787ef1fdd25458d2dd8b0ac7f610,
+        type: 2}
     - target: {fileID: 497760368657366626, guid: 919460fae23e55044899fcd3004e7394,
         type: 3}
       propertyPath: m_IsActive

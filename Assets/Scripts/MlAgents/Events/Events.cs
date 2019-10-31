@@ -8,7 +8,8 @@ public enum QuarkEventType {
   Transform,
   CollisionEnter,
   CollisionExit,
-  Tag
+  Tag,
+  Tagging
 }
 
 [Serializable]
@@ -38,9 +39,9 @@ public class TransformEvent : QuarkEvent {
 
 [Serializable]
 public class CreateEvent : TransformEvent {
-  public string ResourcePath;
+  public string Name;
   
-  public static CreateEvent Create(string ResourcePath, GameObject gameObject) {
+  public static CreateEvent Create(string name, GameObject gameObject) {
     TransformEvent t  = TransformEvent.Create(gameObject);
     CreateEvent e = new CreateEvent();
     e.Type = QuarkEventType.Create;
@@ -49,7 +50,7 @@ public class CreateEvent : TransformEvent {
     e.Position = t.Position;
     e.Rotation = t.Rotation;
     e.Scale = t.Scale;
-    e.ResourcePath = ResourcePath;
+    e.Name = name;
     return e;
   }
 }
@@ -98,5 +99,25 @@ public class CollisionExitEvent : QuarkEvent {
 
 [Serializable]
 public class TagEvent : QuarkEvent {
-  public string Tag;
+  public static TagEvent Create(GameObject gameObject) {
+    TagEvent e = new TagEvent();
+    e.Type = QuarkEventType.Tag;
+    e.Id = gameObject.GetInstanceID();
+    e.Tag = gameObject.tag;
+    return e;
+  }
+}
+
+[Serializable]
+public class TaggingEvent : QuarkEvent {
+  public string NewTag;
+
+  public static TaggingEvent Create(GameObject gameObject, string NewTag) {
+    TaggingEvent e = new TaggingEvent();
+    e.Type = QuarkEventType.Tagging;
+    e.Id = gameObject.GetInstanceID();
+    e.Tag = gameObject.tag;
+    e.NewTag = NewTag;
+    return e;
+  }
 }

@@ -36,7 +36,7 @@ public class SpawnActorArea : AreaReset
                     Quaternion.identity,
                     area.gameObject.transform);
 
-            area.EventSystem.RaiseEvent(CreateEvent.Create(AssetDatabase.GetAssetPath(Actor), gob));
+            area.EventSystem.RaiseEvent(CreateEvent.Create(Actor.name, gob));
             Spawned.Add(gob);
         }
     }
