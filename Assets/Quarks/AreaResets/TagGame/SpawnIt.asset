@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Actor: {fileID: 3854460671935394396, guid: 57a092b233c7379489d4b371b1c9b152, type: 3}
   spawnkey: 1
-  SpawnRange: 32
+  SpawnRange: 16

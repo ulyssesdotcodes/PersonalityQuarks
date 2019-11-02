@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f89a3f748e75b4b89c622168895c2e, type: 3}
-  m_Name: PlayAreaReset40
+  m_Script: {fileID: 11500000, guid: 0bffa3d841a40d4429f5e8c01317f5c3, type: 3}
+  m_Name: StartWithIt
   m_EditorClassIdentifier: 
-  PlayAreaDistanceKeyVal: 18
-  PositionYOffset: 0.5
-  PositionY: 0
-  CenterDistance: 0.5
+  Tag: redactor
+  Label: IsIt

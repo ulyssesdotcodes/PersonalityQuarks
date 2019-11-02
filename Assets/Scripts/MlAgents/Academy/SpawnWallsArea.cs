@@ -41,9 +41,11 @@ public class SpawnWallsArea : AreaReset
 
     private void SpawnWall(Area area, Vector2 position) {
       GameObject prefab = Walls[(int)Random.Range(0, Walls.Length)];
-      GameObject wall = GameObject.Instantiate(prefab, new Vector3(position.x, area.StartY + 1f, position.y), Quaternion.EulerAngles(0, Random.Range(0, 360), 0));
-      wall.transform.SetParent(area.gameObject.transform);
-      area.EventSystem.RaiseEvent(CreateEvent.Create(AssetDatabase.GetAssetPath(prefab), wall));
+      GameObject wall = GameObject.Instantiate(
+          prefab, new Vector3(position.x, area.StartY + 1f, position.y), 
+          Quaternion.EulerAngles(0, Random.Range(0, 360), 0), 
+          area.gameObject.transform);
+      area.EventSystem.RaiseEvent(CreateEvent.Create(prefab.name, wall));
       Spawned.Add(wall);
     }
 }

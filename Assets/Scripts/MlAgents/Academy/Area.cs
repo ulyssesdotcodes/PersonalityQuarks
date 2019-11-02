@@ -15,6 +15,7 @@ public class Area : MonoBehaviour
   public QuarkEvents EventSystem;
 
   public AreaReset[] AreaResets;
+  private List<AreaReset> AreaResetClones;
 
   public Logger Logger;
   public Canvas WorldCanvas;
@@ -26,16 +27,19 @@ public class Area : MonoBehaviour
     StartY = gameObject.transform.position.y;
     academy = FindObjectOfType<Academy>();
 
+    AreaResetClones = new List<AreaReset>();
     foreach(AreaReset areaReset in AreaResets) {
-      areaReset.Init(this);
+      AreaReset ar = Object.Instantiate(areaReset) as AreaReset;
+      AreaResetClones.Add(ar);
+      ar.Init(this);
     }
   }
 
 
   public virtual void ResetArea()
   {
-    foreach(AreaReset areaReset in AreaResets) {
-      areaReset.ResetArea(this);
+    foreach(AreaReset areaReset in AreaResetClones) {
+      areaReset.Init(this);
     }
   }
   

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f89a3f748e75b4b89c622168895c2e, type: 3}
   m_Name: PlayAreaReset
   m_EditorClassIdentifier: 
-  PlayAreaDistanceKeyVal: 8
+  PlayAreaDistanceKeyVal: 18
   PositionYOffset: 0.5
   PositionY: 0
+  CenterDistance: 0.5

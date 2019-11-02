@@ -152,7 +152,8 @@ MonoBehaviour:
   broadcastHub:
     broadcastingBrains:
     - {fileID: 11400000, guid: cec700225736eb543bb8e197ddd0a3b0, type: 2}
-    _brainsToControl: []
+    _brainsToControl:
+    - {fileID: 11400000, guid: cec700225736eb543bb8e197ddd0a3b0, type: 2}
   maxSteps: 0
   trainingConfiguration:
     width: 80
@@ -169,9 +170,9 @@ MonoBehaviour:
   resetParameters:
     resetParameters:
     - key: spawn_actor_number
-      value: 32
+      value: 8
     - key: spawn_wall_number
-      value: 16
+      value: 2
 --- !u!4 &333030800
 Transform:
   m_ObjectHideFlags: 0
@@ -292,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 4880819195692382929, guid: 5c204b2d49617224e8fad63ac53c3978,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4880819195692382930, guid: 5c204b2d49617224e8fad63ac53c3978,
         type: 3}
@@ -380,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7728637f8c43c49bfe1d048b073a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Listeners: []
 --- !u!4 &948763271
 Transform:
   m_ObjectHideFlags: 0

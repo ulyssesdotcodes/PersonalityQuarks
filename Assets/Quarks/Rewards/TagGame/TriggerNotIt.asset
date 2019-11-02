@@ -29,4 +29,7 @@ MonoBehaviour:
   DoneIfAlreadyThere: 0
   ResetArea: 0
   Cooldown: 5
+  CooldownSelfTag: IsIt
+  RunResetMessage: 0
+  AgentCollisionMessage: 
   LabelValue: 0

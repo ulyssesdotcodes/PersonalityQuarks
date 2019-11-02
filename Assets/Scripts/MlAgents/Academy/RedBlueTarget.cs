@@ -13,9 +13,9 @@ public class RedBlueTarget : MonoBehaviour
     }
 
     protected virtual void Update() {
-        if (gameObject.tag == "redtarget") {
+        if (gameObject.tag == "redtarget" && Renderer.material.color != Color.red) {
             Renderer.material.color = Color.red;
-        } else if (gameObject.tag == "bluetarget") {
+        } else if (gameObject.tag == "bluetarget" && Renderer.material.color != Color.blue) {
             Renderer.material.color = Color.blue;
         }
     }

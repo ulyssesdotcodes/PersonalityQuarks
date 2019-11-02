@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d751f755d9a8504096495a5bf971f5b, type: 3}
+  m_Name: SpawnWalls
+  m_EditorClassIdentifier: 
+  SpawnNumberKeyVal: spawn_wall_number
+  SpawnDistanceKeyVal: 16
+  Walls:
+  - {fileID: 1751790651857562764, guid: a4b12a7378cd00049acef3f17ee8c26e, type: 3}
+  - {fileID: 1751790651857562764, guid: c0756a1d7e78bed4d890d4347a5436a3, type: 3}
+  - {fileID: 1751790651857562764, guid: 2c4d2a8cf2721c94b86ce3f37fb80a2a, type: 3}
