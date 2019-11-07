@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TagGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tag Same Time.unity
     guid: 65d97b54edac76d47a3d9133763e6add
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FindEachother.unity
     guid: b5f4f7218b0e29546bfe59840ae7fef4
   - enabled: 0

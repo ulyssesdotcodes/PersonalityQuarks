@@ -14,6 +14,8 @@ class MLActionMove : MLAction {
     public float TurnSpeedVariance = 0f;
     public float TurnMin = -1f;
     public float TurnMax = 1f;
+    public float TagSpeedChange = 1f;
+    public string Tag = "";
 
     public override void RunAction(BaseAgent agent, float[] act) {
         GameObject gameObject = agent.gameObject;
@@ -69,8 +71,9 @@ class MLActionMove : MLAction {
 
         float MoveSpeedRand = Random.Range(MoveSpeed - MoveSpeedVariance, MoveSpeed + MoveSpeedVariance);
         float TurnSpeedRand = Random.Range(TurnSpeed - TurnSpeedVariance, TurnSpeed + TurnSpeedVariance);
+        float TagMod = Tag != "" && agent.gameObject.CompareTag(Tag) ? TagSpeedChange : 1f;
 
-        rigidbody.AddForce(dirToGo * MoveSpeedRand, ForceMode.VelocityChange);
+        rigidbody.AddForce(dirToGo * MoveSpeedRand * TagMod, ForceMode.VelocityChange);
         gameObject.transform.Rotate(rotateDir, Time.fixedDeltaTime * TurnSpeedRand);
 
         agent.area.EventSystem.RaiseEvent(TransformEvent.Create(gameObject));

@@ -1077,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 1363531485, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
       propertyPath: AreaResets.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: b9d2deaec7733a84a87a9f0e75469a64,
+      objectReference: {fileID: 11400000, guid: 5be8343b6311ed444bd7de9181891cb9,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}

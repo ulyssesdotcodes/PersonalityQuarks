@@ -17,6 +17,8 @@ MonoBehaviour:
   LimitZ: 40
   LimitY: 3
   PositionY: 0
-  Reset: 1
-  Done: 1
+  Reset: 0
+  Done: 0
+  Wrap: 1
+  AgentLeaveMessage: Wheeeee!
   myArea: {fileID: 0}
