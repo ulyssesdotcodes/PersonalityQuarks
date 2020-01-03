@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -146,16 +147,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -211,6 +202,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1001 &295778972
@@ -220,16 +221,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,6 +276,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1001 &395379828
@@ -294,16 +295,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -359,6 +350,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1001 &877341423
@@ -368,16 +369,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -433,6 +424,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1001 &962030816
@@ -442,16 +443,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -505,6 +496,16 @@ PrefabInstance:
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -614,16 +615,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -679,6 +670,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1 &1775802322
@@ -706,8 +707,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775802322}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -862,16 +864,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -925,6 +917,16 @@ PrefabInstance:
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1010,11 +1012,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Name
-      value: FindEachotherArea
-      objectReference: {fileID: 0}
+    - target: {fileID: 1363531485, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
+      propertyPath: WorldCanvas
+      value: 
+      objectReference: {fileID: 1333367971}
+    - target: {fileID: 1363531485, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
+      propertyPath: AreaResets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5be8343b6311ed444bd7de9181891cb9,
+        type: 2}
     - target: {fileID: 2550241553127057880, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1070,14 +1076,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1363531485, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
-      propertyPath: WorldCanvas
+    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: FindEachotherArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550241553426863914, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: brain
       value: 
-      objectReference: {fileID: 1333367971}
-    - target: {fileID: 1363531485, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
-      propertyPath: AreaResets.Array.data[0]
+      objectReference: {fileID: 11400000, guid: df86387f4c52d80489adb9d14f3a18c6,
+        type: 2}
+    - target: {fileID: 2550241553971963560, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: brain
       value: 
-      objectReference: {fileID: 11400000, guid: 5be8343b6311ed444bd7de9181891cb9,
+      objectReference: {fileID: 11400000, guid: df86387f4c52d80489adb9d14f3a18c6,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}

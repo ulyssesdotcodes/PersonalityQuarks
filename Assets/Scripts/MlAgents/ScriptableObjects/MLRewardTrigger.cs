@@ -4,8 +4,7 @@ using OptionalUnity;
 using System;
 
 [CreateAssetMenu(menuName="ML/Rewards/Trigger")]
-class MLRewardTrigger : MLReward {
-    public string RequiresTag;
+abstract class MLRewardTrigger : MLReward {
     public string Tag;
     public string NewTag;
     public string Label;
@@ -73,7 +72,6 @@ class MLRewardTrigger : MLReward {
 
         Option<GameObject> triggerColCont = 
             agent.TriggerCollider
-                .Filter(tc => RequiresTag == "" || PreviousFrameTag  == RequiresTag)
                 .Filter(tc => tc != null)
                 .Map(tc => tc.gameObject)
                 .Filter(gob => gob.tag == Tag);
