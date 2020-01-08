@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d751f755d9a8504096495a5bf971f5b, type: 3}
-  m_Name: SpawnWalls
+  m_Name: SpawnMovables
   m_EditorClassIdentifier: 
   SpawnNumberKeyVal: spawn_wall_number
   SpawnDistanceKeyVal: spawn_distance
   Walls:
-  - {fileID: 1751790651857562764, guid: a4b12a7378cd00049acef3f17ee8c26e, type: 3}
-  - {fileID: 1751790651857562764, guid: c0756a1d7e78bed4d890d4347a5436a3, type: 3}
-  - {fileID: 1751790651857562764, guid: 2c4d2a8cf2721c94b86ce3f37fb80a2a, type: 3}
+  - {fileID: 1957309834115894258, guid: b433279bab003fe409258da754909316, type: 3}
+  - {fileID: 2256903278797980789, guid: 07ccb549317bb734ba2df2d6372792c1, type: 3}

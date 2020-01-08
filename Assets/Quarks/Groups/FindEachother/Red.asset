@@ -17,9 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: afeb23a63213f0145a914b38f205668b, type: 2}
   - {fileID: 11400000, guid: 71667d4bd9f4f044d96b3821760afbd7, type: 2}
   Observations:
-  - {fileID: 11400000, guid: 94068bea7dc6d6e46abeee18561e076c, type: 2}
-  - {fileID: 11400000, guid: 6fd2870c8c0b68d49a23e35ee4ca3d33, type: 2}
-  - {fileID: 11400000, guid: 810cf38d54183054094d8fb88a887643, type: 2}
+  - {fileID: 11400000, guid: d1d410924e0cf034db9054374f73ba6f, type: 2}
   - {fileID: 11400000, guid: 7516b40b230d0664493611f51c2f8167, type: 2}
   - {fileID: 11400000, guid: 84790d1e1ad233a439dff8408e71c10e, type: 2}
   Rewards:

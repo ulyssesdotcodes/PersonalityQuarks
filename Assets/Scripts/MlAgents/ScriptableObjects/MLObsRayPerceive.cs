@@ -13,6 +13,6 @@ class MLObsRayPerceive : MLObs {
 
     public override Option<List<float>> FloatListObs(BaseAgent agent) {
         RayPerception rayPer = agent.gameObject.GetComponent<RayPerception>();
-        return Option.Some(rayPer.Perceive(rayDistance, rayAngles, DetectableObjects, startOffset, endOffset));
+        return Option.Some(new List<float>(rayPer.Perceive(rayDistance, rayAngles, DetectableObjects, startOffset, endOffset)));
     }
 }

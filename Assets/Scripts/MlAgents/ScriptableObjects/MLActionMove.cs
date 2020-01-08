@@ -27,46 +27,38 @@ class MLActionMove : MLAction {
         Vector3 dirToGo = Vector3.zero;
         Vector3 rotateDir = Vector3.zero;
 
-        if (agent.brain.brainParameters.vectorActionSpaceType == SpaceType.continuous)
+        var forwardAxis = (int)act[forwardIdx];
+        var rightAxis = (int)act[rightIdx];
+        var rotateAxis = (int)act[turnIdx];
+        
+        switch (forwardAxis)
         {
-            dirToGo = transform.forward * Mathf.Clamp(act[0], -1f, 1f);
-            rotateDir = transform.up * Mathf.Clamp(act[1], -1f, 1f);
+            case 1:
+                dirToGo = transform.forward;
+                break;
+            case 2:
+                dirToGo = -transform.forward;
+                break;
         }
-        else
+        
+        switch (rightAxis)
         {
-            var forwardAxis = (int)act[forwardIdx];
-            var rightAxis = (int)act[rightIdx];
-            var rotateAxis = (int)act[turnIdx];
-            
-            switch (forwardAxis)
-            {
-                case 1:
-                    dirToGo = transform.forward;
-                    break;
-                case 2:
-                    dirToGo = -transform.forward;
-                    break;
-            }
-            
-            switch (rightAxis)
-            {
-                case 1:
-                    dirToGo = transform.right;
-                    break;
-                case 2:
-                    dirToGo = -transform.right;
-                    break;
-            }
+            case 1:
+                dirToGo = transform.right;
+                break;
+            case 2:
+                dirToGo = -transform.right;
+                break;
+        }
 
-            switch (rotateAxis)
-            {
-                case 1:
-                    rotateDir = -transform.up;
-                    break;
-                case 2:
-                    rotateDir = transform.up;
-                    break; 
-            }
+        switch (rotateAxis)
+        {
+            case 1:
+                rotateDir = -transform.up;
+                break;
+            case 2:
+                rotateDir = transform.up;
+                break; 
         }
 
         float MoveSpeedRand = Random.Range(MoveSpeed - MoveSpeedVariance, MoveSpeed + MoveSpeedVariance);

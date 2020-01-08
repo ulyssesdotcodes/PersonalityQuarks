@@ -16,10 +16,12 @@ MonoBehaviour:
   rightIdx: 1
   turnIdx: 2
   MoveSpeed: 1
-  MoveSpeedVariance: 0.5
+  MoveSpeedVariance: 0.2
   MoveMin: -0.6
   MoveMax: 1
   TurnSpeed: 180
-  TurnSpeedVariance: 60
+  TurnSpeedVariance: 20
   TurnMin: -1
   TurnMax: 1
+  TagSpeedChange: 1
+  Tag: 

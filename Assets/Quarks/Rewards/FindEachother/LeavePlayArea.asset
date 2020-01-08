@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822925dde5fb287499f2412110c3fd13, type: 3}
   m_Name: LeavePlayArea
   m_EditorClassIdentifier: 
-  Amount: -1.5
+  Amount: -1
   LimitX: 40
   LimitZ: 40
-  LimitY: 3
+  LimitY: 10
   PositionY: 0
-  Reset: 0
-  Done: 0
-  Wrap: 1
+  Reset: 1
+  Done: 1
+  Wrap: 0
   AgentLeaveMessage: Wheeeee!
   myArea: {fileID: 0}

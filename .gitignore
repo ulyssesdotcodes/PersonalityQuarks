@@ -11,6 +11,8 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /Assets/TrainedModels
+/Assets/PolygonPrototype
+/Assets/PolygonPrototype.meta
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta

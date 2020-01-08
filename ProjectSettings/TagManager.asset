@@ -31,6 +31,11 @@ TagManager:
   - academy
   - blueactor
   - redactor
+  - symbol_X_Goal
+  - symbol_O_Goal
+  - symbol_O
+  - symbol_X
+  - movable
   layers:
   - Default
   - TransparentFX

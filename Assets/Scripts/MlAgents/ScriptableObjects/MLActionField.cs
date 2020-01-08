@@ -31,11 +31,7 @@ class MLActionField : MLAction {
                 Fields.FieldsHash.Remove(Field);
             }
             
-            if (agent.brain.brainParameters.vectorActionSpaceType == SpaceType.continuous) {
-                value = act[StartIdx + i];
-            } else {
-                value = (float) act[StartIdx + i] / BranchSize;
-            }
+            value = (float) act[StartIdx + i] / BranchSize;
 
             Fields.FieldsHash.Add(Field, value);
         }

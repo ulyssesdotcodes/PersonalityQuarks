@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553a9a6640789494db1df42716c8358a, type: 3}
-  m_Name: Obs4Field4Branches
+  m_Name: Obs2Field4Branches
   m_EditorClassIdentifier: 
   StartIdx: 3
-  NumFields: 4
+  NumFields: 2
   FieldName: com
   BranchSize: 4

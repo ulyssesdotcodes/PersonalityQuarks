@@ -44,7 +44,7 @@ public class BaseAgent : Agent, IResettable {
         AddVectorObs(Quarks.CollectObservations(this));
     }
 
-    public override void AgentAction(float[] vectorAction, string textAction) {
+    public override void AgentAction(float[] vectorAction) {
         Quarks.AgentAction(this, vectorAction);
     }
 

@@ -5,6 +5,7 @@ using MLAgents;
 [CreateAssetMenu(menuName="ML/Rewards/Leave Playarea")]
 class MLRewardLeavePlayarea : MLReward {
     public float Amount;
+    public float AmountY;
     public float LimitX;
     public float LimitZ;
     public float LimitY;
@@ -29,7 +30,7 @@ class MLRewardLeavePlayarea : MLReward {
         }
 
         if(Mathf.Abs(agent.gameObject.transform.localPosition.y - PositionY) > LimitY) {
-            agent.AddReward(Amount);
+            agent.AddReward(AmountY);
             isOut = true;
         }
 

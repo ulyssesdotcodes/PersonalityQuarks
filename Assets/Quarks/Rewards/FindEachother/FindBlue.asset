@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FindBlue
   m_EditorClassIdentifier: 
   Tag: blueactor
-  Reward: 40
+  Reward: 2
   Distance: 4
-  ResetAreaAfter: 5
+  ResetAreaAfterKeyVal: together_time

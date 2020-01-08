@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TagA: redactor
   TagB: blueactor
-  Reward: 0.2
-  MaxDistance: 80
+  Reward: 0.5
+  MaxDistance: 40

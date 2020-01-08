@@ -36,8 +36,6 @@ class MLObsTagField : MLObs {
                     level[(int)(f * 4)] = "|";
           //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, String.Join("", level)), agent);
                 }
-                agent.gameObject.GetComponent<Renderer>().material.color =
-                    Color.Lerp(baseColor, Color.green, f);
                 observations.Add(f);
             }
         }

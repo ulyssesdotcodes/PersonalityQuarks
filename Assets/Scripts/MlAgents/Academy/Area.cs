@@ -20,6 +20,8 @@ public class Area : MonoBehaviour
   public Logger Logger;
   public Canvas WorldCanvas;
 
+  private int lastReset;
+
   protected virtual void Start()
   {
     EventSystem = GetComponent<QuarkEvents>();
@@ -31,16 +33,19 @@ public class Area : MonoBehaviour
     foreach(AreaReset areaReset in AreaResets) {
       AreaReset ar = Object.Instantiate(areaReset) as AreaReset;
       AreaResetClones.Add(ar);
-      ar.Init(this);
     }
   }
 
 
   public virtual void ResetArea()
   {
-    foreach(AreaReset areaReset in AreaResetClones) {
-      areaReset.Init(this);
+    if(Time.frameCount > 0 && lastReset != Time.frameCount) {
+      foreach(AreaReset areaReset in AreaResetClones) {
+        areaReset.Init(this);
+      }
     }
+
+    lastReset = Time.frameCount;
   }
   
   public List<GameObject> FindGameObjectsWithTagInChildren(string tag) {

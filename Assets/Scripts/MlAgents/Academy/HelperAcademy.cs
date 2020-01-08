@@ -14,6 +14,11 @@ public class HelperAcademy : Academy
     private List<Area> Areas;
 
     public override void InitializeAcademy() {
+        Area[] listArea = FindObjectsOfType<Area>();
+        foreach (Area ba in listArea)
+        {
+            ba.ResetArea();
+        }
     }
 
 
