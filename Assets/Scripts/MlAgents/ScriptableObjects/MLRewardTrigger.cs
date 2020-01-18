@@ -4,7 +4,7 @@ using OptionalUnity;
 using System;
 
 [CreateAssetMenu(menuName="ML/Rewards/Trigger")]
-abstract class MLRewardTrigger : MLReward {
+class MLRewardTrigger : MLReward {
     public string Tag;
     public string NewTag;
     public string Label;

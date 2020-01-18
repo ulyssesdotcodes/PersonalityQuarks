@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d751f755d9a8504096495a5bf971f5b, type: 3}
-  m_Name: SpawnMovables
+  m_Name: SpawnConsumables
   m_EditorClassIdentifier: 
-  SpawnNumberKeyVal: spawn_movable_number
+  SpawnNumberKeyVal: spawn_consumable_number
   SpawnDistanceKeyVal: spawn_distance
   Walls:
-  - {fileID: 1957309834115894258, guid: b433279bab003fe409258da754909316, type: 3}
-  - {fileID: 2256903278797980789, guid: 07ccb549317bb734ba2df2d6372792c1, type: 3}
+  - {fileID: 3706277414364732198, guid: 97db4b6084cbd0c448dbd028ad0ec156, type: 3}
+  - {fileID: 7432513690429802481, guid: 653763b4886e7f542bda3e93512a2ee2, type: 3}

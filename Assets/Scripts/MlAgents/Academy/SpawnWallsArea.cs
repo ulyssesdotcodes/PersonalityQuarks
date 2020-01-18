@@ -25,14 +25,21 @@ public class SpawnWallsArea : AreaReset
     }
 
     public override void ResetArea(Area area) {
-        SpawnNumber = (int) AcademyParameters.Update(area.academy, SpawnNumberKeyVal, (int)SpawnNumber);
-        SpawnDistance = AcademyParameters.Update(area.academy, SpawnDistanceKeyVal, SpawnDistance);
+      Clear();
+      SpawnWalls(area);
+    }
 
+    public void Clear() {
         foreach(GameObject go in Spawned) {
             GameObject.Destroy(go);
         }
 
         Spawned.Clear();
+    }
+
+    public void SpawnWalls(Area area) {
+        SpawnNumber = (int) AcademyParameters.Update(area.academy, SpawnNumberKeyVal, (int)SpawnNumber);
+        SpawnDistance = AcademyParameters.Update(area.academy, SpawnDistanceKeyVal, SpawnDistance);
 
         for(int i = 0; i < SpawnNumber; i++) {
           SpawnWall(area, new Vector2(Random.Range(-SpawnDistance, SpawnDistance), Random.Range(-SpawnDistance, SpawnDistance)));
@@ -41,10 +48,11 @@ public class SpawnWallsArea : AreaReset
 
     private void SpawnWall(Area area, Vector2 position) {
       GameObject prefab = Walls[(int)Random.Range(0, Walls.Length)];
+      float SpawnHeight = prefab.transform.position.y;
       Quaternion rot = prefab.transform.rotation * Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
       
       GameObject wall = GameObject.Instantiate(
-          prefab, new Vector3(position.x, area.StartY + 1f, position.y), 
+          prefab, new Vector3(position.x, area.StartY + SpawnHeight, position.y), 
           rot,
           area.gameObject.transform);
       area.EventSystem.RaiseEvent(CreateEvent.Create(prefab.name, wall));

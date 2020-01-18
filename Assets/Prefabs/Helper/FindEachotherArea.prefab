@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 2550241553127057880}
   - component: {fileID: 1363531485}
   - component: {fileID: 86802145}
-  - component: {fileID: 4054406108997078993}
   m_Layer: 0
   m_Name: FindEachotherArea
   m_TagString: Untagged
@@ -238,23 +237,10 @@ MonoBehaviour:
   academy: {fileID: 0}
   EventSystem: {fileID: 0}
   AreaResets:
-  - {fileID: 11400000, guid: 5a081e32af096c24982dc9ae3ea03afe, type: 2}
+  - {fileID: 11400000, guid: fb32e5399cb676a48ab20cc98dcfd662, type: 2}
   Logger: {fileID: 0}
   WorldCanvas: {fileID: 0}
 --- !u!114 &86802145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2550241553127057886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7728637f8c43c49bfe1d048b073a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Listeners: []
---- !u!114 &4054406108997078993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,10 +271,10 @@ MonoBehaviour:
     vectorActionSize: 0300000003000000030000000400000004000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 0
-  m_Model: {fileID: 5022602860645237092, guid: 6fa93646028e429419891f2c4688a533, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 68a04be6da91dab49a7e1773a050240c, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: FindEachotherMovable
+  m_BehaviorName: FindEachotherAll
 --- !u!114 &3037067016090986415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +291,7 @@ MonoBehaviour:
   detectableTags:
   - redactor
   - wall
+  - consumable
   - movable
   raysPerDirection: 7
   maxRayDegrees: 70
@@ -648,10 +635,10 @@ MonoBehaviour:
     vectorActionSize: 0300000003000000030000000400000004000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 0
-  m_Model: {fileID: 5022602860645237092, guid: 6fa93646028e429419891f2c4688a533, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 68a04be6da91dab49a7e1773a050240c, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: FindEachotherMovable
+  m_BehaviorName: FindEachotherAll
 --- !u!114 &2550241553909463185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +655,7 @@ MonoBehaviour:
   detectableTags:
   - blueactor
   - wall
+  - consumable
   - movable
   raysPerDirection: 7
   maxRayDegrees: 70
@@ -741,6 +729,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5715266911185122966, guid: c3ec4c5d079225444b7577ab3b1f395a,
+        type: 3}
+      propertyPath: ColliderTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715266911185122966, guid: c3ec4c5d079225444b7577ab3b1f395a,
+        type: 3}
+      propertyPath: ColliderTags.Array.data[0]
+      value: consumable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715266911185122967, guid: c3ec4c5d079225444b7577ab3b1f395a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715266911185122967, guid: c3ec4c5d079225444b7577ab3b1f395a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5715266911185122967, guid: c3ec4c5d079225444b7577ab3b1f395a,
         type: 3}
       propertyPath: m_Constraints
@@ -774,8 +782,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5685398738311501348, guid: 110a019b0b07e6a449ec09f8aab8bb1a,
         type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685398738311501348, guid: 110a019b0b07e6a449ec09f8aab8bb1a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685398738311501348, guid: 110a019b0b07e6a449ec09f8aab8bb1a,
+        type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685398738311501349, guid: 110a019b0b07e6a449ec09f8aab8bb1a,
+        type: 3}
+      propertyPath: ColliderTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685398738311501349, guid: 110a019b0b07e6a449ec09f8aab8bb1a,
+        type: 3}
+      propertyPath: ColliderTags.Array.data[0]
+      value: consumable
       objectReference: {fileID: 0}
     - target: {fileID: 5685398738311501351, guid: 110a019b0b07e6a449ec09f8aab8bb1a,
         type: 3}

@@ -36,6 +36,7 @@ TagManager:
   - symbol_O
   - symbol_X
   - movable
+  - consumable
   layers:
   - Default
   - TransparentFX
