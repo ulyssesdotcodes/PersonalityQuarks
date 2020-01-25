@@ -22,7 +22,6 @@ class MLRewardTrigger : MLReward {
     public bool ResetArea = true;
     public float Cooldown = 5f;
     public string CooldownSelfTag;
-    public bool RunResetMessage = false;
 
     public string AgentCollisionMessage = "";
 
@@ -86,10 +85,6 @@ class MLRewardTrigger : MLReward {
             .MatchSome(_ => {
               if(AgentCollisionMessage != "" ){
                 //TAG: MakeEvent myArea.Logger.Log(Logger.CreateMessage(LogMessageType.Agent, AgentCollisionMessage), agent);
-              }
-
-              if(RunResetMessage) {
-                agent.RunResetMessage();
               }
 
               //TAG: MakeEvent myArea.Logger.Log(String.Concat("Tagged ", agent.transform.position.y));

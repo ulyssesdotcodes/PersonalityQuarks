@@ -15,18 +15,18 @@ class MLRewardTagsLabel : MLReward {
     public bool AreaReset;
     public string RewardKeyVal = "0";
 
-    Academy academy;
+    PersonalityQuarksAcademy academy;
     private float Reward = 0;
 
-    Area myArea;
+    PersonalityQuarksArea myArea;
     private HashSet<int> AddedLastRound = new HashSet<int>();
 
 
     public override void Initialize(BaseAgent agent) {
-        academy = FindObjectOfType<Academy>();
+        academy = FindObjectOfType<PersonalityQuarksAcademy>();
         Reward = AcademyParameters.FetchOrParse(academy, RewardKeyVal);
 
-        myArea = agent.gameObject.GetComponentInParent<Area>();
+        myArea = agent.gameObject.GetComponentInParent<PersonalityQuarksArea>();
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorActions) {

@@ -956,21 +956,21 @@ MonoBehaviour:
   resetParameters:
     m_ResetParameters:
     - key: spawn_wall_number
-      value: 64
+      value: 0
     - key: spawn_distance
       value: 32
     - key: player_spawn_distance
       value: 32
     - key: together_time
-      value: 0
+      value: 2
     - key: consumable_value
       value: 4
     - key: spawn_movable_number
-      value: 16
+      value: 0
     - key: spawn_consumable_number
-      value: 32
+      value: 0
     - key: spawn_all_number
-      value: 16
+      value: 0
 --- !u!4 &2091025070
 Transform:
   m_ObjectHideFlags: 0
@@ -985,6 +985,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2104481370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2550241553909463180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2104481371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104481370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5ce8df85a13d14d91c10f493a56e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartY: 0
+  academy: {fileID: 0}
+  EventSystem: {fileID: 0}
+  AreaResets:
+  - {fileID: 11400000, guid: b4e731e7da1679f4c80cbe91edc098d2, type: 2}
+  WorldCanvas: {fileID: 0}
 --- !u!1001 &2550241553909463180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1056,6 +1080,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FindEachotherArea
       objectReference: {fileID: 0}
+    - target: {fileID: 2550241553647356309, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
+        type: 3}
+      propertyPath: m_Name
+      value: Square Env
+      objectReference: {fileID: 0}
     - target: {fileID: 2550241553909463182, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
         type: 3}
       propertyPath: m_Model
@@ -1068,5 +1097,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5022602860645237092, guid: 402474b715f73d04ab4f8666313aebd3,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1363531485, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}

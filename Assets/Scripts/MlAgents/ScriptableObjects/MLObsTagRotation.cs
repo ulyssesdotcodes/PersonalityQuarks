@@ -9,7 +9,7 @@ class MLObsTagRotation : MLObs {
     List<GameObject> TaggedObjects;
 
     public override void Initialize(BaseAgent agent) {
-        TaggedObjects = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(Tag);
+        TaggedObjects = agent.gameObject.GetComponentInParent<PersonalityQuarksArea>().FindGameObjectsWithTagInChildren(Tag);
     }
 
     public override Option<List<float>> FloatListObs(BaseAgent agent) {

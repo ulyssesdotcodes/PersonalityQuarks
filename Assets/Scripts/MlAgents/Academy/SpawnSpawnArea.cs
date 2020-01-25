@@ -12,7 +12,7 @@ public class SpawnSpawnArea : AreaReset
     private List<SpawnWallsArea> mySpawns = new List<SpawnWallsArea>();
 
     // Start is called before the first frame update
-    public override void Init(Area area)
+    public override void Init(PersonalityQuarksArea area)
     {
       foreach(SpawnWallsArea spawn in Spawns) {
         SpawnWallsArea mySpawn = Object.Instantiate(spawn);
@@ -24,7 +24,7 @@ public class SpawnSpawnArea : AreaReset
       ResetArea(area);
     }
 
-    public override void ResetArea(Area area) {
+    public override void ResetArea(PersonalityQuarksArea area) {
       if(last != null) {
         last.Clear();
       }

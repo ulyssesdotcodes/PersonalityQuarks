@@ -9,14 +9,14 @@ class MLRewardNearby : MLReward {
     public float Distance;
     public string ResetAreaAfterKeyVal = "0";
     private float ResetTime = -1;
-    private Area myArea;
+    private PersonalityQuarksArea myArea;
     private Academy academy;
     private float ResetAreaAfter;
 
     private bool resetNextFrame = false;
 
     public override void Initialize(BaseAgent agent) {
-        myArea = agent.gameObject.GetComponentInParent<Area>();
+        myArea = agent.gameObject.GetComponentInParent<PersonalityQuarksArea>();
         academy = FindObjectOfType<Academy>();
         ResetAreaAfter = AcademyParameters.FetchOrParse(academy, ResetAreaAfterKeyVal);
     }

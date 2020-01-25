@@ -12,11 +12,11 @@ class MLObsTagField : MLObs {
     public string FieldName;
 
     private List<ObservableFields> TaggedObjectFields;
-    private Area area;
+    private PersonalityQuarksArea area;
     private Color baseColor;
 
     public override void Initialize(BaseAgent agent) {
-        area = agent.gameObject.GetComponentInParent<Area>();
+        area = agent.gameObject.GetComponentInParent<PersonalityQuarksArea>();
         baseColor = agent.gameObject.GetComponent<Renderer>().material.color;
     }
 

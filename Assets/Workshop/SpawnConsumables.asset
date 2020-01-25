@@ -9,17 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822925dde5fb287499f2412110c3fd13, type: 3}
-  m_Name: LeavePlayArea
+  m_Script: {fileID: 11500000, guid: 2d751f755d9a8504096495a5bf971f5b, type: 3}
+  m_Name: SpawnConsumables
   m_EditorClassIdentifier: 
-  Amount: -1
-  AmountY: 0
-  LimitX: 40
-  LimitZ: 40
-  LimitY: 3
-  PositionY: 0.5
-  Reset: 1
-  Done: 0
-  Wrap: 0
-  AgentLeaveMessage: Wheeeee!
-  myArea: {fileID: 0}
+  SpawnNumberKeyVal: 32
+  SpawnDistanceKeyVal: 32
+  Walls:
+  - {fileID: 8297582847623652074, guid: 8034124bca26cdf4b93c995454a897e8, type: 3}

@@ -15,7 +15,7 @@ class MLRewardObjectLeaveCirclePlayArea : MLReward {
     List<GameObject> TargetObjects;
 
     public override void Initialize(BaseAgent agent) {
-        TargetObjects = agent.gameObject.GetComponentInParent<Area>().FindGameObjectsWithTagInChildren(Tag);
+        TargetObjects = agent.gameObject.GetComponentInParent<PersonalityQuarksArea>().FindGameObjectsWithTagInChildren(Tag);
     }
 
     public override void AddReward(BaseAgent agent, float[] vectorAction) {

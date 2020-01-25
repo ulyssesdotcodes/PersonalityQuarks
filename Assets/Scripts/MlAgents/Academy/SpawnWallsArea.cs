@@ -16,7 +16,7 @@ public class SpawnWallsArea : AreaReset
     private float SpawnDistance;
 
     // Start is called before the first frame update
-    public override void Init(Area area)
+    public override void Init(PersonalityQuarksArea area)
     {
         SpawnNumber = (int)AcademyParameters.FetchOrParse(area.academy, SpawnNumberKeyVal);
         SpawnDistance = AcademyParameters.FetchOrParse(area.academy, SpawnDistanceKeyVal);
@@ -24,7 +24,7 @@ public class SpawnWallsArea : AreaReset
         ResetArea(area);
     }
 
-    public override void ResetArea(Area area) {
+    public override void ResetArea(PersonalityQuarksArea area) {
       Clear();
       SpawnWalls(area);
     }
@@ -37,7 +37,7 @@ public class SpawnWallsArea : AreaReset
         Spawned.Clear();
     }
 
-    public void SpawnWalls(Area area) {
+    public void SpawnWalls(PersonalityQuarksArea area) {
         SpawnNumber = (int) AcademyParameters.Update(area.academy, SpawnNumberKeyVal, (int)SpawnNumber);
         SpawnDistance = AcademyParameters.Update(area.academy, SpawnDistanceKeyVal, SpawnDistance);
 
@@ -46,7 +46,7 @@ public class SpawnWallsArea : AreaReset
         }
     }
 
-    private void SpawnWall(Area area, Vector2 position) {
+    private void SpawnWall(PersonalityQuarksArea area, Vector2 position) {
       GameObject prefab = Walls[(int)Random.Range(0, Walls.Length)];
       float SpawnHeight = prefab.transform.position.y;
       Quaternion rot = prefab.transform.rotation * Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
@@ -55,7 +55,9 @@ public class SpawnWallsArea : AreaReset
           prefab, new Vector3(position.x, area.StartY + SpawnHeight, position.y), 
           rot,
           area.gameObject.transform);
-      area.EventSystem.RaiseEvent(CreateEvent.Create(prefab.name, wall));
+      if(area.EventSystem != null) {
+        area.EventSystem.RaiseEvent(CreateEvent.Create(prefab.name, wall));
+      }
       Spawned.Add(wall);
     }
 }

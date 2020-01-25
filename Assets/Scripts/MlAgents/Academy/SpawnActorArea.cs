@@ -8,24 +8,24 @@ using UnityEditor;
 public class SpawnActorArea : AreaReset
 {
     public GameObject Actor;
-    public string spawnkey;
+    public string SpawnNumberKeyVal;
     public float SpawnRange;
     private List<GameObject> Spawned = new List<GameObject>();
 
     // Start is called before the first frame update
-    public override void Init(Area area)
+    public override void Init(PersonalityQuarksArea area)
     {
         ResetArea(area);
     }
 
-    public override void ResetArea(Area area) {
+    public override void ResetArea(PersonalityQuarksArea area) {
         foreach(GameObject go in Spawned) {
             GameObject.Destroy(go);
         }
 
         Spawned.Clear();
 
-        int SpawnNumber = (int) AcademyParameters.FetchOrParse(area.academy, spawnkey);
+        int SpawnNumber = (int) AcademyParameters.FetchOrParse(area.academy, SpawnNumberKeyVal);
         for(int i = 0; i < SpawnNumber; i++) {
             GameObject gob =
                 GameObject.Instantiate(Actor, 
@@ -36,7 +36,9 @@ public class SpawnActorArea : AreaReset
                     Quaternion.identity,
                     area.gameObject.transform);
 
-            area.EventSystem.RaiseEvent(CreateEvent.Create(Actor.name, gob));
+            if (area.EventSystem != null) {
+              area.EventSystem.RaiseEvent(CreateEvent.Create(Actor.name, gob));
+            }
             Spawned.Add(gob);
         }
     }

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using MLAgents;
 
-public class Area : MonoBehaviour
+public class PersonalityQuarksArea : MonoBehaviour
 {
   [HideInInspector]
   public float StartY;
 
   [HideInInspector]
-  public Academy academy;
+  public PersonalityQuarksAcademy academy;
 
   [HideInInspector]
   public QuarkEvents EventSystem;
@@ -17,7 +17,6 @@ public class Area : MonoBehaviour
   public AreaReset[] AreaResets;
   private List<AreaReset> AreaResetClones;
 
-  public Logger Logger;
   public Canvas WorldCanvas;
 
   private int lastReset;
@@ -27,7 +26,7 @@ public class Area : MonoBehaviour
     EventSystem = GetComponent<QuarkEvents>();
 
     StartY = gameObject.transform.position.y;
-    academy = FindObjectOfType<Academy>();
+    academy = FindObjectOfType<PersonalityQuarksAcademy>();
 
     AreaResetClones = new List<AreaReset>();
     foreach(AreaReset areaReset in AreaResets) {
@@ -53,7 +52,7 @@ public class Area : MonoBehaviour
       List<GameObject> res = new List<GameObject>();
 
       foreach(GameObject go in gos) {
-          if (go.GetComponentInParent<Area>() == this) {
+          if (go.GetComponentInParent<PersonalityQuarksArea>() == this) {
               res.Add(go);
           }
       }

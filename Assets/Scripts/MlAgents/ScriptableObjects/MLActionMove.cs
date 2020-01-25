@@ -15,6 +15,7 @@ class MLActionMove : MLAction {
     public float TurnMin = -1f;
     public float TurnMax = 1f;
     public float TagSpeedChange = 1f;
+    public float MaxVelocity = 5f;
     public string Tag = "";
 
     public override void RunAction(BaseAgent agent, float[] act) {
@@ -68,6 +69,14 @@ class MLActionMove : MLAction {
         rigidbody.AddForce(dirToGo * MoveSpeedRand * TagMod, ForceMode.VelocityChange);
         gameObject.transform.Rotate(rotateDir, Time.fixedDeltaTime * TurnSpeedRand);
 
-        agent.area.EventSystem.RaiseEvent(TransformEvent.Create(gameObject));
+        if (rigidbody.velocity.sqrMagnitude > MaxVelocity * MaxVelocity) // slow it down
+        {
+            rigidbody.velocity *= 0.95f;
+        }
+
+        if(agent.area.EventSystem != null) {
+          agent.area.EventSystem.RaiseEvent(TransformEvent.Create(gameObject));
+        }
+
     }
 }
