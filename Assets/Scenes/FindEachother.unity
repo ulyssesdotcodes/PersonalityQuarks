@@ -188,11 +188,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FindEachotherArea (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1001 &295778972
@@ -261,11 +256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FindEachotherArea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
@@ -336,11 +326,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FindEachotherArea (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1001 &877341423
@@ -410,11 +395,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FindEachotherArea (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1001 &962030816
@@ -483,11 +463,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FindEachotherArea (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
@@ -655,11 +630,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FindEachotherArea (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
@@ -905,11 +875,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FindEachotherArea (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 2550241553127057886, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}
 --- !u!1 &2091025068
@@ -1022,17 +987,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: FindEachotherArea
       objectReference: {fileID: 0}
-    - target: {fileID: 2550241553909463182, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Model
-      value: 
-      objectReference: {fileID: 5022602860645237092, guid: d595019d72b5ae24f9c01ef6ea7d56ed,
-        type: 3}
-    - target: {fileID: 2550241553909463184, guid: 1b5095c4cdf98d542a4e9c60babf92fe,
-        type: 3}
-      propertyPath: m_Model
-      value: 
-      objectReference: {fileID: 5022602860645237092, guid: d595019d72b5ae24f9c01ef6ea7d56ed,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5095c4cdf98d542a4e9c60babf92fe, type: 3}

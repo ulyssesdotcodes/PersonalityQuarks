@@ -37,6 +37,7 @@ TagManager:
   - symbol_X
   - movable
   - consumable
+  - spawnwall
   layers:
   - Default
   - TransparentFX
