@@ -3,13 +3,15 @@ using UnityEngine;
 
 public enum QuarkEventType {
   All,
-  Create,
-  Reset,
-  Transform,
   CollisionEnter,
   CollisionExit,
+  Consumable,
+  Create,
+  Distance,
+  Reset,
   Tag,
-  Tagging
+  Tagging,
+  Transform,
 }
 
 [Serializable]
@@ -118,6 +120,36 @@ public class TaggingEvent : QuarkEvent {
     e.Id = gameObject.GetInstanceID();
     e.Tag = gameObject.tag;
     e.NewTag = NewTag;
+    return e;
+  }
+}
+
+[Serializable]
+public class DistanceEvent : QuarkEvent {
+  public float Distance;
+
+  public static DistanceEvent Create(GameObject gameObject, float distance) {
+    DistanceEvent e = new DistanceEvent();
+    e.Type = QuarkEventType.Distance;
+    e.Id = gameObject.GetInstanceID();
+    e.Tag = gameObject.tag;
+    e.Distance = distance;
+    return e;
+  }
+}
+
+[Serializable]
+public class ConsumableEvent : QuarkEvent {
+  public float Reward;
+  public Vector3 Position;
+
+  public static ConsumableEvent Create(GameObject gameObject, float reward, Vector3 position) {
+    ConsumableEvent e = new ConsumableEvent();
+    e.Type = QuarkEventType.Consumable;
+    e.Id = gameObject.GetInstanceID();
+    e.Tag = gameObject.tag;
+    e.Reward = reward;
+    e.Position = position;
     return e;
   }
 }

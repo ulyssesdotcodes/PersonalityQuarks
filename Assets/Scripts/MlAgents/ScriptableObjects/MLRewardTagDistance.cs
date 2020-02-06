@@ -23,5 +23,9 @@ class MLRewardTagDistance : MLReward {
         float byMaxDist = sqrmag / (MaxDistance * MaxDistance);
         float scaledReward = Mathf.Max((1 - byMaxDist) * Reward, 0) / (float)agent.agentParameters.maxStep;
         agent.AddReward(scaledReward);
+
+        if(agent.area.EventSystem != null) {
+          agent.area.EventSystem.RaiseEvent(DistanceEvent.Create(agent.gameObject, sqrmag));
+        }
     }
 }

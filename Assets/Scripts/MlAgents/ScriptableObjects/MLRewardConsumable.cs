@@ -19,15 +19,19 @@ class MLRewardConsumable : MLReward {
         Mult = AcademyParameters.Update(academy, MultKeyVal, Mult);
         agent.TriggerCollider
             .Filter(tc => tc != null)
-            .Map(tc => tc.gameObject)
-            .Filter(gob => gob.tag == "consumable")
-            .MatchSome(go => {
+            .Filter(tc => tc.gameObject.tag == "consumable")
+            .MatchSome(tc => {
+                GameObject go = tc.gameObject;
                 Consumable consumable = go.GetComponent<Consumable>();
                 agent.AddReward(consumable.value * Mult);
 
                 SpawnDistance = AcademyParameters.Update(academy, SpawnDistanceKeyVal, SpawnDistance);
                 Vector2 pos = new Vector2(Random.Range(-SpawnDistance, SpawnDistance), Random.Range(-SpawnDistance, SpawnDistance));
                 go.transform.position = new Vector3(pos.x, go.transform.position.y, pos.y);
+
+                if(agent.area.EventSystem != null) {
+                  agent.area.EventSystem.RaiseEvent(ConsumableEvent.Create(agent.gameObject, consumable.value, tc.transform.position));
+                }
             });
     }
 }
