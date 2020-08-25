@@ -1,0 +1,166 @@
+behaviors:
+  RollerCollector:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 2024
+      buffer_size: 20240
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 256
+      num_layers: 2
+      vis_encode_type: simple
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 1.0
+    keep_checkpoints: 5
+    max_steps: 10000000
+    time_horizon: 1000
+    summary_freq: 30000
+    threaded: true
+  CollectorArm:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 2024
+      buffer_size: 20240
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 512
+      num_layers: 3
+      vis_encode_type: simple
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 1.0
+    keep_checkpoints: 5
+    max_steps: 3000000
+    time_horizon: 1024
+    summary_freq: 30000
+    threaded: true
+  TowardTargetY:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 512
+      buffer_size: 5120
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 128
+      num_layers: 2
+      vis_encode_type: simple
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 1.0
+    keep_checkpoints: 5
+    max_steps: 3000000
+    time_horizon: 128
+    summary_freq: 30000
+    threaded: true
+  MovingTarget:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 4096
+      buffer_size: 40960
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 128
+      num_layers: 2
+      vis_encode_type: simple
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 1.0
+    keep_checkpoints: 5
+    max_steps: 3000000
+    time_horizon: 128
+    summary_freq: 30000
+    threaded: true
+environment_parameters:
+  movement-speed:
+    curriculum:
+      - name: 0
+        value: 0.0
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 0.1
+        value: 0.1
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 0.2
+        value: 0.2
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 0.4
+        value: 0.4
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 0.8
+        value: 0.8
+  tolerence:
+    curriculum:
+      - name: 4
+        value: 4.0
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 2
+        value: 2.0
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 1.0
+        value: 1.0
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 0.5
+        value: 0.5
+        completion_criteria:
+          measure: reward
+          behavior: MovingTarget
+          min_lesson_length: 64
+          threshold: 0.0
+      - name: 0.25
+        value: 0.25

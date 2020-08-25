@@ -1,62 +1,110 @@
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
+using UnityEditor;
 
 public class PersonalityQuarksArea : MonoBehaviour
 {
-  [HideInInspector]
-  public float StartY;
+    [HideInInspector]
+    public float StartY;
+    [HideInInspector]
+    public PersonalityQuarksSettings settings;
+    [HideInInspector]
+    public QuarkEvents EventSystem;
+    public DefaultAsset AnimationsPath;
+    public AreaReset[] AreaResets;
+    public bool Playback = false;
+    private List<AreaReset> AreaResetClones;
 
-  [HideInInspector]
-  public PersonalityQuarksAcademy academy;
+    public Canvas WorldCanvas;
 
-  [HideInInspector]
-  public QuarkEvents EventSystem;
+    private int lastReset;
 
-  public AreaReset[] AreaResets;
-  private List<AreaReset> AreaResetClones;
+    protected virtual void Start()
+    {
+        EventSystem = GetComponent<QuarkEvents>();
 
-  public Canvas WorldCanvas;
+        StartY = gameObject.transform.position.y;
 
-  private int lastReset;
+        AreaResetClones = new List<AreaReset>();
+        foreach (AreaReset areaReset in AreaResets)
+        {
+            AreaReset ar = Object.Instantiate(areaReset) as AreaReset;
+            AreaResetClones.Add(ar);
+        }
 
-  protected virtual void Start()
-  {
-    EventSystem = GetComponent<QuarkEvents>();
+        if (!Playback)
+        {
+            GetComponent<Animator>().enabled = false;
 
-    StartY = gameObject.transform.position.y;
-    academy = FindObjectOfType<PersonalityQuarksAcademy>();
+            foreach (AreaReset areaReset in AreaResetClones)
+            {
+                areaReset.ResetArea(this);
+            }
+        }
 
-    AreaResetClones = new List<AreaReset>();
-    foreach(AreaReset areaReset in AreaResets) {
-      AreaReset ar = Object.Instantiate(areaReset) as AreaReset;
-      AreaResetClones.Add(ar);
+        lastReset = Time.frameCount;
     }
-  }
 
 
-  public virtual void ResetArea()
-  {
-    if(Time.frameCount > 0 && lastReset != Time.frameCount) {
-      foreach(AreaReset areaReset in AreaResetClones) {
-        areaReset.Init(this);
-      }
+    public virtual void ResetArea()
+    {
+        if (Playback)
+        {
+            return;
+        }
+
+        if (Time.frameCount > 0 && lastReset != Time.frameCount)
+        {
+            foreach (AreaReset areaReset in AreaResetClones)
+            {
+                areaReset.Init(this);
+            }
+        }
+
+        lastReset = Time.frameCount;
     }
 
-    lastReset = Time.frameCount;
-  }
-  
-  public List<GameObject> FindGameObjectsWithTagInChildren(string tag) {
-      GameObject[] gos = GameObject.FindGameObjectsWithTag(tag);
-      List<GameObject> res = new List<GameObject>();
+    public List<GameObject> FindGameObjectsWithTagInChildren(string tag)
+    {
+        GameObject[] gos = GameObject.FindGameObjectsWithTag(tag);
+        List<GameObject> res = new List<GameObject>();
 
-      foreach(GameObject go in gos) {
-          if (go.GetComponentInParent<PersonalityQuarksArea>() == this) {
-              res.Add(go);
-          }
-      }
+        foreach (GameObject go in gos)
+        {
+            if (go.GetComponentInParent<PersonalityQuarksArea>() == this)
+            {
+                res.Add(go);
+            }
+        }
 
-      return res;
-  }
+        return res;
+    }
+
+    public GameObject SpawnPrefab(string jsonEvent)
+    {
+        return SpawnPrefab(JsonUtility.FromJson<CreateEvent>(jsonEvent));
+    }
+
+    public GameObject SpawnPrefab(CreateEvent createEvent)
+    {
+        if (!Application.isPlaying || transform.Find(createEvent.Name) != null)
+        {
+            return null;
+        }
+
+        GameObject gob = GameObject.Instantiate((GameObject)AssetDatabase.LoadAssetAtPath(createEvent.AssetPath, typeof(GameObject)));
+        gob.transform.parent = transform;
+        gob.name = createEvent.Name;
+
+        Rigidbody rb = gob.GetComponent<Rigidbody>();
+        if (rb != null && Playback)
+        {
+            rb.isKinematic = true;
+        }
+
+        return gob;
+    }
 }

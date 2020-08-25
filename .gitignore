@@ -73,3 +73,7 @@ Assets/Gizmos.meta
 
 
 *.log
+
+# results from mlagents
+results/
+Assets/Recordings/*

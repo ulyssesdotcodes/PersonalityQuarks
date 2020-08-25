@@ -1,82 +1,67 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
 
-[CreateAssetMenu(menuName="ML/Actions/Move")]
-class MLActionMove : MLAction {
-    public int forwardIdx = 0;
-    public int rightIdx = 0;
-    public int turnIdx = 0;
-    public float MoveSpeed = 3f;
-    public float MoveSpeedVariance = 0f;
-    public float MoveMin = -0.6f;
-    public float MoveMax = 1f;
-    public float TurnSpeed = 180f;
-    public float TurnSpeedVariance = 0f;
-    public float TurnMin = -1f;
-    public float TurnMax = 1f;
+[CreateAssetMenu(menuName = "ML/Actions/Move")]
+class MLActionMove : MLAction
+{
+    public int startIdx = 0;
+    public float Speed = 3f;
+    public float SpeedVariance = 0f;
     public float TagSpeedChange = 1f;
-    public float MaxVelocity = 5f;
+    public float MaxSpeed = 5f;
     public string Tag = "";
+    public Rigidbody rigidbody;
 
-    public override void RunAction(BaseAgent agent, float[] act) {
-        GameObject gameObject = agent.gameObject;
-        Transform transform = gameObject.transform;
-        Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+    public bool MoveX = true;
+    public bool MoveY = false;
+    public bool MoveZ = true;
 
-        if (rigidbody == null) return;
+    public override void RunAction(BaseAgent agent, float[] act)
+    {
+        int i = startIdx;
 
-        Vector3 dirToGo = Vector3.zero;
-        Vector3 rotateDir = Vector3.zero;
+        var rightAmount = 0f;
+        var upAmount = 0f;
+        var forwardAmount = 0f;
 
-        var forwardAxis = (int)act[forwardIdx];
-        var rightAxis = (int)act[rightIdx];
-        var rotateAxis = (int)act[turnIdx];
-        
-        switch (forwardAxis)
+        if (MoveX)
         {
-            case 1:
-                dirToGo = transform.forward;
-                break;
-            case 2:
-                dirToGo = -transform.forward;
-                break;
+            rightAmount = GetMultiplier(act[i++]);
         }
-        
-        switch (rightAxis)
+        if (MoveY)
         {
-            case 1:
-                dirToGo = transform.right;
-                break;
-            case 2:
-                dirToGo = -transform.right;
-                break;
+            upAmount = GetMultiplier(act[i++]);
+        }
+        if (MoveZ)
+        {
+            forwardAmount = GetMultiplier(act[i++]);
         }
 
-        switch (rotateAxis)
-        {
-            case 1:
-                rotateDir = -transform.up;
-                break;
-            case 2:
-                rotateDir = transform.up;
-                break; 
-        }
-
-        float MoveSpeedRand = Random.Range(MoveSpeed - MoveSpeedVariance, MoveSpeed + MoveSpeedVariance);
-        float TurnSpeedRand = Random.Range(TurnSpeed - TurnSpeedVariance, TurnSpeed + TurnSpeedVariance);
+        float SpeedRand = Random.Range(Speed - SpeedVariance, Speed + SpeedVariance);
         float TagMod = Tag != "" && agent.gameObject.CompareTag(Tag) ? TagSpeedChange : 1f;
 
-        rigidbody.AddForce(dirToGo * MoveSpeedRand * TagMod, ForceMode.VelocityChange);
-        gameObject.transform.Rotate(rotateDir, Time.fixedDeltaTime * TurnSpeedRand);
+        Vector3 MoveVector = new Vector3(rightAmount, upAmount, forwardAmount);
 
-        if (rigidbody.velocity.sqrMagnitude > MaxVelocity * MaxVelocity) // slow it down
+        rigidbody.AddForce(MoveVector * SpeedRand * TagMod, ForceMode.VelocityChange);
+
+        if (rigidbody.velocity.sqrMagnitude > MaxSpeed * MaxSpeed) // slow it down
         {
             rigidbody.velocity *= 0.95f;
         }
 
-        if(agent.area.EventSystem != null) {
-          agent.area.EventSystem.RaiseEvent(TransformEvent.Create(gameObject));
+        if (agent.area.EventSystem != null)
+        {
+            agent.area.EventSystem.RaiseEvent(TransformEvent.Create(agent.gameObject));
         }
+    }
 
+    private float GetMultiplier(float action)
+    {
+        switch (action)
+        {
+            case 1: return -1;
+            case 2: return 1;
+            default: return 0;
+        }
     }
 }

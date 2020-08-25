@@ -1,35 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
-using MLAgents;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
 using UnityEngine;
 using UnityEngine.UI;
 using OptionalUnity;
 
-public class BaseAgent : Agent {
+public class BaseAgent : Agent
+{
     public QuarkGroup Quarks;
-
-    public Option<Collider> TriggerCollider;
-
-    public List<string> ColliderTags = new List<string>();
-
     private Vector3 StartPosition;
     private Quaternion StartRotation;
+    [HideInInspector]
+    public StartEpisodeAction[] StartEpisodeActions;
+    [HideInInspector]
     public PersonalityQuarksArea area;
+    public bool ResetArea = true;
+    private int lastRewardedStepCount = 1;
 
-    public void Start() {
-      if(area == null) {
+    public void Start()
+    {
         area = GetComponentInParent<PersonalityQuarksArea>();
-      }
-      StartPosition = transform.position;
-      StartRotation = transform.rotation;
+
+        if (area.Playback)
+        {
+            enabled = false;
+            if (GetComponent<Rigidbody>() != null)
+            {
+                GetComponent<Rigidbody>().isKinematic = true;
+            }
+            return;
+        }
+
+        StartEpisodeActions = GetComponents<StartEpisodeAction>();
+        StartPosition = transform.position;
+        StartRotation = transform.rotation;
     }
 
-    public override void InitializeAgent()
+    public override void Initialize()
     {
-        base.InitializeAgent();
+        base.Initialize();
 
-        if(area == null) {
-          area = GetComponentInParent<PersonalityQuarksArea>();
+        if (area == null)
+        {
+            area = GetComponentInParent<PersonalityQuarksArea>();
         }
 
         Quarks = QuarkGroup.Instantiate(Quarks);
@@ -38,56 +52,42 @@ public class BaseAgent : Agent {
         // TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.World, $"Initialized {Quarks.name} {gameObject.name}"), this); 
     }
 
-    public override void CollectObservations() {
-        AddVectorObs(Quarks.CollectObservations(this));
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        Quarks.CollectObservations(this, sensor);
     }
 
-    public override void AgentAction(float[] vectorAction) {
+    public override void OnActionReceived(float[] vectorAction)
+    {
         Quarks.AgentAction(this, vectorAction);
     }
 
-    public override void AgentReset() {
-        base.AgentReset();
-        Reset();
-    }
-
-    public void Reset()
+    void FixedUpdate()
     {
-      //TAG: MakeEvent area.Logger.Log(System.String.Concat("Reset ", gameObject.transform.position.y));
-      Quarks.Reset(this);
+        // Reward only after an action is taken.
+        Quarks.RewardAgent(this, StepCount - lastRewardedStepCount);
+        lastRewardedStepCount = 1;
+
+        Quarks.FixedUpdate();
     }
 
-    public void OnTriggerEnter(Collider col) {
-        if(ColliderTags.Contains(col.gameObject.tag)) {
-          //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Debug, $"Ran into {col.gameObject.tag}"), this); 
-          TriggerCollider = col.Some();
+    public override void OnEpisodeBegin()
+    {
+        if (ResetArea)
+        {
+            area.ResetArea();
         }
-    }
 
-    public void OnTriggerExit(Collider col) {
-        if(ColliderTags.Contains(col.gameObject.tag)) {
-          //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Debug, $"Ran away from {col.gameObject.tag}"), this); 
-          TriggerCollider = Option.None<Collider>();
+        foreach (StartEpisodeAction action in StartEpisodeActions)
+        {
+            action.OnStartEpisodePreReset();
         }
-    }
 
-    public void OnCollisionEnter(Collision col) {
-        if(ColliderTags.Contains(col.gameObject.tag)) {
-          //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Debug, $"Ran into {col.gameObject.name}"), this); 
-          TriggerCollider = col.collider.Some();
-          if(area.EventSystem != null) {
-            area.EventSystem.RaiseEvent(CollisionEnterEvent.Create(gameObject, col));
-          }
-        }
-    }
+        Quarks.Reset(this);
 
-    public void OnCollisionExit(Collision col) {
-        if(ColliderTags.Contains(col.gameObject.tag)) {
-          //TAG: MakeEvent area.Logger.Log(Logger.CreateMessage(LogMessageType.Debug, $"Ran away from {col.gameObject.name}"), this); 
-          TriggerCollider = Option.None<Collider>();
-          if(area.EventSystem != null) {
-            area.EventSystem.RaiseEvent(CollisionExitEvent.Create(gameObject, col));
-          }
+        foreach (StartEpisodeAction action in StartEpisodeActions)
+        {
+            action.OnStartEpisodePostReset();
         }
     }
 }

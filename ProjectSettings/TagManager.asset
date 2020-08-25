@@ -38,6 +38,10 @@ TagManager:
   - movable
   - consumable
   - spawnwall
+  - collected
+  - dump
+  - collecting
+  - settings
   layers:
   - Default
   - TransparentFX
@@ -47,8 +51,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - ML Control
+  - Wall
   - 
   - 
   - 

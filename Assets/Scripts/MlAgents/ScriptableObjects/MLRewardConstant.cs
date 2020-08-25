@@ -1,22 +1,25 @@
 using UnityEngine;
 using UnityEditor;
 using System;
-using MLAgents;
+using Unity.MLAgents;
 
-[CreateAssetMenu(menuName="ML/Rewards/Constant")]
-class MLRewardConstant : MLReward {
+[CreateAssetMenu(menuName = "ML/Rewards/Constant")]
+class MLRewardConstant : MLReward
+{
     public string AmountKeyVal;
 
     private float Amount;
     Academy academy;
 
-    public override void Initialize(BaseAgent agent) {
-        academy = FindObjectOfType<Academy>();
+    public override void Initialize(BaseAgent agent)
+    {
+        academy = Academy.Instance;
         Amount = AcademyParameters.FetchOrParse(academy, AmountKeyVal);
     }
 
-    public override void AddReward(BaseAgent agent, float[] vectorAction) {
+    public override void AddReward(BaseAgent agent, float[] vectorAction, int deltaSteps)
+    {
         Amount = AcademyParameters.Update(academy, AmountKeyVal, Amount);
-        agent.AddReward(Amount / (float)agent.agentParameters.maxStep);
+        agent.AddReward(Amount * (float)deltaSteps / (float)agent.MaxStep);
     }
 }

@@ -1,10 +1,12 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
 
-public abstract class MLReward : ScriptableObject {
-    public virtual void Initialize(BaseAgent agent) {
+public abstract class MLReward : ScriptableObject
+{
+    public virtual void Initialize(BaseAgent agent)
+    {
 
     }
 
-    public abstract void AddReward(BaseAgent agent, float[] vectorActions);
+    public abstract void AddReward(BaseAgent agent, float[] vectorActions, int deltaSteps);
 }

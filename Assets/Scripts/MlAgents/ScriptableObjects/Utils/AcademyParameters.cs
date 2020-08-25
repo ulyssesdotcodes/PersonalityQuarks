@@ -1,18 +1,26 @@
-using MLAgents;
+using Unity.MLAgents;
 using UnityEngine;
 
-static class AcademyParameters {
+static class AcademyParameters
+{
 
-    public static float FetchOrParse(Academy academy, string key) {
-      float prop = academy.FloatProperties.GetPropertyWithDefault(key, -1);
-      if(prop == -1) {
-        float.TryParse(key, out prop);
-      }
+    public static float FetchOrParse(Academy academy, string key)
+    {
+        float prop = academy.EnvironmentParameters.GetWithDefault(key, -1);
+        if (prop == -1)
+        {
+            float.TryParse(key, out prop);
+        }
 
-      return prop;
+        return prop;
     }
 
-    public static float Update(Academy academy, string key, float current) {
-      return academy.FloatProperties.GetPropertyWithDefault(key, current);
+    public static float Update(Academy academy, string key, float current)
+    {
+        if (academy != null && academy.EnvironmentParameters != null)
+        {
+            return academy.EnvironmentParameters.GetWithDefault(key, current);
+        }
+        return current;
     }
 }

@@ -1,8 +1,9 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
 
-[CreateAssetMenu(menuName="ML/Rewards/Movement")]
-class MLRewardMovement : MLReward {
+[CreateAssetMenu(menuName = "ML/Rewards/Movement")]
+class MLRewardMovement : MLReward
+{
     public int ForwardIdx = 0;
     public int RightIdx = 1;
     public int TurnIdx = 2;
@@ -10,9 +11,10 @@ class MLRewardMovement : MLReward {
     public float MultiplierRight;
     public float MultiplierTurn;
 
-    public override void AddReward(BaseAgent agent, float[] vectorActions) {
-        agent.AddReward(Mathf.Abs(vectorActions[ForwardIdx]) * MultiplierForward / (float) agent.agentParameters.maxStep);
-        agent.AddReward(Mathf.Abs(vectorActions[RightIdx]) * MultiplierRight / (float) agent.agentParameters.maxStep);
-        agent.AddReward(Mathf.Abs(vectorActions[TurnIdx]) * MultiplierTurn / (float) agent.agentParameters.maxStep);
+    public override void AddReward(BaseAgent agent, float[] vectorActions, int deltaSteps)
+    {
+        agent.AddReward(Mathf.Abs(vectorActions[ForwardIdx]) * MultiplierForward / (float)agent.MaxStep);
+        agent.AddReward(Mathf.Abs(vectorActions[RightIdx]) * MultiplierRight / (float)agent.MaxStep);
+        agent.AddReward(Mathf.Abs(vectorActions[TurnIdx]) * MultiplierTurn / (float)agent.MaxStep);
     }
 }

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8923b5f6dd77ad64cb4aa4949067fa0c, type: 3}
+  m_Name: RollerCollector
+  m_EditorClassIdentifier: 
+  Groups: []
+  Resets:
+  - {fileID: 11400000, guid: 86f1fb268900f69468d35e6c7236a899, type: 2}
+  - {fileID: 11400000, guid: 5382c46b1c37ca845ba5aecd65bbecb5, type: 2}
+  Observations:
+  - {fileID: 11400000, guid: a85d166f43b02a3479896740f559d71b, type: 2}
+  - {fileID: 11400000, guid: a319dd5a1cece4642a3808328906f32c, type: 2}
+  - {fileID: 11400000, guid: 7516b40b230d0664493611f51c2f8167, type: 2}
+  - {fileID: 11400000, guid: b9a36202b3df7f24d8403b6f421b34c7, type: 2}
+  - {fileID: 11400000, guid: 6a32bf11095912344a50d8f2ae9fd4cb, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: c3ab25a3d1a75924989e6ad32a488160, type: 2}
+  - {fileID: 11400000, guid: 986526e6611dc8544850a2edcea58416, type: 2}
+  - {fileID: 11400000, guid: 65a1f6e9a1108924a82250036e39748f, type: 2}
+  - {fileID: 11400000, guid: ae539be44df0fff4b85d5819e4bc369c, type: 2}
+  - {fileID: 11400000, guid: 56afdc6b724a6214f8f3e96782d55e00, type: 2}
+  - {fileID: 11400000, guid: aebdde0a70644624e80f96bb52dfe90b, type: 2}
+  Actions:
+  - {fileID: 11400000, guid: 2dd11ec94d8e2fd48b2ad5d0319e9858, type: 2}
+  - {fileID: 11400000, guid: aa7e7e28f66d7f04094f373479c243b6, type: 2}
+  - {fileID: 11400000, guid: 4f09d5d9b6b62264a9a13ec1f14ab855, type: 2}
+  - {fileID: 11400000, guid: 5079bf7a8e1dd3c4ba2b87a8f47d22d3, type: 2}
+  - {fileID: 11400000, guid: 9f777659064a171498aee5754da9f342, type: 2}

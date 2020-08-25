@@ -1,9 +1,10 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
 using System.Collections.Generic;
 
-[CreateAssetMenu(menuName="ML/Rewards/Nearby")]
-class MLRewardNearby : MLReward {
+[CreateAssetMenu(menuName = "ML/Rewards/Nearby")]
+class MLRewardNearby : MLReward
+{
     public string Tag;
     public float Reward;
     public float Distance;
@@ -15,35 +16,46 @@ class MLRewardNearby : MLReward {
 
     private bool resetNextFrame = false;
 
-    public override void Initialize(BaseAgent agent) {
+    public override void Initialize(BaseAgent agent)
+    {
         myArea = agent.gameObject.GetComponentInParent<PersonalityQuarksArea>();
-        academy = FindObjectOfType<Academy>();
+        academy = Academy.Instance;
         ResetAreaAfter = AcademyParameters.FetchOrParse(academy, ResetAreaAfterKeyVal);
     }
 
-    public override void AddReward(BaseAgent agent, float[] vectorActions) {
-      if(resetNextFrame) {
-        agent.Done();
-        myArea.ResetArea();
-        resetNextFrame = false;
-      } else {
-        List<GameObject> objs = myArea.FindGameObjectsWithTagInChildren(Tag);
-        foreach(GameObject obj in objs) {
-            if ((obj.transform.position - agent.gameObject.transform.position).sqrMagnitude < Distance * Distance) {
-              if (ResetTime < 0) {
-                ResetTime = Time.time;
-              } 
+    public override void AddReward(BaseAgent agent, float[] vectorActions, int deltaSteps)
+    {
+        if (resetNextFrame)
+        {
+            agent.EndEpisode();
+            myArea.ResetArea();
+            resetNextFrame = false;
+        }
+        else
+        {
+            List<GameObject> objs = myArea.FindGameObjectsWithTagInChildren(Tag);
+            foreach (GameObject obj in objs)
+            {
+                if ((obj.transform.position - agent.gameObject.transform.position).sqrMagnitude < Distance * Distance)
+                {
+                    if (ResetTime < 0)
+                    {
+                        ResetTime = Time.time;
+                    }
 
-              ResetAreaAfter = AcademyParameters.Update(academy, ResetAreaAfterKeyVal, ResetAreaAfter);
-              if (Time.time - ResetTime >= ResetAreaAfter) {
-                agent.AddReward(Reward);
-                resetNextFrame = true;
-              }
+                    ResetAreaAfter = AcademyParameters.Update(academy, ResetAreaAfterKeyVal, ResetAreaAfter);
+                    if (Time.time - ResetTime >= ResetAreaAfter)
+                    {
+                        agent.AddReward(Reward);
+                        resetNextFrame = true;
+                    }
 
-            } else {
-              ResetTime = -1;
+                }
+                else
+                {
+                    ResetTime = -1;
+                }
             }
         }
-      }
     }
 }

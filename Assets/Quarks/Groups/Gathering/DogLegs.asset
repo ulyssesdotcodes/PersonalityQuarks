@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8923b5f6dd77ad64cb4aa4949067fa0c, type: 3}
+  m_Name: DogLegs
+  m_EditorClassIdentifier: 
+  Groups: []
+  Resets:
+  - {fileID: 11400000, guid: 5382c46b1c37ca845ba5aecd65bbecb5, type: 2}
+  - {fileID: 11400000, guid: 6e08bb6d90ff7694cb2b32d62cfd8442, type: 2}
+  Observations:
+  - {fileID: 11400000, guid: a85d166f43b02a3479896740f559d71b, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: c5101e04b35a2a647a73e47e3148ec4c, type: 2}
+  - {fileID: 11400000, guid: e3a7bc4c6a3562c499fff4ccf81f0187, type: 2}
+  - {fileID: 11400000, guid: ae539be44df0fff4b85d5819e4bc369c, type: 2}
+  Actions:
+  - {fileID: 11400000, guid: 2dd11ec94d8e2fd48b2ad5d0319e9858, type: 2}

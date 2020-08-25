@@ -1,14 +1,29 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
 using OptionalUnity;
 using System.Collections.Generic;
 
-[CreateAssetMenu(menuName="ML/Obs/Velocity")]
-class MLObsVelocity : MLObs {
+[CreateAssetMenu(menuName = "ML/Obs/Velocity")]
+class MLObsVelocity : MLObs
+{
+    public Transform BaseTransform;
+    public Rigidbody Rigidbody;
+    public float MaxVelocity;
+    public bool ObserveXZ = true;
+    public bool ObserveY = false;
 
-    public override Option<Vector2> Vec2Obs(BaseAgent agent) {
-        return agent.gameObject.GetComponent<Rigidbody>()
-            .SomeNotNull()  
-            .Map(rb => new Vector2(rb.velocity.x, rb.velocity.z));
+    public override void CollectObservations(BaseAgent agent, VectorSensor sensor)
+    {
+        Vector3 inverseVelocity = BaseTransform.InverseTransformDirection(Rigidbody.velocity);
+        if (ObserveXZ)
+        {
+            sensor.AddObservation(new Vector2(inverseVelocity.x, inverseVelocity.z) / MaxVelocity);
+        }
+
+        if (ObserveY)
+        {
+            sensor.AddObservation(inverseVelocity.y / MaxVelocity);
+        }
     }
 }

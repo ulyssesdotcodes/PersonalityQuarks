@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Unity.MLAgents;
 
-[CreateAssetMenu(menuName="ML/AreaResets/SpawnSpawn")]
+[CreateAssetMenu(menuName = "ML/AreaResets/SpawnSpawn")]
 public class SpawnSpawnArea : AreaReset
 {
     public List<SpawnWallsArea> Spawns;
@@ -14,23 +15,26 @@ public class SpawnSpawnArea : AreaReset
     // Start is called before the first frame update
     public override void Init(PersonalityQuarksArea area)
     {
-      foreach(SpawnWallsArea spawn in Spawns) {
-        SpawnWallsArea mySpawn = Object.Instantiate(spawn);
-        mySpawns.Add(mySpawn);
-        mySpawn.ResetArea(area);
-        mySpawn.Clear();
-      }
+        foreach (SpawnWallsArea spawn in Spawns)
+        {
+            SpawnWallsArea mySpawn = Object.Instantiate(spawn);
+            mySpawns.Add(mySpawn);
+            mySpawn.ResetArea(area);
+            mySpawn.Clear();
+        }
 
-      ResetArea(area);
+        ResetArea(area);
     }
 
-    public override void ResetArea(PersonalityQuarksArea area) {
-      if(last != null) {
-        last.Clear();
-      }
+    public override void ResetArea(PersonalityQuarksArea area)
+    {
+        if (last != null)
+        {
+            last.Clear();
+        }
 
-      SpawnWallsArea prefab = mySpawns[(int)Random.Range(0, Spawns.Count)];
-      prefab.SpawnWalls(area);
-      last = prefab;
+        SpawnWallsArea prefab = mySpawns[(int)Random.Range(0, Spawns.Count)];
+        prefab.SpawnWalls(area);
+        last = prefab;
     }
 }

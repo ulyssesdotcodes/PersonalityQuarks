@@ -1,12 +1,14 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
 using OptionalUnity;
 
-[CreateAssetMenu(menuName="ML/Obs/Constant")]
-class MLObsConstant : MLObs {
+[CreateAssetMenu(menuName = "ML/Obs/Constant")]
+class MLObsConstant : MLObs
+{
     public float obs;
-
-    public override Option<float> FloatObs(BaseAgent agent) {
-        return obs.SomeNotNull();
+    public override void CollectObservations(BaseAgent agent, VectorSensor sensor)
+    {
+        sensor.AddObservation(obs);
     }
 }

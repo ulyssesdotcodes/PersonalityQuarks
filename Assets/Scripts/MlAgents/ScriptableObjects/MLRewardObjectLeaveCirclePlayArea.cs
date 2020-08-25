@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEditor;
-using MLAgents;
+using Unity.MLAgents;
 using System.Collections.Generic;
 
-[CreateAssetMenu(menuName="ML/Rewards/Object Leave Circle Play Area")]
-class MLRewardObjectLeaveCirclePlayArea : MLReward {
+[CreateAssetMenu(menuName = "ML/Rewards/Object Leave Circle Play Area")]
+class MLRewardObjectLeaveCirclePlayArea : MLReward
+{
     public float Amount;
     public float Radius;
     public float PositionY;
@@ -14,33 +15,39 @@ class MLRewardObjectLeaveCirclePlayArea : MLReward {
 
     List<GameObject> TargetObjects;
 
-    public override void Initialize(BaseAgent agent) {
+    public override void Initialize(BaseAgent agent)
+    {
         TargetObjects = agent.gameObject.GetComponentInParent<PersonalityQuarksArea>().FindGameObjectsWithTagInChildren(Tag);
     }
 
-    public override void AddReward(BaseAgent agent, float[] vectorAction) {
+    public override void AddReward(BaseAgent agent, float[] vectorAction, int deltaSteps)
+    {
         bool isOut = false;
 
-        foreach(GameObject TargetObject in TargetObjects) {
-            if(TargetObject == agent.gameObject) {
+        foreach (GameObject TargetObject in TargetObjects)
+        {
+            if (TargetObject == agent.gameObject)
+            {
                 continue;
             }
 
-            if((new Vector2(TargetObject.transform.position.x, TargetObject.transform.position.z)).sqrMagnitude 
-                > Radius * Radius) {
+            if ((new Vector2(TargetObject.transform.position.x, TargetObject.transform.position.z)).sqrMagnitude
+                > Radius * Radius)
+            {
                 agent.AddReward(Amount);
                 isOut = true;
             }
 
-            if(Mathf.Abs(TargetObject.transform.localPosition.y - PositionY) > LimitY) {
+            if (Mathf.Abs(TargetObject.transform.localPosition.y - PositionY) > LimitY)
+            {
                 agent.AddReward(Amount);
                 isOut = true;
             }
         }
 
-        if(isOut && Reset) {
-            agent.Done();
-            agent.Reset();
+        if (isOut && Reset)
+        {
+            agent.EndEpisode();
         }
     }
 }

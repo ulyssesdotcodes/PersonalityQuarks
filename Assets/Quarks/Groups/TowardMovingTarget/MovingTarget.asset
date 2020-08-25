@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8923b5f6dd77ad64cb4aa4949067fa0c, type: 3}
+  m_Name: MovingTarget
+  m_EditorClassIdentifier: 
+  Groups: []
+  Resets:
+  - {fileID: 11400000, guid: c74429ae7cd06b644987944d765efb65, type: 2}
+  - {fileID: 11400000, guid: 2ab03bcd6f77cac45b786d973df4f20c, type: 2}
+  - {fileID: 11400000, guid: 8f3509ad76c43b84490ed7b3d311ca64, type: 2}
+  - {fileID: 11400000, guid: 2ba85234b4f3c5e4f85d1344fd17a731, type: 2}
+  Observations:
+  - {fileID: 11400000, guid: d25b7109c838e1e499e0b27e04e28bd2, type: 2}
+  - {fileID: 11400000, guid: 72551d0399215ec449c3bd21ab2cc9ee, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: 0f4d1bd8a0ccb6e4aaca28e6ef9b2aeb, type: 2}
+  - {fileID: 11400000, guid: 1804a9bd409955942bbff0dbc9637e2a, type: 2}
+  Actions:
+  - {fileID: 11400000, guid: 0fe7761eb77ab4e45a897872e8104e89, type: 2}

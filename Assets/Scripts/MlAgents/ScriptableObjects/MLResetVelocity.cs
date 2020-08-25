@@ -1,13 +1,13 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
 
-[CreateAssetMenu(menuName="ML/Reset/Velocity")]
-class MLResetVelocity : MLReset {
+[CreateAssetMenu(menuName = "ML/Reset/Velocity")]
+class MLResetVelocity : MLReset
+{
+    public Rigidbody Rigidbody;
 
-    public override void Reset(BaseAgent agent) {
-        Rigidbody rb = agent.gameObject.GetComponent<Rigidbody>();
-        if(rb == null) return;
-
-        rb.velocity = Vector3.zero;
+    public override void Reset(BaseAgent agent)
+    {
+        Rigidbody.velocity = Vector3.zero;
     }
 }

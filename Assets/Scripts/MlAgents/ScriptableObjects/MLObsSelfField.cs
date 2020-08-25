@@ -1,25 +1,35 @@
 using System;
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
 using OptionalUnity;
 using System.Collections.Generic;
 
-[CreateAssetMenu(menuName="ML/Obs/Self Field")]
-class MLObsSelfField : MLObs {
+[CreateAssetMenu(menuName = "ML/Obs/Self Field")]
+class MLObsSelfField : MLObs
+{
     public string FieldName;
     public bool ObserveAsBool = true;
 
-    public override void Initialize(BaseAgent agent) {
+    private ObservableFields fields;
+
+    public override void Initialize(BaseAgent agent)
+    {
+        fields = agent.GetComponent<ObservableFields>();
     }
 
-    public override Option<float> FloatObs(BaseAgent agent) {
-      if(ObserveAsBool) {
-        return (agent.GetComponent<ObservableFields>().FieldsHash.ContainsKey(FieldName) ? 1f : 0f)
-          .SomeNotNull();
-      } else {
-        float f = 0;
-        agent.GetComponent<ObservableFields>().FieldsHash.TryGetValue(FieldName, out f);
-        return f.SomeNotNull();
-      }
+    public override void CollectObservations(BaseAgent agent, VectorSensor sensor)
+    {
+        if (ObserveAsBool)
+        {
+
+            sensor.AddObservation(fields.FieldsHash.ContainsKey(FieldName) ? 1f : 0f);
+        }
+        else
+        {
+            float f = -1;
+            fields.FieldsHash.TryGetValue(FieldName, out f);
+            sensor.AddObservation(f);
+        }
     }
 }

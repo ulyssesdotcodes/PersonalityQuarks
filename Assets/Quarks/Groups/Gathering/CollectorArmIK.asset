@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8923b5f6dd77ad64cb4aa4949067fa0c, type: 3}
+  m_Name: CollectorArmIK
+  m_EditorClassIdentifier: 
+  Groups: []
+  Resets:
+  - {fileID: 11400000, guid: 19e855dd094223e44bfa608a2888d06f, type: 2}
+  - {fileID: 11400000, guid: 7968dc0cfa952274dbff134546a5dc4f, type: 2}
+  - {fileID: 11400000, guid: f5a96ecab0751764798fe49dec651a47, type: 2}
+  Observations:
+  - {fileID: 11400000, guid: db34cebc96c58bf4e981e9b5fcd40686, type: 2}
+  - {fileID: 11400000, guid: b9a36202b3df7f24d8403b6f421b34c7, type: 2}
+  - {fileID: 11400000, guid: fddb3d9b8a668414cbfbb238856d7b88, type: 2}
+  - {fileID: 11400000, guid: 3701afa21e3bc0642863be643f673ac6, type: 2}
+  - {fileID: 11400000, guid: 8ec712077a2c14645b167031d52819b0, type: 2}
+  - {fileID: 11400000, guid: cdb8175655e0ad447a8ad7ef93a8133d, type: 2}
+  - {fileID: 11400000, guid: 35b1c779d6cb24d4e8cab6d913db00a8, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: 7475b53acdae8f2408f238cc856f0591, type: 2}
+  - {fileID: 11400000, guid: 61ccf3b6fb145ee4ea36f90172de5458, type: 2}
+  - {fileID: 11400000, guid: 055f0dc056f9420499628475d0ef4f98, type: 2}
+  - {fileID: 11400000, guid: 25c43f22d40ce7f4992219c6a9826699, type: 2}
+  Actions:
+  - {fileID: 11400000, guid: badf1594cca2aad42930f35a3b1272be, type: 2}
+  - {fileID: 11400000, guid: 872813572dfd44e4798d9ac77a12dc62, type: 2}

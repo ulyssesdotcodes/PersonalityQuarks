@@ -1,16 +1,18 @@
 using UnityEngine;
-using MLAgents;
+using Unity.MLAgents;
 
-[CreateAssetMenu(menuName="ML/Rewards/Velocity")]
-class MLRewardVelocity : MLReward {
+[CreateAssetMenu(menuName = "ML/Rewards/Velocity")]
+class MLRewardVelocity : MLReward
+{
     public float Multiplier;
 
-    public override void AddReward(BaseAgent agent, float[] vectorActions) {
+    public override void AddReward(BaseAgent agent, float[] vectorActions, int deltaSteps)
+    {
         Rigidbody rb = agent.gameObject.GetComponent<Rigidbody>();
-        
-        if(rb == null) return;
 
-        agent.AddReward(Mathf.Abs(rb.velocity.x) * Multiplier / (float)agent.agentParameters.maxStep);
-        agent.AddReward(Mathf.Abs(rb.velocity.z) * Multiplier / (float)agent.agentParameters.maxStep);
+        if (rb == null) return;
+
+        agent.AddReward(Mathf.Abs(rb.velocity.x) * Multiplier / (float)agent.MaxStep);
+        agent.AddReward(Mathf.Abs(rb.velocity.z) * Multiplier / (float)agent.MaxStep);
     }
 }
